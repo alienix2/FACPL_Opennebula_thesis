@@ -1,0 +1,26 @@
+//Testing out some requests
+import "tests.fpl"
+
+Request:{ not_allowed 
+	(action/id , "READ")
+	(action/text, "not_allowed")
+	(action/command1, "cowsay I was allowed hurray")
+	(action/command2, "ls")
+	(resource/boss_email, "mattemoni@gmail.com")
+}
+
+Request:{ allowed 
+	(action/id , "READ" )
+	(action/text, "allowed")
+	(action/command1, "cowsay I was allowed hurray")
+	(action/command2, ":")
+	(resource/boss_email, "mattemoni@gmail.com")
+}
+
+Request:{ allowed_too
+	(action/id , "READ" )
+	(action/text, "allowed")
+	(action/command1, "onevm stop 10")
+	(action/command2, ":")
+	(resource/boss_email, "mattemoni@gmail.com")
+}
