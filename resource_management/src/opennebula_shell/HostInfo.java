@@ -3,9 +3,12 @@ package opennebula_shell;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
@@ -17,6 +20,7 @@ public class HostInfo {
 	private static Logger logger;
 	private static int availableCpu = -1;
     private static long availableMem = -1;
+    private static List<String> runningVMsName;
     
     public static void setLogger(Logger logger) {
     	HostInfo.logger = logger;
@@ -59,13 +63,13 @@ public class HostInfo {
         
         logger.info("Resources available on host: " + hostId + ": [CPU, MEM]: " + "[" + availableCpu + "," + availableMem + "]" );
     }
-
-    public static int getAvailableCpu(int hostId) throws Exception {
+    
+    public static int calculateAvailableCpu(int hostId) throws Exception {
         updateHostResources(hostId);
         return availableCpu;
     }
     
-    public static long getAvailableMem(int hostId) throws Exception {
+    public static long calculateAvailableMem(int hostId) throws Exception {
         updateHostResources(hostId);
         return availableMem;
     }

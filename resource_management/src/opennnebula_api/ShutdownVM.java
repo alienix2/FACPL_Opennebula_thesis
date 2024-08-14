@@ -17,7 +17,7 @@ public class ShutdownVM extends ApiCallTemplate {
 
 	@Override
 	public void callApi(List<Object> args) throws IOException, InterruptedException, SAXException, ParserConfigurationException {
-		logger.info("Shuttong down " + args.get(2) + " VMs of [host, temp]: " + "[" + args.get(0) + " " + args.get(1) + "]");
+		logger.info("Shutting down " + args.get(2) + " VMs of [host, temp]: " + "[" + args.get(0) + " " + args.get(1) + "]");
 		List<VirtualMachine> terminateList = VMsInfo
 				.getVMsByHostTemplate((String)args.get(0), 
 										(String)args.get(1), 

@@ -68,12 +68,12 @@ public class HostInfo {
         logger.info("Resources available on host: " + hostId + ": [CPU, MEM]: " + "[" + availableCpu + "," + availableMem + "]" );
     }
 
-    public static int getAvailableCpu(int hostId) throws Exception{
+    public static int calculateAvailableCpu(int hostId) throws Exception{
     	updateHostResources(hostId);
         return availableCpu;
     }
     
-    public static long getAvailableMem(int hostId) throws Exception{
+    public static long calculateAvailableMem(int hostId) throws Exception{
     	updateHostResources(hostId);
         return availableMem;
     }

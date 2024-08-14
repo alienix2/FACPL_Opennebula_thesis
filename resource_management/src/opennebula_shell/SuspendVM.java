@@ -11,7 +11,7 @@ public class SuspendVM extends ShellCommandTemplate {
 	}
 
 	public void runCommand(List<Object> args) throws IOException, InterruptedException {
-		String suspendList = VMsInfo.getVMsInfoByHostTemplate((String)args.get(0), (String)args.get(2), (int)args.get(1));
+		String suspendList = VMsInfo.getVMsIdByHostTemplate((String)args.get(0), (String)args.get(2), (int)args.get(1));
 		
 		logger.info("Suspending VM(s): " + "[" + suspendList + "]");
 		process = new ProcessBuilder()

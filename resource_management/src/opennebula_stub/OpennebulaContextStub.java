@@ -1,6 +1,7 @@
 package opennebula_stub;
 
 import java.util.Date;
+import java.util.UUID;
 
 import it.unifi.facpl.lib.interfaces.IContextStub;
 import it.unifi.facpl.lib.util.AttributeName;
@@ -36,9 +37,8 @@ public class OpennebulaContextStub implements IContextStub {
 				if (attribute.getCategory().equals("environment") && attribute.getIDAttribute().equals("false")) {
 					return false;
 				}
-				
-				if (attribute.getCategory().equals("prova") && attribute.getIDAttribute().equals("hello")) {
-					return "Sono riuscito a modificare";
+				if (attribute.getCategory().equals("system") && attribute.getIDAttribute().equals("vm-name")) {
+					return UUID.randomUUID().toString();	//Random VM name
 				}
 				// TO Implement your own context here. For example
 				/*

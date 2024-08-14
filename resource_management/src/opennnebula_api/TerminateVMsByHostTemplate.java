@@ -9,9 +9,9 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.opennebula.client.vm.VirtualMachine;
 import org.xml.sax.SAXException;
 
-public class TerminateVM extends ApiCallTemplate {
+public class TerminateVMsByHostTemplate extends ApiCallTemplate {
 
-	public TerminateVM(String credentials, String endpoint, Logger logger) {
+	public TerminateVMsByHostTemplate(String credentials, String endpoint, Logger logger) {
 		super(credentials, endpoint, logger);
 	}
 

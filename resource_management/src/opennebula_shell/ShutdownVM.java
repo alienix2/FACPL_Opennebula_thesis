@@ -11,7 +11,7 @@ public class ShutdownVM extends ShellCommandTemplate {
 	}
 	
 	public void runCommand(List<Object> args) throws IOException, InterruptedException {
-		String shutdownList = VMsInfo.getVMsInfoByHostTemplate((String)args.get(0), (String)args.get(1), (int)args.get(2));
+		String shutdownList = VMsInfo.getVMsIdByHostTemplate((String)args.get(0), (String)args.get(1), (int)args.get(2));
 		
 		logger.info("Shutting down VM(s): " + "[" + shutdownList + "]");
 		process = new ProcessBuilder()
