@@ -7,11 +7,15 @@ import org.opennebula.client.host.Host;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 import utilities.FileLoggerFactory;
 import utilities.XmlUtils;
 
+import java.io.IOException;
 import java.util.logging.Logger;
+
+import javax.xml.parsers.ParserConfigurationException;
 
 public class HostInfo {
 	
@@ -35,7 +39,7 @@ public class HostInfo {
     	oneClient = new Client("oneadmin:Panzerotto", "http://localhost:2633/RPC2");
     }
 
-    private static void updateHostResources(int hostId) throws Exception {
+    private static void updateHostResources(int hostId) throws SAXException, IOException, ParserConfigurationException {
         // Retrieve the host object
         Host host = new Host(hostId, oneClient);
 
@@ -68,12 +72,12 @@ public class HostInfo {
         logger.info("Resources available on host: " + hostId + ": [CPU, MEM]: " + "[" + availableCpu + "," + availableMem + "]" );
     }
 
-    public static int calculateAvailableCpu(int hostId) throws Exception{
+    public static int getAvailableCpu(int hostId) throws SAXException, IOException, ParserConfigurationException {
     	updateHostResources(hostId);
         return availableCpu;
     }
     
-    public static long calculateAvailableMem(int hostId) throws Exception{
+    public static long getAvailableMem(int hostId) throws SAXException, IOException, ParserConfigurationException{
     	updateHostResources(hostId);
         return availableMem;
     }
