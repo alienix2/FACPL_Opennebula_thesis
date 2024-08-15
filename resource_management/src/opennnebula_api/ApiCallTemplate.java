@@ -19,28 +19,26 @@ public abstract class ApiCallTemplate implements IPepAction{
 	protected Client oneClient;
 	protected List<OneResponse> responseList = new ArrayList<>();
 	protected final Logger logger;
-    private final String credentials;
-    private final String endpoint;
+	protected VMsInfo vmsInfo;
     
-    public ApiCallTemplate(String credentials, String endpoint, Logger logger) {
-    	this.credentials = credentials;
-    	this.endpoint = endpoint;
+    public ApiCallTemplate(Client oneClient, Logger logger) {
     	this.logger = logger;
+    	this.oneClient = oneClient;
     }
     
-    public void eval(List<Object> args) throws Throwable {
-    	setupHost();
+    public void eval(List<Object> args) throws ClientConfigurationException, InterruptedException, SAXException, ParserConfigurationException, IOException {
+    	setupVMs();
     	callApi(args);
     	logResponse();
 	}
 	
-    private final void setupHost() throws ClientConfigurationException {
-    	oneClient = new Client(credentials, endpoint);
+    private final void setupVMs() throws ClientConfigurationException {
+    	vmsInfo = VMsInfo.withClientAndLogger(oneClient, logger);
     }
     
-	public abstract void callApi(List<Object> args) throws IOException, InterruptedException, SAXException, ParserConfigurationException;
+	public abstract void callApi(List<Object> args) throws InterruptedException, SAXException, ParserConfigurationException, IOException;
 
-	public void logResponse() {
+	private void logResponse() {
 		responseList.forEach(res -> {
 			if(res.isError()) {
 				logger.severe(res.getErrorMessage());
@@ -48,7 +46,7 @@ public abstract class ApiCallTemplate implements IPepAction{
 			else{
 				logger.info(res.getMessage());
 			}
-			});
+		});
 		responseList.clear();
 	}
 }

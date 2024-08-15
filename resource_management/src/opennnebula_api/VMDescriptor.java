@@ -10,7 +10,6 @@ public class VMDescriptor {
     private String state;
     private VirtualMachine virtualMachine;
 
-    // Constructor
     public VMDescriptor(String vmId, String vmName, String templateId, String host, String state, VirtualMachine virtualMachine) {
         this.vmId = vmId;
         this.vmName = vmName;
@@ -20,7 +19,6 @@ public class VMDescriptor {
         this.virtualMachine = virtualMachine;
     }
 
-    // Getters
     public String getVmId() {
         return vmId;
     }
@@ -45,14 +43,10 @@ public class VMDescriptor {
         return virtualMachine;
     }
 
-    @Override
-    public String toString() {
-        return "VMInfo{" +
-                "vmId='" + vmId + '\'' +
-                ", vmName='" + vmName + '\'' +
-                ", templateId='" + templateId + '\'' +
-                ", host='" + host + '\'' +
-                ", state='" + state + '\'' +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "VMDescriptor [vmId=" + vmId + ", vmName=" + vmName + ", templateId=" + templateId + ", host=" + host
+				+ ", state=" + state + ", virtualMachine=" + virtualMachine + "]";
+	}
+
 }
