@@ -1,4 +1,4 @@
-package test_shell;
+package prova;
 
 import it.unifi.facpl.lib.policy.*;
 import it.unifi.facpl.system.*;
@@ -19,12 +19,12 @@ public class MainFACPL{
 	public MainFACPL() {
 		// defined list of policies included in the PDP
 		LinkedList<IEvaluablePolicy> policies = new LinkedList<IEvaluablePolicy>();
-		policies.add(new PolicySet_PSet()); 
-		this.pdp = new PDP(new it.unifi.facpl.lib.algorithm.PermitUnlessDenyGreedy(), policies, false);
+		policies.add(new PolicySet_Energy_Saving()); 
+		this.pdp = new PDP(new it.unifi.facpl.lib.algorithm.DenyUnlessPermitGreedy(), policies, false);
 		
 		this.pep = new PEP(EnforcementAlgorithm.DENY_BIASED);
 			
-		this.pep.addPEPActions(PEPAction.getPepActions());
+		this.pep.addPEPActions(OpennebulaAction.getPepActions());
 	}
 		
 	/*
@@ -38,9 +38,7 @@ public class MainFACPL{
 		StringBuffer result = new StringBuffer();
 		//request
 		LinkedList<ContextRequest> requests = new LinkedList<ContextRequest>();
-		requests.add(ContextRequest_allowed.getContextReq());
-		requests.add(ContextRequest_not_allowed.getContextReq());
-		requests.add(ContextRequest_allowed_too.getContextReq());
+		requests.add(ContextRequest_prova1.getContextReq());
 		for (ContextRequest rcxt : requests) {
 			result.append("---------------------------------------------------\n");
 			AuthorisationPDP resPDP = system.pdp.doAuthorisation(rcxt);

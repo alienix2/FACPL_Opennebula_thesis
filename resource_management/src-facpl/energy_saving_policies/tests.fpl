@@ -1,0 +1,13 @@
+import "requests.fpl"
+import "energySaving.fpl"
+
+PAS { 
+	Extended Indeterminate : false ;
+	Java Package : "prova" ;
+	Requests To Evaluate : prova1;
+	pep: deny-biased
+	pdp: deny-unless-permit
+
+	include Energy_Saving
+}
+

@@ -30,9 +30,8 @@ class ApiCallTemplateTest {
 	@Test
 	void testCallApi() throws ClientConfigurationException, InterruptedException, SAXException, ParserConfigurationException, IOException {
 		apiCall.eval(null);
-		assertEquals("INFO: Client initialized.\n"
-				+ "INFO: Success message\n"
-				+ "SEVERE: Error message\n", 
-				mockLogHandler.getLogBuilder());
+		assertEquals("INFO: Success message\n"
+					+ "SEVERE: Error message\n", 
+					mockLogHandler.getLogBuilder());
 	}
 }

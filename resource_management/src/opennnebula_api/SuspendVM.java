@@ -24,7 +24,6 @@ public class SuspendVM extends ApiCallTemplate {
 				.getRunningVMsByHostTemplate((String)args.get(0), 
 											(String)args.get(1), 
 											(int)args.get(2));
-		terminateList.forEach(x -> x.toString());
 		terminateList.forEach(vm -> responseList.add(vm.suspend()));
 	}
 }

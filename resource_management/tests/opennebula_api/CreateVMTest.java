@@ -35,9 +35,8 @@ class CreateVMTest {
 		Object[] argsArray = new Object[] {0, "param1", 2};
 		List<Object> args = Arrays.asList(argsArray);
 		vmCreator.eval(args);
-		assertEquals("INFO: Client initialized.\n"
-				+ "INFO: Starting VM: [2, param1]\n"
-				+ "INFO: 100\n"
-				+ "INFO: Success message\n", mockLogHandler.getLogBuilder());
+		assertEquals("INFO: Starting VM: [2, param1]\n"
+					+ "INFO: 100\n"
+					+ "INFO: Success message\n", mockLogHandler.getLogBuilder());
 	}
 }

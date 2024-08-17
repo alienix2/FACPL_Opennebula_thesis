@@ -38,7 +38,6 @@ public class VMsInfo {
     private VMsInfo(Client client, Logger logger) {
         this.oneClient = client;
         this.logger = logger;
-        this.logger.info("Client initialized.");
     }
 
     // Static factory methods
@@ -83,7 +82,6 @@ public class VMsInfo {
 
     // Return a list of VMInfo objects
     public List<String> getRunningVMsIdByHostTemplate(String host, String templateId, int number) throws IOException, InterruptedException, SAXException, ParserConfigurationException {
-        updateVmsInfo();
         return updateVmsInfo().stream()
                 .filter(x -> x.getHost().equals(host))
                 .filter(x -> x.getTemplateId().equals(templateId))
@@ -113,7 +111,6 @@ public class VMsInfo {
     }
     
     public long countRunningVMsByHost(String host) throws IOException, InterruptedException, SAXException, ParserConfigurationException {
-    	updateVmsInfo();
         return updateVmsInfo().stream()
                 .filter(x -> x.getHost().equals(host))
                 .filter(x -> x.getState().equals("ACTIVE"))
@@ -121,7 +118,6 @@ public class VMsInfo {
     }
     
     public List<VirtualMachine> getRunningVMsByHostTemplate(String host, String templateId, int number) throws IOException, InterruptedException, SAXException, ParserConfigurationException {
-        updateVmsInfo();
         return updateVmsInfo().stream()
                 .filter(x -> x.getHost().equals(host))
                 .filter(x -> x.getTemplateId().equals(templateId))
@@ -133,7 +129,6 @@ public class VMsInfo {
 
     // Return a specific VMInfo object by VM name
     public VirtualMachine getRunningVMByName(String vmName) throws IOException, InterruptedException, SAXException, ParserConfigurationException {
-        updateVmsInfo();
         return updateVmsInfo().stream()
                 .filter(x -> x.getVmName().equals(vmName))
                 .filter(x -> x.getState().equals("ACTIVE"))
@@ -144,7 +139,6 @@ public class VMsInfo {
 
     // Return a list of VMInfo objects for running VMs on a specific host
     public List<VirtualMachine> getRunningVMsByHost(String host) throws IOException, InterruptedException, SAXException, ParserConfigurationException {
-        updateVmsInfo();
         return updateVmsInfo().stream()
                 .filter(x -> x.getHost().equals(host))
                 .filter(x -> x.getState().equals("ACTIVE"))

@@ -1,19 +1,22 @@
-package test_shell;
+package facpl_things;
 
 import java.util.HashMap;
 import java.util.logging.Logger;
 
+import org.opennebula.client.Client;
+import org.opennebula.client.ClientConfigurationException;
+
 import it.unifi.facpl.lib.interfaces.*;
-import opennebula_shell.CreateVM;
-import opennebula_shell.ShutdownVM;
-import opennebula_shell.SuspendVM;
+import opennnebula_api.HostInfo;
+import opennnebula_api.ShutdownVM;
 import utilities.FileLoggerFactory;
 
 @SuppressWarnings("all")
 public class PEPAction{
 
 	public static HashMap<String, IPepAction> getPepActions() {
-		Logger logger = FileLoggerFactory.make("commandOutput.txt");
+		Client oneClient = OpennebulaContextStub.getOneClient();
+		Logger clientLogger = OpennebulaContextStub.getLogger();
 		/*
 		* Set your own pep action e.g. HashMap<String,new ***** class Action extending IPepAction***()
 		* 
@@ -22,11 +25,9 @@ public class PEPAction{
 		* pepAction;
 		*/
 		HashMap<String, IPepAction> pepAction = new HashMap<String, IPepAction>();
-		pepAction.put("create", new CreateVM(logger));
-		pepAction.put("freeze", new SuspendVM(logger));
-		pepAction.put("release", new ShutdownVM(logger));
-		pepAction.put("shellCommand", new ShellCommand());
-		return pepAction;
+		pepAction.put("release", new ShutdownVM(oneClient, clientLogger));
+		
+		return null;
    	}
 	
 }

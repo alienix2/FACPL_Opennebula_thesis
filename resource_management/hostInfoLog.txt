@@ -1,4 +1,0 @@
-SEVERE opennnebula_api.HostInfo.updateHostResources: Error retrieving host information: Failed to read servers response: fake-endpoint
-SEVERE opennnebula_api.HostInfo.updateHostResources: Error retrieving host information: Failed to read servers response: fake-endpoint
-SEVERE opennnebula_api.HostInfo.updateHostResources: Error retrieving host information: Failed to read servers response: fake-endpoint
-SEVERE opennnebula_api.HostInfo.updateHostResources: Error retrieving host information: Failed to read servers response: fake-endpoint

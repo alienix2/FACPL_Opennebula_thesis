@@ -1,0 +1,8 @@
+//Testing out some requests
+import "tests.fpl"
+
+Request:{ prova1 
+	(action/action-id , "RELEASE")
+	(subject/profile-id, "P_1")
+	(resource/vm-id, "451")
+}
