@@ -1,8 +1,0 @@
-//Testing out some policies
-PolicySet PSet { deny-unless-permit-greedy
-	target:equal ( "READ" , action/id )
-	policies:
-	Rule rule1 ( permit target: equal("allowed", action/text))
-	obl-p:[M shellCommand(action/command1, action/command2)]
-	obl-d:[M log(prova/hello, "Not allowed subject tried to exec a command")]
-}

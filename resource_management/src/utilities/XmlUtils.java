@@ -10,11 +10,15 @@ import org.xml.sax.SAXException;
 
 public class XmlUtils {
 
-    public static Document parseXml(String xmlData) throws SAXException, IOException, ParserConfigurationException {
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-        DocumentBuilder builder = factory.newDocumentBuilder();
-        ByteArrayInputStream inputStream = new ByteArrayInputStream(xmlData.getBytes("UTF-8"));
-        return builder.parse(inputStream);
+    public static Document parseXml(String xmlData) {
+        try {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            ByteArrayInputStream inputStream = new ByteArrayInputStream(xmlData.getBytes("UTF-8"));
+            return builder.parse(inputStream);
+        } catch (SAXException | IOException | ParserConfigurationException e) {
+            throw new RuntimeException("Failed to parse XML", e);
+        }
     }
 }
 

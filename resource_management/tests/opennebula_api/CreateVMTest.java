@@ -14,7 +14,7 @@ import org.junit.jupiter.api.Test;
 import org.opennebula.client.ClientConfigurationException;
 import org.xml.sax.SAXException;
 
-import opennnebula_api.CreateVM;
+import opennebula_api.CreateVM;
 
 class CreateVMTest {
 

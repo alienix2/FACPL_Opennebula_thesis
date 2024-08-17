@@ -11,7 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.opennebula.client.ClientConfigurationException;
 import org.opennebula.client.vm.VirtualMachine;
 
-import opennnebula_api.VMsInfo;
+import opennebula_api.VMsInfo;
 
 public class VMsInfoTest {
 
@@ -100,24 +100,20 @@ public class VMsInfoTest {
     
     @Test
     void testGetRunningVMsByHostTemplate() throws Exception {
-        List<VirtualMachine> vms = vmsInfo.getRunningVMsByHostTemplate("localhost", "5", 3);
+        List<VirtualMachine> vms = vmsInfo.getRunningVMsByHostTemplate("localhost", "5");
         assertEquals(2, vms.size());
         
         List<String> vmIds = vms.stream().map(VirtualMachine::getId).collect(Collectors.toList());
         assertTrue(vmIds.contains("443"));
         assertTrue(vmIds.contains("446"));
         
-        vms = vmsInfo.getRunningVMsByHostTemplate("localhost", "5", 1);
-        assertEquals(1, vms.size());
-        assertEquals("443", vms.get(0).getId());
-        
-        vms = vmsInfo.getRunningVMsByHostTemplate("localhost", "10", 3);
+        vms = vmsInfo.getRunningVMsByHostTemplate("localhost", "10");
         assertEquals(0, vms.size());
         
-        vms = vmsInfo.getRunningVMsByHostTemplate("remotehost", "5", 3);
+        vms = vmsInfo.getRunningVMsByHostTemplate("remotehost", "5");
         assertEquals(0, vms.size());
         
-        vms = vmsInfo.getRunningVMsByHostTemplate("otherhost", "5", 3);
+        vms = vmsInfo.getRunningVMsByHostTemplate("otherhost", "5");
         assertEquals(0, vms.size());
     }
     

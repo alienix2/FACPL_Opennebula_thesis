@@ -9,7 +9,7 @@ import org.opennebula.client.Client;
 import org.opennebula.client.OneResponse;
 import org.xml.sax.SAXException;
 
-import opennnebula_api.ApiCallTemplate;
+import opennebula_api.ApiCallTemplate;
 
 public class MockApiCall extends ApiCallTemplate {
 	
