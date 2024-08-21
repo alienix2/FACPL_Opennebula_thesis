@@ -5,6 +5,8 @@ import java.util.UUID;
 
 import it.unifi.facpl.lib.util.Set;
 import opennebula_api.HostInfo;
+import opennebula_api.OpenNebulaActionContext;
+import opennebula_api.OpenNebulaVMService;
 import opennebula_api.VMsInfo;
 import utilities.FileLoggerFactory;
 
@@ -42,7 +44,7 @@ public class ContextStub_Default implements IContextStub {
 	private static void inizializeStub(Client oneClient, Logger clientLogger) {
 		ContextStub_Default.oneClient = oneClient;
 		ContextStub_Default.clientLogger = clientLogger;
-		ContextStub_Default.vmsInfo = VMsInfo.withClientAndLogger(oneClient, clientLogger);
+		ContextStub_Default.vmsInfo = VMsInfo.withCustomLogger(new OpenNebulaVMService(oneClient), clientLogger);
 		ContextStub_Default.hostInfo = HostInfo.withClientAndLogger(oneClient, clientLogger);
 	}
 
@@ -73,22 +75,22 @@ public class ContextStub_Default implements IContextStub {
 				if (attribute.getCategory().equals("system") && attribute.getIDAttribute().equals("hyper1.vm-names")) {
 					Set runningHyper1VMs = new Set();
 					vmsInfo
-						.getRunningVMsByHost("localhost")
-						.forEach(vm -> runningHyper1VMs.addValue(vm.getName()));
+						.getRunningVMsByHost("0")
+						.forEach(vm -> runningHyper1VMs.addValue(vm.getVmName()));
 					return runningHyper1VMs;
 				}
 				if (attribute.getCategory().equals("system") && attribute.getIDAttribute().equals("hyper2.vm-names")) {
 					Set runningHyper2VMs = new Set();
 					vmsInfo
-						.getRunningVMsByHost("192.168.1.11")
-						.forEach(vm -> runningHyper2VMs.addValue(vm.getName()));
+						.getRunningVMsByHost("6")
+						.forEach(vm -> runningHyper2VMs.addValue(vm.getVmName()));
 					return runningHyper2VMs;
 				}
 				if (attribute.getCategory().equals("system") && attribute.getIDAttribute().equals("hyper1.vm1-counter")) {
-					return vmsInfo.countRunningVMsByHost("localhost").doubleValue();
+					return vmsInfo.countRunningVMsByHost("0").doubleValue();
 				}
 				if (attribute.getCategory().equals("system") && attribute.getIDAttribute().equals("hyper2.vm1-counter")) {
-					return vmsInfo.countRunningVMsByHost("192.168.1.11").doubleValue();
+					return vmsInfo.countRunningVMsByHost("6").doubleValue();
 				}
 				if (attribute.getCategory().equals("system") && attribute.getIDAttribute().equals("hyper1.availableResources")) {
 					return hostInfo.getAvailableCpu(0);
@@ -105,12 +107,7 @@ public class ContextStub_Default implements IContextStub {
 				return null;
 	}
 	
-	public static Client getOneClient() {
-		return oneClient;
+	public static OpenNebulaActionContext getONContext() {
+		return new OpenNebulaActionContext(oneClient, clientLogger);
 	}
-	
-	public static Logger getLogger() {
-		return clientLogger;
-	}
-
 }

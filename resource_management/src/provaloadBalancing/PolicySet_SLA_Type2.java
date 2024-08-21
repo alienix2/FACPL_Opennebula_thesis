@@ -33,7 +33,7 @@ public class PolicySet_SLA_Type2 extends PolicySet {
 					//Effect
 					addEffect(Effect.PERMIT);
 					//Target
-					addTarget(new ExpressionBooleanTree(ExprBooleanConnector.AND,new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.LessThanOrEqual(), 2,new AttributeName("system","hyper1.availableResources") 
+					addTarget(new ExpressionBooleanTree(ExprBooleanConnector.AND,new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.LessThanOrEqual(), 200,new AttributeName("system","hyper1.availableResources") 
 					)),new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.LessThanOrEqual(), new AttributeName("system","hyper2.availableResources") 
 					,new AttributeName("system","hyper1.availableResources") 
 					)))
@@ -53,7 +53,7 @@ public class PolicySet_SLA_Type2 extends PolicySet {
 					//Effect
 					addEffect(Effect.PERMIT);
 					//Target
-					addTarget(new ExpressionBooleanTree(ExprBooleanConnector.AND,new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.LessThanOrEqual(), 2,new AttributeName("system","hyper1.availableResources") 
+					addTarget(new ExpressionBooleanTree(ExprBooleanConnector.AND,new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.LessThanOrEqual(), 200,new AttributeName("system","hyper1.availableResources") 
 					)),new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.LessThanOrEqual(), new AttributeName("system","hyper1.availableResources") 
 					,new AttributeName("system","hyper2.availableResources") 
 					)))
@@ -76,14 +76,14 @@ public class PolicySet_SLA_Type2 extends PolicySet {
 					addTarget(new ExpressionBooleanTree(ExprBooleanConnector.OR,new ExpressionBooleanTree(new ExpressionBooleanTree(ExprBooleanConnector.AND,new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.Equal(), 0,new AttributeName("system","hyper1.availableResources") 
 					)),new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.LessThanOrEqual(), 2,new AttributeName("system","hyper1.vm1-counter") 
 					)))
-					),new ExpressionBooleanTree(new ExpressionBooleanTree(ExprBooleanConnector.AND,new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.Equal(), 1,new AttributeName("system","hyper1.availableResources") 
+					),new ExpressionBooleanTree(new ExpressionBooleanTree(ExprBooleanConnector.AND,new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.Equal(), 100,new AttributeName("system","hyper1.availableResources") 
 					)),new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.LessThanOrEqual(), 1,new AttributeName("system","hyper1.vm1-counter") 
 					)))
 					))
 					);
 					//Obligations
-					addObligation(new Obligation("freeze",Effect.PERMIT,ObligationType.M,"localhost",
-					new ExpressionFunction(new it.unifi.facpl.lib.function.arithmetic.Subtract(), 2,new AttributeName("system","hyper1.availableResources") 
+					addObligation(new Obligation("freeze",Effect.PERMIT,ObligationType.M,"0",
+					new ExpressionFunction(new it.unifi.facpl.lib.function.arithmetic.Subtract(), 200,new AttributeName("system","hyper1.availableResources") 
 					),
 					"6"
 					)
@@ -105,18 +105,12 @@ public class PolicySet_SLA_Type2 extends PolicySet {
 					addTarget(new ExpressionBooleanTree(ExprBooleanConnector.OR,new ExpressionBooleanTree(new ExpressionBooleanTree(ExprBooleanConnector.AND,new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.Equal(), 0,new AttributeName("system","hyper2.availableResources") 
 					)),new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.LessThanOrEqual(), 2,new AttributeName("system","hyper2.vm1-counter") 
 					)))
-					),new ExpressionBooleanTree(new ExpressionBooleanTree(ExprBooleanConnector.AND,new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.Equal(), 1,new AttributeName("system","hyper2.availableResources") 
+					),new ExpressionBooleanTree(new ExpressionBooleanTree(ExprBooleanConnector.AND,new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.Equal(), 100,new AttributeName("system","hyper2.availableResources") 
 					)),new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.LessThanOrEqual(), 1,new AttributeName("system","hyper2.vm1-counter") 
 					)))
 					))
 					);
 					//Obligations
-					addObligation(new Obligation("freeze",Effect.PERMIT,ObligationType.M,"192.168.1.11",
-					new ExpressionFunction(new it.unifi.facpl.lib.function.arithmetic.Subtract(), 2,new AttributeName("system","hyper2.availableResources") 
-					),
-					"6"
-					)
-					);
 					addObligation(new Obligation("create",Effect.PERMIT,ObligationType.M,6,
 					new AttributeName("system","vm-name") ,
 					4

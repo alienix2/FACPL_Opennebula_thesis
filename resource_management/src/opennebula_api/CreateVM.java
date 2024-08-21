@@ -4,26 +4,27 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import org.opennebula.client.Client;
+import org.opennebula.client.OneResponse;
 import org.opennebula.client.template.Template;
 import org.opennebula.client.vm.VirtualMachine;
 
-public class CreateVM extends ApiCallTemplate {
+public class CreateVM extends OpenNebulaActionBase {
 
-	public CreateVM(Client oneClient, Logger logger) {
-		super(oneClient, logger);
+	public CreateVM(OpenNebulaActionContext ONActionContext) {
+		super(ONActionContext);
 	}
 
 	@Override
-	public void callApi(List<Object> args) throws InterruptedException {
-		logger.info("Starting VM: " + "[" + args.get(2) + ", " + args.get(1) + "]");
-		Template template = new Template((int) args.get(2), oneClient);
-		responseList.add(template.instantiate((String) args.get(1)));
-		VirtualMachine vm = 
-				new VirtualMachine(Integer
-									.parseInt(responseList
-											.get(responseList.size()-1)
-												.getMessage()), oneClient);
-		responseList.add(vm.deploy((int) args.get(0)));
+	public void eval(List<Object> args) {
+		ONActionContext.getLogger().info("Starting VM: " + "[" + args.get(2) + ", " + args.get(1) + "]");
+		Template template = new Template((int) args.get(2), ONActionContext.getClient());
+		OneResponse instantiateResponse = template.instantiate((String) args.get(1));
+		logResponse(instantiateResponse);
+		if (!instantiateResponse.isError()){
+			VirtualMachine vm = 
+					new VirtualMachine(Integer.parseInt(instantiateResponse.getMessage()), ONActionContext.getClient());
+			logResponse(vm.deploy((int) args.get(0)));
+		}		
 	}
 
 }

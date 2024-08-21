@@ -3,9 +3,8 @@ package provaloadBalancing;
 import java.util.HashMap;
 import it.unifi.facpl.lib.interfaces.*;
 import opennebula_api.CreateVM;
+import opennebula_api.FreezeVM;
 import opennebula_api.ReleaseVM;
-import opennebula_api.ShutdownVM;
-import prova.ContextStub_Default;
 
 @SuppressWarnings("all")
 public class PEPAction{
@@ -21,11 +20,11 @@ public class PEPAction{
 		*/
 		HashMap<String, IPepAction> pepAction = new HashMap<String, IPepAction>();
 		pepAction.put("release", 
-				new ReleaseVM(ContextStub_Default.getOneClient(), ContextStub_Default.getLogger()));
+				new ReleaseVM(ContextStub_Default.getONContext()));
 		pepAction.put("create", 
-				new CreateVM(ContextStub_Default.getOneClient(), ContextStub_Default.getLogger()));
+				new CreateVM(ContextStub_Default.getONContext()));
 		pepAction.put("freeze", 
-				new ShutdownVM(ContextStub_Default.getOneClient(), ContextStub_Default.getLogger()));
+				new FreezeVM(ContextStub_Default.getONContext()));
 		
 		return pepAction;
    	}

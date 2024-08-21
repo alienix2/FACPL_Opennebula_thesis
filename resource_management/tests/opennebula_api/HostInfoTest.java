@@ -6,8 +6,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.opennebula.client.Client;
 
-import opennebula_api.HostInfo;
-
 class HostInfoTest {
 
 	private static final int TEST_HOST_ID = 123;
@@ -19,8 +17,8 @@ class HostInfoTest {
     
     @BeforeEach
     void setUp() throws Exception {
-        invalidMockClient = new MockClient("fake-auth", "http://fake-endpoint:123/random", INVALID_XML_RESPONSE, null);
-        validMockClient = new MockClient("fake-auth", "http://fake-endpoint:123/random", VALID_XML_RESPONSE, null);
+        invalidMockClient = new MockClientFalse(INVALID_XML_RESPONSE);
+        validMockClient = new MockClientTrue(VALID_XML_RESPONSE);
     }
     
     @Test
@@ -44,7 +42,7 @@ class HostInfoTest {
         hostInfo = HostInfo.withClient(invalidMockClient);
         int availableCpu = hostInfo.getAvailableCpu(TEST_HOST_ID);
 
-        assertEquals(0, availableCpu);
+        assertEquals(-1, availableCpu);
     }
     
     @Test
@@ -52,6 +50,6 @@ class HostInfoTest {
         hostInfo = HostInfo.withClient(invalidMockClient);
         int availableMem = hostInfo.getAvailableCpu(TEST_HOST_ID);
 
-        assertEquals(0, availableMem);
+        assertEquals(-1, availableMem);
     }
 }

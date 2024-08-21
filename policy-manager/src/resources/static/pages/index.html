@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Policy Manager</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/js/script.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Policy Manager</h1>
+    </header>
+
+    <!-- Policy Section: Side by Side -->
+    <section class="policy-section">
+      <!-- Form to submit new policies -->
+      <div class="policy-input">
+        <h2><i class="fas fa-edit"></i> Submit Policy</h2>
+        <textarea id="policiesText" rows="10" placeholder="Write your policy update here..."></textarea>
+        <button id="updatePolicies" class="action-button">
+          <i class="fas fa-save"></i> Submit Policy
+        </button>
+      </div>
+
+      <!-- Display current policies -->
+      <div class="policy-display">
+        <h2><i class="fas fa-file-alt"></i> Current Policies</h2>
+        <textarea id="policiesContent" class="file-content" readonly></textarea>
+      </div>
+    </section>
+
+    <!-- Request Section -->
+    <section class="request-section">
+      <div class="request-input">
+        <h2><i class="fas fa-paper-plane"></i> Submit Request</h2>
+        <textarea id="requestText" rows="6" placeholder="Enter your request here..."></textarea>
+        <button id="submitRequest" class="action-button">
+          <i class="fas fa-paper-plane"></i> Submit Request
+        </button>
+      </div>
+
+      <div class="request-display">
+        <h2><i class="fas fa-list-alt"></i> Current Requests</h2>
+        <textarea id="requestsContent" class="file-content" readonly></textarea>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

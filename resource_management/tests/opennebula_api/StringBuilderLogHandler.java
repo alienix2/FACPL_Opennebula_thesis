@@ -7,18 +7,6 @@ import java.util.logging.LogRecord;
 public class StringBuilderLogHandler extends Handler {
 	
 	private final StringBuilder logBuilder = new StringBuilder();
-
-	@Override
-	public void close() throws SecurityException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void flush() {
-		// TODO Auto-generated method stub
-
-	}
 	
 	@Override
     public void publish(LogRecord record) {
@@ -38,4 +26,9 @@ public class StringBuilderLogHandler extends Handler {
 		return logBuilder.toString();
 	}
 
+	@Override
+	public void close() throws SecurityException {}
+
+	@Override
+	public void flush() {}
 }

@@ -54,7 +54,7 @@ PolicySet Energy_Saving { permit-overrides
            		[M freeze("HYPER_2", subtract(2, system/hyper2.availableResources), "TYPE_1")]
            		[M create("HYPER_2", system/vm-id, "TYPE_2")]
         	)
-      	obl-d: [O log("Not enough available resources for TYPE_2 VMs")]
+      	obl-d: [O warning("Not enough available resources for TYPE_2 VMs")]
     	}
     	
     }

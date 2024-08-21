@@ -1,20 +1,27 @@
 package opennebula_api;
 
 import java.util.List;
-import java.util.logging.Logger;
 
-import org.opennebula.client.Client;
+import org.opennebula.client.OneResponse;
+import org.opennebula.client.vm.VirtualMachine;
 
-public class ReleaseVM extends ApiCallTemplate {
+public class ReleaseVM extends OpenNebulaActionBase {
 
-	public ReleaseVM(Client oneClient, Logger logger) {
-		super(oneClient, logger);
+	public ReleaseVM(OpenNebulaActionContext ONActionContext) {
+		super(ONActionContext);
 	}
 
 	@Override
-	public void callApi(List<Object> args) {
-		logger.info("Shutting down (releasing) the VM: " + args.get(1));
-		responseList.add(VMsInfo.withClientAndLogger(oneClient, logger)
-					.getRunningVMByName((String)args.get(1)).poweroff());
+	public void eval(List<Object> args) {
+		ONActionContext.getLogger().info("Powering off (Releasing) 1 VM of [host, temp]: " + "[" + args.get(0) + " " + args.get(2) + "]");
+		List<VMDescriptor> suspendList = 
+				ONActionContext.getVMsInfo().getRunningVMsByHostTemplate((String)args.get(0), (String)args.get(2));
+		if (suspendList.isEmpty()) {
+			ONActionContext.getLogger().severe("No VM found");
+            return;
+        }
+		logResponse(
+				new VirtualMachine(Integer.parseInt(suspendList.get(0).getVmId()), ONActionContext.getClient())
+				.poweroff());
 	}
 }

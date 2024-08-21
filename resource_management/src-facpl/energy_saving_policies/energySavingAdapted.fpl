@@ -38,7 +38,7 @@ PolicySet Energy_Saving { permit-overrides
                   		less-than-or-equal(1, system/hyper1.vm1-counter))
             		)
           		obl:
-            	[M freeze("localhost", subtract(200, system/hyper1.availableResources), "6")]
+            	[M freeze("0", subtract(200, system/hyper1.availableResources), "6")]
             	[M create(0, system/vm-name, 4)]
         	)
         	Rule hyper_2_freeze (permit
@@ -49,7 +49,7 @@ PolicySet Energy_Saving { permit-overrides
                   		less-than-or-equal(1, system/hyper2.vm1-counter))
             	)
           		obl:
-           		[M freeze("192.168.1.11", subtract(200, system/hyper2.availableResources), "6")]
+           		[M freeze("6", subtract(200, system/hyper2.availableResources), "6")]
            		[M create(6, system/vm-name, 4)]
         	)
       	obl-d: [O log("Not enough available resources for TYPE_2 VMs")]
@@ -63,11 +63,11 @@ PolicySet Energy_Saving { permit-overrides
   		policies:
     	Rule hyper_1_release (permit
       		target:( in (resource/vm-name, system/hyper1.vm-names))
-      		obl: [M release("localhost", resource/vm-name)]
+      		obl: [M release("0", resource/vm-name)]
     	)
     	Rule hyper_2_release (permit
       		target:( in (resource/vm-name, system/hyper2.vm-names))
-      		obl: [M release("192.168.1.11", resource/vm-name)]
+      		obl: [M release("6", resource/vm-name)]
     	)
   	}
 }

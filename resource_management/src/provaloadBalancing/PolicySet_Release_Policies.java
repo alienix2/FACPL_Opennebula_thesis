@@ -34,7 +34,7 @@ public class PolicySet_Release_Policies extends PolicySet {
 					,new AttributeName("system","hyper1.vm-names") 
 					));
 					//Obligations
-					addObligation(new Obligation("release",Effect.PERMIT,ObligationType.M,"localhost",
+					addObligation(new Obligation("release",Effect.PERMIT,ObligationType.M,"0",
 					new AttributeName("resource","vm-name") 
 					)
 					);
@@ -51,7 +51,7 @@ public class PolicySet_Release_Policies extends PolicySet {
 					,new AttributeName("system","hyper2.vm-names") 
 					));
 					//Obligations
-					addObligation(new Obligation("release",Effect.PERMIT,ObligationType.M,"192.168.1.11",
+					addObligation(new Obligation("release",Effect.PERMIT,ObligationType.M,"6",
 					new AttributeName("resource","vm-name") 
 					)
 					);

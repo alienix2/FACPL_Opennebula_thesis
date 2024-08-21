@@ -17,7 +17,7 @@ PolicySet Load_Balancing { permit-overrides
         		target: less-than-or-equal(100, system/hyper1.availableResources)
         			&& less-than-or-equal(system/hyper1.availableResources, system/hyper2.availableResources)
         		obl: [M create(6, system/vm-name, 6)])       
-      		obl-d: [O warning("Not enough available resources for TYPE_1 VMs")]
+      		obl-d: [O log("Not enough available resources for TYPE_1 VMs")]
     	}
 
     	PolicySet SLA_Type2 { deny-unless-permit
@@ -42,7 +42,7 @@ PolicySet Load_Balancing { permit-overrides
                   		less-than-or-equal(1, system/hyper1.vm1-counter))
             		)
           		obl:
-            	[M freeze("localhost", subtract(200, system/hyper1.availableResources), "6")]
+            	[M freeze("0", subtract(200, system/hyper1.availableResources), "6")]
             	[M create(0, system/vm-name, 4)]
         	)
         	Rule hyper_2_freeze (permit
@@ -66,11 +66,11 @@ PolicySet Load_Balancing { permit-overrides
   		policies:
     	Rule hyper_1_release (permit
       		target:( in (resource/vm-name, system/hyper1.vm-names))
-      		obl: [M release("localhost", resource/vm-name)]
+      		obl: [M release("0", resource/vm-name)]
     	)
     	Rule hyper_2_release (permit
       		target:( in (resource/vm-name, system/hyper2.vm-names))
-      		obl: [M release("192.168.1.11", resource/vm-name)]
+      		obl: [M release("6", resource/vm-name)]
     	)
   	}
 }

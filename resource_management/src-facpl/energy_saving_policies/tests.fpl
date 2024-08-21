@@ -3,7 +3,7 @@ import "energySavingAdapted.fpl"
 
 PAS { 
 	Extended Indeterminate : false ;
-	Java Package : "prova" ;
+	Java Package : "provaEnergySaving" ;
 	Requests To Evaluate : Create_Type1_VM_P1, Create_Type1_VM_P2, Create_Type2_VM_P2, Release_VM_P2, Create_Type2_VM_P2_Second;
 	pep: deny-biased
 	pdp: deny-unless-permit

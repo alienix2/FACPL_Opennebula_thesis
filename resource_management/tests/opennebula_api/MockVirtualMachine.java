@@ -1,51 +1,47 @@
 package opennebula_api;
 
-import org.opennebula.client.Client;
 import org.opennebula.client.OneResponse;
 import org.opennebula.client.vm.VirtualMachine;
 
 public class MockVirtualMachine extends VirtualMachine {
 
-    private final String response;
-    private String state = "undefined";
+    private String state;
+    private String id;
+    private String name;
+    private String lcmState;
+    private String xmlData;
 
-    public MockVirtualMachine(int id, Client mockClient, String response) {
-        super(id, mockClient);
+    public MockVirtualMachine(String id, String name, String state, String lcmState, String xmlData) {
+        super(-1, null);
         this.id = id;
-        this.response = response;
+        this.name = name;
+        this.state = state;
+        this.lcmState = lcmState;
+        this.xmlData = xmlData;
     }
 
+    @Override
+    public String getId() {
+        return id;
+    }
+
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String stateStr() {
+        return state;
+    }
+    
+    @Override
+    public String lcmStateStr() {
+        return lcmState;
+    }
+    
     @Override
     public OneResponse info() {
-        return new OneResponse(true, response);
-    }
-    
-    @Override
-    public OneResponse terminate() {
-    	state = "termiated";
-        return new OneResponse(true, state);
-    }
-    
-    @Override
-    public OneResponse suspend() {
-    	state = "suspended";
-        return new OneResponse(true, state);
-    }
-    
-    @Override
-    public OneResponse poweroff() {
-    	state = "poweroff";
-        return new OneResponse(true, state);
-    }
-    
-    @Override
-    public OneResponse deploy(int hostId) {
-    	state = "deployed";
-    	return new OneResponse(true, state);
-    }
-    
-    public String getState() {
-    	return state;
-    }
-    
+        return new OneResponse(true, xmlData);
+    } 
 }
