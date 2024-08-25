@@ -20,6 +20,12 @@ public abstract class FACPLHandlingTemplate {
         this.executor = new CodeExecutor(javaFilesDir, logger);
         this.javaFilesDir = javaFilesDir;
     }
+    
+    public FACPLHandlingTemplate(Logger logger, String javaFilesDir) throws IOException {
+        this.logger = logger;
+        this.executor = new CodeExecutor(javaFilesDir, logger);
+        this.javaFilesDir = javaFilesDir;
+    }
 
     public final void execute(String[] args) throws Exception {
         try {
@@ -37,8 +43,8 @@ public abstract class FACPLHandlingTemplate {
     }
 
     protected void setup(List<String> fileLocations) throws Exception {
-        OpenNebulaFACPLClassSetup setup = new OpenNebulaFACPLClassSetup(logger);
-        setup.setup(fileLocations, "opennebula_context_actions", javaFilesDir);
+        OpenNebulaFACPLClassSetup setup = new OpenNebulaFACPLClassSetup(logger, fileLocations);
+        setup.setup("opennebula_context_actions", javaFilesDir);
     }
 
     protected void compile() throws Exception {

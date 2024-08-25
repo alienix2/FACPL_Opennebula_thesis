@@ -63,7 +63,6 @@ class FileMergerTest {
 
         // Execute merge and expect an exception
         IOException exception = assertThrows(IOException.class, () -> fileMerger.mergeFiles(TEMP_DIR));
-        System.out.println(exception.getMessage());
         assertTrue(exception.getMessage().contains("non_existent_file1.txt"));
     }
     

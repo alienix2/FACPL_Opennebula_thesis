@@ -44,6 +44,7 @@ public class CodeExecutor {
             logger.info("Compilation successful.");
         } else {
             logger.severe("Compilation failed with result code: " + result);
+            throw new RuntimeException("Compilation failed with result code: " + result);
         }
         return success;
     }

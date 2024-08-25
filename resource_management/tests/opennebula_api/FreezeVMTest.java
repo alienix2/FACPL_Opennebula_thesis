@@ -9,6 +9,8 @@ import java.util.logging.Logger;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import utilities.StringBuilderLogHandler;
+
 
 public class FreezeVMTest {
 

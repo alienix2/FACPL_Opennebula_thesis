@@ -8,6 +8,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.opennebula.client.ClientConfigurationException;
 
+import utilities.StringBuilderLogHandler;
+
 public class OpenNebulaActionBaseTest {
 
 	private StringBuilderLogHandler mockLogHandler;

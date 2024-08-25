@@ -1,4 +1,4 @@
-package opennebula_api;
+package utilities;
 
 import java.util.logging.Handler;
 import java.util.logging.Level;

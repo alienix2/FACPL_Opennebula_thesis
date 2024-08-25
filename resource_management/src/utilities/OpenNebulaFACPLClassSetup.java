@@ -7,19 +7,26 @@ import java.util.logging.Logger;
 public class OpenNebulaFACPLClassSetup {
 
     private final Logger logger;
+    OpenNebulaFACPLClassGenerator classGenerator;
 
-    public OpenNebulaFACPLClassSetup() {
+    public OpenNebulaFACPLClassSetup(List<String> fileLocations) {
 		this.logger = Logger.getLogger(OpenNebulaFACPLClassGenerator.class.getName());
+        this.classGenerator = new OpenNebulaFACPLClassGenerator(new FileMerger(fileLocations, logger), logger);
     }
 
-    public OpenNebulaFACPLClassSetup(Logger logger) {
+    public OpenNebulaFACPLClassSetup(Logger logger, List<String> fileLocations) {
         this.logger = logger;
+        this.classGenerator = new OpenNebulaFACPLClassGenerator(new FileMerger(fileLocations, logger), logger);
+    }
+    
+    public OpenNebulaFACPLClassSetup(Logger logger, OpenNebulaFACPLClassGenerator classGenerator) {
+        this.logger = logger;
+        this.classGenerator = classGenerator;
     }
 
-    public void setup(List<String> fileLocations, String additionalFilesFolder, String outputFolder) {
+    public void setup(String additionalFilesFolder, String outputFolder) {
         logger.info("Starting setup...");
 
-        OpenNebulaFACPLClassGenerator classGenerator = new OpenNebulaFACPLClassGenerator(new FileMerger(fileLocations, logger), logger);
         try {
             classGenerator.generateClasses("tmp/FACPLFiles");
             logger.info("Class generation completed successfully.");

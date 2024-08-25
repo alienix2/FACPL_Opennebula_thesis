@@ -5,8 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
 
-import opennebula_api.StringBuilderLogHandler;
-
 import java.io.IOException;
 import java.nio.file.*;
 import java.util.logging.Logger;
