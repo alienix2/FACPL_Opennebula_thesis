@@ -4,9 +4,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 import org.opennebula.client.ClientConfigurationException;
-
-import opennebula_api.CreateVM;
-
 import org.junit.jupiter.api.BeforeEach;
 
 import java.util.logging.Logger;

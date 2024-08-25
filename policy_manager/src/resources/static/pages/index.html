@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Policy Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/base16/gruvbox-light-soft.min.css"
+        integrity="sha512-HCASvUkisVRkxDnRPjJ2crnv44xGTtlNYsaipi4neWNFUQi613L4w6WsD8G4oqgj77YTh3iPuPWU30mZRxS7vA==" crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+    <script src="/js/facpl.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/js/script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Policy Manager</h1>
+        </header>
+
+        <!-- Policy Section -->
+        <section class="policy-section">
+            <div class="policy-input">
+                <h2><i class="fas fa-edit"></i> Check Policies</h2>
+                <textarea id="policiesText" rows="10" placeholder="Write your policy update here...&#10;Wrap everything inside the PolicySet Online_Generated before submitting"></textarea>
+                <button id="validatePolicies" class="action-button">
+                    <i class="fas fa-save"></i> Validate Policy
+                </button>
+            </div>
+
+            <div class="policy-display">
+                <h2><i class="fas fa-file-alt"></i> Validated Policies</h2>
+                <pre><code id="policiesContent" class="language-facpl">Loading...</code></pre>
+                <button type="button" id="submitPolicyBtn" class="action-button">
+                    <i class="fas fa-check"></i> Submit Policy
+                </button>
+            </div>
+        </section>
+
+        <!-- Request Section -->
+        <section class="request-section">
+            <div class="request-input">
+                <h2><i class="fas fa-paper-plane"></i> Generate Request</h2>
+                <form id="requestForm">
+                    <div>
+                        <label for="actionId">Action ID:</label>
+                        <select id="actionId">
+                            <option value="">Select...</option>
+                            <option value="CREATE">CREATE</option>
+                            <option value="RELEASE">RELEASE</option>
+                            <option value="custom">Custom</option>
+                            <option value="nothing">Nothing</option>
+                        </select>
+                        <label id="customActionIdLabel" for="customActionId">Custom Action ID:</label>
+                        <input id="customActionId" type="text" placeholder="Enter custom action ID (optional)">
+                    </div>
+
+                    <div>
+                        <label for="profileId">Profile ID:</label>
+                        <select id="profileId">
+                            <option value="">Select...</option>
+                            <option value="P_2">P_2</option>
+                            <option value="P_1">P_1</option>
+                            <option value="custom">Custom</option>
+                            <option value="nothing">Nothing</option>
+                        </select>
+                        <label id="customProfileIdLabel" for="customProfileId">Custom Profile ID:</label>
+                        <input id="customProfileId" type="text" placeholder="Enter custom profile ID (optional)">
+                    </div>
+
+                    <div>
+                        <label for="vmType">VM Type:</label>
+                        <select id="vmType">
+                            <option value="">Select...</option>
+                            <option value="6">6</option>
+                            <option value="4">4</option>
+                            <option value="custom">Custom</option>
+                            <option value="nothing">Nothing</option>
+                        </select>
+                        <label id="customVmTypeLabel" for="customVmType">Custom VM Type:</label>
+                        <input id="customVmType" type="text" placeholder="Enter custom VM type (optional)">
+                    </div>
+
+                    <div>
+                        <label for="vmName">VM Name:</label>
+                        <input id="vmName" type="text" placeholder="Enter VM Name (optional)">
+                    </div>
+
+                    <button type="button" id="generateRequestBtn" class="action-button">
+                        <i class="fas fa-paper-plane"></i> Generate Request
+                    </button>
+                </form>
+            </div>
+
+            <div class="request-display">
+                <h2><i class="fas fa-list-alt"></i> Generated Request</h2>
+                <pre><code id="requestsContent" class="language-facpl">No request generated yet...</code></pre>
+                <button type="button" id="submitRequestBtn" class="action-button">
+                    <i class="fas fa-check"></i> Submit Request
+                </button>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

@@ -1,9 +1,6 @@
 package opennebula_api;
 
 import java.util.List;
-import java.util.logging.Logger;
-
-import org.opennebula.client.Client;
 import org.opennebula.client.vm.VirtualMachine;
 
 public class FreezeVM extends OpenNebulaActionBase {
@@ -14,7 +11,7 @@ public class FreezeVM extends OpenNebulaActionBase {
 
 	@Override
 	public void eval(List<Object> args) {
-		ONActionContext.getLogger().info("Suspending (Freezing) 1 VM of [host, temp]: " + "[" + args.get(0) + " " + args.get(2) + "]");
+		ONActionContext.getLogger().info("Suspending (Freezing) 1 VM of [host, template]: " + "[" + args.get(0) + " " + args.get(2) + "]");
 		List<VMDescriptor> suspendList = 
 				ONActionContext.getVMsInfo().getRunningVMsByHostTemplate((String)args.get(0), (String)args.get(2));
 		if (suspendList.isEmpty()) {

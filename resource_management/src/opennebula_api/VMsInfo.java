@@ -46,7 +46,6 @@ public class VMsInfo {
     	return getAndLogVMs()
         		.stream()
                 .filter(x -> x.getVmName().equals(vmName))
-                .filter(x -> x.getState().equals("ACTIVE"))
                 .findFirst()
                 .orElse(null);
     }

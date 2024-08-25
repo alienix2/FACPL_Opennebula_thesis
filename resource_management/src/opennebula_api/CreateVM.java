@@ -1,9 +1,6 @@
 package opennebula_api;
 
 import java.util.List;
-import java.util.logging.Logger;
-
-import org.opennebula.client.Client;
 import org.opennebula.client.OneResponse;
 import org.opennebula.client.template.Template;
 import org.opennebula.client.vm.VirtualMachine;

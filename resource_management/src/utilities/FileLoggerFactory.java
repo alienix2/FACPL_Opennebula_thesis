@@ -16,7 +16,7 @@ public class FileLoggerFactory {
     public static Logger make(String fileName, Formatter formatter, Level level) {
         Throwable t = new Throwable();
         StackTraceElement directCaller = t.getStackTrace()[1];
-        String loggerName = directCaller.getClassName();
+        String loggerName = directCaller.getClassName() + "-" + fileName;
 
         // Create or retrieve the logger by name
         Logger logger = Logger.getLogger(loggerName);
@@ -26,6 +26,7 @@ public class FileLoggerFactory {
             try {
                 FileHandler fileHandler = createFileHandler(fileName, formatter, level);
                 logger.addHandler(fileHandler);
+                logger.setUseParentHandlers(false);
             } catch (IOException e) {
                 throw new RuntimeException("Failed to initialize logger handler.", e);
             }

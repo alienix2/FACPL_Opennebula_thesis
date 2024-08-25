@@ -3,9 +3,6 @@ package opennebula_api;
 import java.util.ArrayList;
 import java.util.List;
 
-import opennebula_api.VMDescriptor;
-import opennebula_api.VirtualMachineService;
-
 public class MockVirtualMachineService implements VirtualMachineService {
 
     private List<VMDescriptor> virtualMachinesInfo = new ArrayList<>();

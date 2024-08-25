@@ -1,0 +1,1038 @@
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P1_First.java to src/onlinePolicies/ContextRequest_Release_VM_P1_First.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Energy_Saving.java to src/onlinePolicies/PolicySet_Energy_Saving.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P2.java to src/onlinePolicies/ContextRequest_Release_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+INFO utilities.CodeExecutor.runCompiledClass: Successfully ran class: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P1_First.java to src/onlinePolicies/ContextRequest_Release_VM_P1_First.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Energy_Saving.java to src/onlinePolicies/PolicySet_Energy_Saving.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P2.java to src/onlinePolicies/ContextRequest_Release_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO onlinePolicies.Main.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+INFO utilities.CodeExecutor.runCompiledClass: Successfully ran class: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+SEVERE utilities.FileMerger.mergeFiles: Failed to merge files: online-generated/policies.fpl
+SEVERE utilities.OpenNebulaFACPLClassSetup.setup: Failed to generate classes: online-generated/policies.fpl
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P1_First.java to src/onlinePolicies/ContextRequest_Release_VM_P1_First.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Energy_Saving.java to src/onlinePolicies/PolicySet_Energy_Saving.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P2.java to src/onlinePolicies/ContextRequest_Release_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO main.Main.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+INFO utilities.CodeExecutor.runCompiledClass: Successfully ran class: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+SEVERE utilities.FileMerger.mergeFiles: Failed to merge files: online-generated/policies.fpl
+SEVERE utilities.OpenNebulaFACPLClassSetup.setup: Failed to generate classes: online-generated/policies.fpl
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P1_First.java to src/onlinePolicies/ContextRequest_Release_VM_P1_First.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Energy_Saving.java to src/onlinePolicies/PolicySet_Energy_Saving.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P2.java to src/onlinePolicies/ContextRequest_Release_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO main.Main.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+INFO utilities.CodeExecutor.runCompiledClass: Successfully ran class: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+SEVERE utilities.OpenNebulaFACPLClassGenerator.generateClasses: Error generating classes: null
+SEVERE utilities.OpenNebulaFACPLClassSetup.setup: Failed to generate classes: null
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P1_First.java to src/onlinePolicies/ContextRequest_Release_VM_P1_First.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Energy_Saving.java to src/onlinePolicies/PolicySet_Energy_Saving.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P2.java to src/onlinePolicies/ContextRequest_Release_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO main.Main.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+INFO utilities.CodeExecutor.runCompiledClass: Successfully ran class: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+SEVERE utilities.OpenNebulaFACPLClassGenerator.generateClasses: Error generating classes: null
+SEVERE utilities.OpenNebulaFACPLClassSetup.setup: Failed to generate classes: null
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P1_First.java to src/onlinePolicies/ContextRequest_Release_VM_P1_First.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Energy_Saving.java to src/onlinePolicies/PolicySet_Energy_Saving.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P2.java to src/onlinePolicies/ContextRequest_Release_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO main.Main.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+INFO utilities.CodeExecutor.runCompiledClass: Successfully ran class: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+SEVERE utilities.FileMerger.mergeFiles: Failed to merge files: online-generated/policies.fpl
+SEVERE utilities.OpenNebulaFACPLClassSetup.setup: Failed to generate classes: online-generated/policies.fpl
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+INFO utilities.CodeExecutor.runCompiledClass: Successfully ran class: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+SEVERE utilities.OpenNebulaFACPLClassGenerator.generateClasses: Error generating classes: null
+SEVERE utilities.OpenNebulaFACPLClassSetup.setup: Failed to generate classes: null
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+WARNING utilities.CodeExecutor.compileJavaFiles: No Java files found in directory: src/onlinePolicies
+SEVERE main.Main.main: An error occurred: No Java files found in directory: src/onlinePolicies
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P1_First.java to src/onlinePolicies/ContextRequest_Release_VM_P1_First.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Energy_Saving.java to src/onlinePolicies/PolicySet_Energy_Saving.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P2.java to src/onlinePolicies/ContextRequest_Release_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO main.Main.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE main.Main.main: An error occurred: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P1_First.java to src/onlinePolicies/ContextRequest_Release_VM_P1_First.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Energy_Saving.java to src/onlinePolicies/PolicySet_Energy_Saving.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P2.java to src/onlinePolicies/ContextRequest_Release_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO main.Main.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE main.Main.main: An error occurred: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P1_First.java to src/onlinePolicies/ContextRequest_Release_VM_P1_First.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Energy_Saving.java to src/onlinePolicies/PolicySet_Energy_Saving.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P2.java to src/onlinePolicies/ContextRequest_Release_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO main.Main.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE main.Main.main: An error occurred: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P1_First.java to src/onlinePolicies/ContextRequest_Release_VM_P1_First.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Energy_Saving.java to src/onlinePolicies/PolicySet_Energy_Saving.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P2.java to src/onlinePolicies/ContextRequest_Release_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO main.Main.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE main.Main.main: An error occurred: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P1_First.java to src/onlinePolicies/ContextRequest_Release_VM_P1_First.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Energy_Saving.java to src/onlinePolicies/PolicySet_Energy_Saving.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P2.java to src/onlinePolicies/ContextRequest_Release_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO main.Main.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+INFO utilities.CodeExecutor.runCompiledClass: Successfully ran class: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P1_First.java to src/onlinePolicies/ContextRequest_Release_VM_P1_First.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Energy_Saving.java to src/onlinePolicies/PolicySet_Energy_Saving.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P2.java to src/onlinePolicies/ContextRequest_Release_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO main.Main.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE main.Main.main: An error occurred: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P1_First.java to src/onlinePolicies/ContextRequest_Release_VM_P1_First.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Energy_Saving.java to src/onlinePolicies/PolicySet_Energy_Saving.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P2.java to src/onlinePolicies/ContextRequest_Release_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO main.Main.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+INFO utilities.CodeExecutor.runCompiledClass: Successfully ran class: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P1_First.java to src/onlinePolicies/ContextRequest_Release_VM_P1_First.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Energy_Saving.java to src/onlinePolicies/PolicySet_Energy_Saving.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P2.java to src/onlinePolicies/ContextRequest_Release_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO main.Main.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE main.Main.main: An error occurred: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P1_First.java to src/onlinePolicies/ContextRequest_Release_VM_P1_First.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Energy_Saving.java to src/onlinePolicies/PolicySet_Energy_Saving.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P2.java to src/onlinePolicies/ContextRequest_Release_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO main.Main.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE main.Main.main: An error occurred: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P1_First.java to src/onlinePolicies/ContextRequest_Release_VM_P1_First.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Energy_Saving.java to src/onlinePolicies/PolicySet_Energy_Saving.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P2.java to src/onlinePolicies/ContextRequest_Release_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO main.Main.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE main.Main.main: An error occurred: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P1_First.java to src/onlinePolicies/ContextRequest_Release_VM_P1_First.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Energy_Saving.java to src/onlinePolicies/PolicySet_Energy_Saving.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P2.java to src/onlinePolicies/ContextRequest_Release_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO main.Main.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+INFO utilities.CodeExecutor.runCompiledClass: Successfully ran class: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P1_First.java to src/onlinePolicies/ContextRequest_Release_VM_P1_First.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Energy_Saving.java to src/onlinePolicies/PolicySet_Energy_Saving.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P2.java to src/onlinePolicies/ContextRequest_Release_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO main.Main.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE main.Main.main: An error occurred: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P1_First.java to src/onlinePolicies/ContextRequest_Release_VM_P1_First.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Energy_Saving.java to src/onlinePolicies/PolicySet_Energy_Saving.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P2.java to src/onlinePolicies/ContextRequest_Release_VM_P2.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentCopy.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO main.Main.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+INFO utilities.CodeExecutor.runCompiledClass: Successfully ran class: onlinePolicies.MainFACPL
+SEVERE main.Main.main: An error occurred: Aborting: no output path and no path to EMF resource provided!
+SEVERE main.Main.main: An error occurred: null
+SEVERE main.Main.main: An error occurred: null
+SEVERE main.Main.main: An error occurred: null
+SEVERE main.Main.main: An error occurred: null
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+SEVERE utilities.OpenNebulaFACPLClassGenerator.generateClasses: Error generating classes: null
+SEVERE utilities.OpenNebulaFACPLClassSetup.setup: Failed to generate classes: null
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO main.Main.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+INFO utilities.CodeExecutor.runCompiledClass: Successfully ran class: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P1_First.java to src/onlinePolicies/ContextRequest_Release_VM_P1_First.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Energy_Saving.java to src/onlinePolicies/PolicySet_Energy_Saving.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P2.java to src/onlinePolicies/ContextRequest_Release_VM_P2.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentMover.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentMover.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO main.Main.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+INFO utilities.CodeExecutor.runCompiledClass: Successfully ran class: onlinePolicies.MainFACPL
+SEVERE main.Main.main: An error occurred: 0
+SEVERE entryPoint.Main.main: An error occurred: 0
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+SEVERE utilities.FileMerger.mergeFiles: Failed to merge files: online-generated/policies.fpl
+SEVERE utilities.OpenNebulaFACPLClassSetup.setup: Failed to generate classes: online-generated/policies.fpl
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+SEVERE entryPoint.FullEntryPoint.main: An error occurred: src/onlinePolicies
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+SEVERE entryPoint.FullEntryPoint.main: An error occurred: Target path is not a directory.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P1_First.java to src/onlinePolicies/ContextRequest_Release_VM_P1_First.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Energy_Saving.java to src/onlinePolicies/PolicySet_Energy_Saving.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P2.java to src/onlinePolicies/ContextRequest_Release_VM_P2.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentMover.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentMover.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO entryPoint.FullEntryPoint.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+INFO utilities.CodeExecutor.runCompiledClass: Successfully ran class: onlinePolicies.MainFACPL
+SEVERE entryPoint.requestEntryPoint.main: An error occurred: 0
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+SEVERE entryPoint.requestEntryPoint.main: An error occurred: 1
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P2.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2_Second.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java to src/onlinePolicies/ContextRequest_Create_Type2_VM_P2.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P1_First.java to src/onlinePolicies/ContextRequest_Release_VM_P1_First.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Energy_Saving.java to src/onlinePolicies/PolicySet_Energy_Saving.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Release_VM_P2.java to src/onlinePolicies/ContextRequest_Release_VM_P2.java
+INFO utilities.FolderContentMover.lambda$1: Copied file: tmp/FACPLFiles/onlinePolicies/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentMover.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentMover.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO entryPoint.FullEntryPoint.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+INFO utilities.CodeExecutor.runCompiledClass: Successfully ran class: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentMover.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentMover.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO entryPoint.requestEntryPoint.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+INFO utilities.CodeExecutor.runCompiledClass: Successfully ran class: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentMover.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentMover.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+SEVERE utilities.CodeExecutor.compileJavaFiles: Compilation failed with result code: 1
+SEVERE entryPoint.requestEntryPoint.main: Compilation failed.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE entryPoint.requestEntryPoint.main: An error occurred: null
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentMover.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentMover.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+SEVERE utilities.CodeExecutor.compileJavaFiles: Compilation failed with result code: 1
+SEVERE entryPoint.requestEntryPoint.main: Compilation failed.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE entryPoint.requestEntryPoint.main: An error occurred: null
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentMover.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentMover.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+SEVERE utilities.CodeExecutor.compileJavaFiles: Compilation failed with result code: 1
+SEVERE entryPoint.requestEntryPoint.main: Compilation failed.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE entryPoint.requestEntryPoint.main: An error occurred: null
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+SEVERE utilities.FileMerger.mergeFiles: Failed to merge files: online_generated/request.fpl
+SEVERE utilities.OpenNebulaFACPLClassSetup.setup: Failed to generate classes: online_generated/request.fpl
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+SEVERE utilities.CodeExecutor.compileJavaFiles: Compilation failed with result code: 1
+SEVERE entryPoint.requestEntryPoint.main: Compilation failed.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE entryPoint.requestEntryPoint.main: An error occurred: null
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentHandler.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentHandler.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+SEVERE utilities.CodeExecutor.compileJavaFiles: Compilation failed with result code: 1
+SEVERE entryPoint.requestEntryPoint.main: Compilation failed.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE entryPoint.requestEntryPoint.main: An error occurred: null
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentHandler.lambda$0: Moved file: tmp/FACPLFiles/ContextRequest_Create_Type1_VM_P1.java to src/onlinePolicies/ContextRequest_Create_Type1_VM_P1.java
+INFO utilities.FolderContentHandler.lambda$0: Moved file: tmp/FACPLFiles/system.fpl to src/onlinePolicies/system.fpl
+INFO utilities.FolderContentHandler.createDirectory: Created directory: src/onlinePolicies/onlinePolicies
+INFO utilities.FolderContentHandler.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentHandler.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+SEVERE utilities.CodeExecutor.compileJavaFiles: Compilation failed with result code: 1
+SEVERE entryPoint.requestEntryPoint.main: Compilation failed.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE entryPoint.requestEntryPoint.main: An error occurred: null
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+SEVERE utilities.OpenNebulaFACPLClassGenerator.generateClasses: Error generating classes: null
+SEVERE utilities.OpenNebulaFACPLClassSetup.setup: Failed to generate classes: null
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO entryPoint.requestEntryPoint.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+INFO utilities.CodeExecutor.runCompiledClass: Successfully ran class: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+SEVERE utilities.OpenNebulaFACPLClassGenerator.generateClasses: Error generating classes: null
+SEVERE utilities.OpenNebulaFACPLClassSetup.setup: Failed to generate classes: null
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+SEVERE utilities.CodeExecutor.compileJavaFiles: Compilation failed with result code: 1
+SEVERE entryPoint.requestEntryPoint.main: Compilation failed.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE entryPoint.requestEntryPoint.main: An error occurred: null
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+SEVERE utilities.OpenNebulaFACPLClassGenerator.generateClasses: Error generating classes: null
+SEVERE utilities.OpenNebulaFACPLClassSetup.setup: Failed to generate classes: null
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+SEVERE utilities.CodeExecutor.compileJavaFiles: Compilation failed with result code: 1
+SEVERE entryPoint.requestEntryPoint.main: Compilation failed.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE entryPoint.requestEntryPoint.main: An error occurred: null
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+SEVERE utilities.OpenNebulaFACPLClassGenerator.generateClasses: Error generating classes: null
+SEVERE utilities.OpenNebulaFACPLClassSetup.setup: Failed to generate classes: null
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+SEVERE utilities.CodeExecutor.compileJavaFiles: Compilation failed with result code: 1
+SEVERE entryPoint.requestEntryPoint.main: Compilation failed.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE entryPoint.requestEntryPoint.main: An error occurred: null
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+SEVERE utilities.OpenNebulaFACPLClassSetup.setup: Failed to move folder contents: tmp/FACPLFiles/request.fpl
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+SEVERE utilities.CodeExecutor.compileJavaFiles: Compilation failed with result code: 1
+SEVERE entryPoint.requestEntryPoint.main: Compilation failed.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE entryPoint.requestEntryPoint.main: An error occurred: null
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentHandler.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentHandler.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+SEVERE utilities.CodeExecutor.compileJavaFiles: Compilation failed with result code: 1
+SEVERE entryPoint.requestEntryPoint.main: Compilation failed.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+INFO utilities.CodeExecutor.runCompiledClass: Successfully ran class: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+SEVERE utilities.FileMerger.mergeFiles: Failed to merge files: online_generated/request.fpl
+SEVERE utilities.OpenNebulaFACPLClassSetup.setup: Failed to generate classes: online_generated/request.fpl
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+WARNING utilities.CodeExecutor.compileJavaFiles: No Java files found in directory: src/onlinePolicies
+SEVERE entryPoint.FullEntryPoint.main: An error occurred: No Java files found in directory: src/onlinePolicies
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+SEVERE utilities.FileMerger.mergeFiles: Failed to merge files: online_generated/request.fpl
+SEVERE utilities.OpenNebulaFACPLClassSetup.setup: Failed to generate classes: online_generated/request.fpl
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+WARNING utilities.CodeExecutor.compileJavaFiles: No Java files found in directory: src/onlinePolicies
+SEVERE entryPoint.FullEntryPoint.main: An error occurred: No Java files found in directory: src/onlinePolicies
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+SEVERE utilities.OpenNebulaFACPLClassGenerator.generateClasses: Error generating classes: null
+SEVERE utilities.OpenNebulaFACPLClassSetup.setup: Failed to generate classes: null
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+WARNING utilities.CodeExecutor.compileJavaFiles: No Java files found in directory: src/onlinePolicies
+SEVERE entryPoint.FullEntryPoint.main: An error occurred: No Java files found in directory: src/onlinePolicies
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentHandler.lambda$0: Moved file: tmp/FACPLFiles/onlinePolicies/ContextRequest_Online_Generated.java to src/onlinePolicies/ContextRequest_Online_Generated.java
+INFO utilities.FolderContentHandler.lambda$0: Moved file: tmp/FACPLFiles/onlinePolicies/PolicySet_Online_Generated.java to src/onlinePolicies/PolicySet_Online_Generated.java
+INFO utilities.FolderContentHandler.lambda$0: Moved file: tmp/FACPLFiles/onlinePolicies/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentHandler.lambda$0: Moved file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentHandler.lambda$0: Moved file: tmp/FACPLFiles/onlinePolicies/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentHandler.lambda$0: Moved file: tmp/FACPLFiles/onlinePolicies/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentHandler.lambda$0: Moved file: tmp/FACPLFiles/onlinePolicies/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentHandler.lambda$0: Moved file: tmp/FACPLFiles/onlinePolicies/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentHandler.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentHandler.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO entryPoint.FullEntryPoint.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+INFO utilities.CodeExecutor.runCompiledClass: Successfully ran class: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentHandler.lambda$0: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentHandler.lambda$0: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+SEVERE utilities.CodeExecutor.compileJavaFiles: Compilation failed with result code: 1
+SEVERE entryPoint.requestEntryPoint.main: Compilation failed.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE entryPoint.requestEntryPoint.main: An error occurred: null
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/ContextRequest_Online_Generated.java to src/onlinePolicies/ContextRequest_Online_Generated.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/system.fpl to src/onlinePolicies/system.fpl
+INFO utilities.FolderContentHandler.lambda$1: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentHandler.lambda$1: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+SEVERE utilities.CodeExecutor.compileJavaFiles: Compilation failed with result code: 1
+SEVERE entryPoint.requestEntryPoint.main: Compilation failed.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE entryPoint.requestEntryPoint.main: An error occurred: null
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/ContextRequest_Online_Generated.java to src/onlinePolicies/ContextRequest_Online_Generated.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/system.fpl to src/onlinePolicies/system.fpl
+INFO utilities.FolderContentHandler.lambda$1: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentHandler.lambda$1: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+SEVERE utilities.CodeExecutor.compileJavaFiles: Compilation failed with result code: 1
+SEVERE entryPoint.requestEntryPoint.main: Compilation failed.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE entryPoint.requestEntryPoint.main: An error occurred: null
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/ContextRequest_Online_Generated.java to src/onlinePolicies/ContextRequest_Online_Generated.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/system.fpl to src/onlinePolicies/system.fpl
+INFO utilities.FolderContentHandler.lambda$1: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentHandler.lambda$1: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+SEVERE utilities.CodeExecutor.compileJavaFiles: Compilation failed with result code: 1
+SEVERE entryPoint.requestEntryPoint.main: Compilation failed.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE entryPoint.requestEntryPoint.main: An error occurred: null
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/ContextRequest_Online_Generated.java to src/onlinePolicies/ContextRequest_Online_Generated.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/PolicySet_Online_Generated.java to src/onlinePolicies/PolicySet_Online_Generated.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/system.fpl to src/onlinePolicies/system.fpl
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentHandler.lambda$1: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentHandler.lambda$1: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+SEVERE utilities.CodeExecutor.compileJavaFiles: Compilation failed with result code: 1
+SEVERE entryPoint.FullEntryPoint.main: Compilation failed.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE entryPoint.FullEntryPoint.main: An error occurred: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/ContextRequest_Online_Generated.java to src/onlinePolicies/ContextRequest_Online_Generated.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/PolicySet_Online_Generated.java to src/onlinePolicies/PolicySet_Online_Generated.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/system.fpl to src/onlinePolicies/system.fpl
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentHandler.lambda$1: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentHandler.lambda$1: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+SEVERE utilities.CodeExecutor.compileJavaFiles: Compilation failed with result code: 1
+SEVERE entryPoint.FullEntryPoint.main: Compilation failed.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: onlinePolicies.MainFACPL
+SEVERE entryPoint.FullEntryPoint.main: An error occurred: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/ContextRequest_Online_Generated.java to src/onlinePolicies/ContextRequest_Online_Generated.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/PolicySet_Online_Generated.java to src/onlinePolicies/PolicySet_Online_Generated.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/system.fpl to src/onlinePolicies/system.fpl
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentHandler.lambda$1: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentHandler.lambda$1: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO entryPoint.FullEntryPoint.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/ContextRequest_Online_Generated.java to src/onlinePolicies/ContextRequest_Online_Generated.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/PolicySet_Online_Generated.java to src/onlinePolicies/PolicySet_Online_Generated.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/PolicySet_Create_Policies.java to src/onlinePolicies/PolicySet_Create_Policies.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/system.fpl to src/onlinePolicies/system.fpl
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/PolicySet_SLA_Type2.java to src/onlinePolicies/PolicySet_SLA_Type2.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/PolicySet_SLA_Type1.java to src/onlinePolicies/PolicySet_SLA_Type1.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/MainFACPL.java to src/onlinePolicies/MainFACPL.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/PolicySet_Release_Policies.java to src/onlinePolicies/PolicySet_Release_Policies.java
+INFO utilities.FolderContentHandler.lambda$1: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentHandler.lambda$1: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO entryPoint.FullEntryPoint.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: MainFACPL
+INFO utilities.CodeExecutor.runCompiledClass: Successfully ran class: MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/ContextRequest_Online_Generated.java to src/onlinePolicies/ContextRequest_Online_Generated.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/system.fpl to src/onlinePolicies/system.fpl
+INFO utilities.FolderContentHandler.lambda$1: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentHandler.lambda$1: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO entryPoint.requestEntryPoint.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: onlinePolicies.MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/ContextRequest_Online_Generated.java to src/onlinePolicies/ContextRequest_Online_Generated.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/system.fpl to src/onlinePolicies/system.fpl
+INFO utilities.FolderContentHandler.lambda$1: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentHandler.lambda$1: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO entryPoint.requestEntryPoint.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: MainFACPL
+SEVERE utilities.CodeExecutor.runCompiledClass: Error running class: MainFACPL
+SEVERE entryPoint.requestEntryPoint.main: An error occurred: MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/ContextRequest_Online_Generated.java to src/onlinePolicies/ContextRequest_Online_Generated.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/system.fpl to src/onlinePolicies/system.fpl
+INFO utilities.FolderContentHandler.lambda$1: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentHandler.lambda$1: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO entryPoint.requestEntryPoint.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: MainFACPL
+INFO utilities.CodeExecutor.runCompiledClass: Successfully ran class: MainFACPL
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
+INFO utilities.FileMerger.mergeFiles: Files merged successfully to tmp/FACPLFiles/system.fpl
+INFO utilities.OpenNebulaFACPLClassGenerator.generateClasses: FACPL class generation completed.
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Class generation completed successfully.
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/ContextRequest_Online_Generated.java to src/onlinePolicies/ContextRequest_Online_Generated.java
+INFO utilities.FolderContentHandler.lambda$1: Moved file: tmp/FACPLFiles/system.fpl to src/onlinePolicies/system.fpl
+INFO utilities.FolderContentHandler.lambda$1: Copied file: opennebula_context_actions/PEPAction.java to src/onlinePolicies/PEPAction.java
+INFO utilities.FolderContentHandler.lambda$1: Copied file: opennebula_context_actions/ContextStub_Default.java to src/onlinePolicies/ContextStub_Default.java
+INFO utilities.OpenNebulaFACPLClassSetup.setup: Folder contents moved successfully.
+INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/onlinePolicies
+INFO utilities.CodeExecutor.compileJavaFiles: Compiling Java files...
+INFO utilities.CodeExecutor.compileJavaFiles: Compilation successful.
+INFO entryPoint.requestEntryPoint.main: Compilation successful.
+INFO utilities.CodeExecutor.runCompiledClass: Running compiled class: MainFACPL
+INFO utilities.CodeExecutor.runCompiledClass: Successfully ran class: MainFACPL

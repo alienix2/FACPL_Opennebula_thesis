@@ -1,0 +1,6 @@
+INFO opennebula_api.VMsInfo.getAndLogVMs: The VMs running are: [VMDescriptor [vmId=739, vmName=1f6734dd-4809-4591-bdfa-bd7e4c30940c, templateId=6, host=0, state=ACTIVE, virtualMachine=]
+]
+INFO opennebula_api.ReleaseVM.eval: Powering off (Releasing) the VM: 1f6734dd-4809-4591-bdfa-bd7e4c30940c
+INFO opennebula_api.VMsInfo.getAndLogVMs: The VMs running are: [VMDescriptor [vmId=739, vmName=1f6734dd-4809-4591-bdfa-bd7e4c30940c, templateId=6, host=0, state=ACTIVE, virtualMachine=]
+]
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 739

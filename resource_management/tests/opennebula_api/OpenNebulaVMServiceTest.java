@@ -6,9 +6,6 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import opennebula_api.OpenNebulaVMService;
-import opennebula_api.VMDescriptor;
-
 import java.util.Arrays;
 
 class OpenNebulaVMServiceTest {

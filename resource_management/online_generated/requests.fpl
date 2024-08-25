@@ -1,0 +1,6 @@
+Request: { Online_Generated
+    (action/action-id , "RELEASE")
+    (resource/vm-name, "6d43d203-cf2e-4aef-916a-0c5c83f2dd6d")
+    (subject/profile-id, "P_1")
+    (resource/vm-type, "6")
+}
