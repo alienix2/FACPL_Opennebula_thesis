@@ -18,9 +18,9 @@ public class ContextRequest_Online_Generated {
 	HashMap<String, Object> req_subject = new HashMap<String, Object>();
 	HashMap<String, Object> req_resource = new HashMap<String, Object>();
 	//add attribute's values
-	req_action.put("action-id","RELEASE");
+	req_action.put("action-id","CREATE");
 	req_subject.put("profile-id","P_2");
-	req_resource.put("vm-name","1f6734dd-4809-4591-bdfa-bd7e4c30940c");
+	req_resource.put("vm-type","4");
 	//add attributes to request
 	Request req = new Request("Online_Generated");
 	req.addAttribute("action",req_action);
