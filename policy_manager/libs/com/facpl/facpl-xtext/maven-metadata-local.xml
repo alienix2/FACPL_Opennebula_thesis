@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <metadata>
   <groupId>com.facpl</groupId>
-  <artifactId>facpl</artifactId>
+  <artifactId>facpl-xtext</artifactId>
   <versioning>
     <release>2.0.5</release>
     <versions>

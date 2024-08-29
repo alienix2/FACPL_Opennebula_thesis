@@ -87,14 +87,8 @@
 
 		<dependency>
 			<groupId>com.facpl</groupId>
-			<artifactId>facpl</artifactId>
+			<artifactId>facpl-xtext</artifactId>
 			<version>2.0.5</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.resource_management</groupId>
-			<artifactId>resource_management</artifactId>
-			<version>0.0.1</version>
 		</dependency>
 
 	</dependencies>
