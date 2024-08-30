@@ -59,7 +59,7 @@ PolicySet Online_Generated { permit-overrides
 
 	PolicySet Release_Policies { permit-overrides
   		target:equal("RELEASE", action/action-id)
-    			&& (equal("P_2", subject/profile-id) || equal("P_2", subject/profile-id))
+    			&& (equal("P_1", subject/profile-id))
   		policies:
     	Rule hyper_1_release (permit
       		target:( in (resource/vm-name, system/hyper1.vm-names))
@@ -71,4 +71,5 @@ PolicySet Online_Generated { permit-overrides
     	)
   	}
 }
+
 

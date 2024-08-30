@@ -12,3 +12,19 @@ INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 0
 INFO opennebula_api.CreateVM.eval: Starting VM: [4, 5f1c7743-3425-4736-bdaf-8548765815ca]
 INFO opennebula_api.OpenNebulaActionBase.logResponse: 741
 INFO opennebula_api.OpenNebulaActionBase.logResponse: 741
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 0: [CPU, MEM]: [400,14667540]
+INFO opennebula_api.CreateVM.eval: Starting VM: [4, de50e79d-55fb-4349-99b8-55182bbbd739]
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 744
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 744
+INFO opennebula_api.VMsInfo.getAndLogVMs: The VMs running are: [VMDescriptor [vmId=742, vmName=2e93f2ee-7bc1-4fc7-acf9-7e386ffa33fe, templateId=4, host=0, state=ACTIVE, virtualMachine=]
+]
+INFO opennebula_api.ReleaseVM.eval: Powering off (Releasing) the VM: 2e93f2ee-7bc1-4fc7-acf9-7e386ffa33fe
+INFO opennebula_api.VMsInfo.getAndLogVMs: The VMs running are: [VMDescriptor [vmId=742, vmName=2e93f2ee-7bc1-4fc7-acf9-7e386ffa33fe, templateId=4, host=0, state=ACTIVE, virtualMachine=]
+]
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 742
+INFO opennebula_api.VMsInfo.getAndLogVMs: The VMs running are: [VMDescriptor [vmId=742, vmName=2e93f2ee-7bc1-4fc7-acf9-7e386ffa33fe, templateId=4, host=0, state=ACTIVE, virtualMachine=]
+]
+INFO opennebula_api.ReleaseVM.eval: Powering off (Releasing) the VM: 2e93f2ee-7bc1-4fc7-acf9-7e386ffa33fe
+INFO opennebula_api.VMsInfo.getAndLogVMs: The VMs running are: [VMDescriptor [vmId=742, vmName=2e93f2ee-7bc1-4fc7-acf9-7e386ffa33fe, templateId=4, host=0, state=ACTIVE, virtualMachine=]
+]
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 742

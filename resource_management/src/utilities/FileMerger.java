@@ -24,7 +24,7 @@ public class FileMerger {
     }
 
     public String mergeFiles(String outputFolder) throws IOException {
-        Path outputFile = Paths.get(outputFolder, "system.fpl");
+        Path outputFile = Paths.get(outputFolder, "system.fpl");   
         try {
             List<Path> pathList = filePaths.stream().map(Paths::get).collect(Collectors.toList());
             appendFiles(pathList, outputFile);
