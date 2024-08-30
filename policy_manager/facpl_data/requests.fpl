@@ -1,6 +1,5 @@
 Request: { Online_Generated
-    (action/action-id, "RELEASE")
+    (action/action-id, "CREATE")
     (subject/profile-id, "P_1")
-    (resource/vm-type, "4")
-    (resource/vm-name, "HYPER1_TYPE1-747")
+    (resource/vm-type, "6")
 }

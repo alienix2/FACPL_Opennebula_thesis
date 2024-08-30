@@ -17,20 +17,22 @@ import java.util.List;
 @Service
 public class PolicyService {
 
-    @Value("${facpl.policies.filepath}")
-    private String policiesFilePath;
+    @Value("${facpl.policies.filepath}") String policiesFilePath;
 
-    @Value("${facpl.temp.filepath}")
-    private String tempFilePath;
+    @Value("${facpl.temp.filepath}") String tempFilePath;
 
-    @Value("${facpl.compile.folderpath}")
-    private String compilePath;
+    @Value("${facpl.compile.folderpath}") String compilePath;
     
-    @Value("${logging.compile.file.name}")
-    private String compileLog;
+    @Value("${logging.compile.file.name}") String compileLog;
     
     private final Logger logger = LoggerFactory.getLogger(PolicyService.class);
 
+    private final ApplyPolicy applyPolicy;
+
+    public PolicyService(ApplyPolicy applyPolicy) {
+        this.applyPolicy = applyPolicy;
+    }
+    
     public ResponseEntity<List<String>> getPolicies() throws IOException {
         Path path = Paths.get(policiesFilePath);
         if (!Files.exists(path)) {
@@ -53,7 +55,7 @@ public class PolicyService {
 
     public ResponseEntity<String> submitPolicies() throws IOException {
         try {
-            new ApplyPolicy(compileLog, compilePath).execute(new String[]{policiesFilePath});
+            applyPolicy.execute(new String[]{policiesFilePath});
             return ResponseEntity.ok("Policy applied");
         } catch (Exception e) {
             logger.error("Error submitting policies", e);

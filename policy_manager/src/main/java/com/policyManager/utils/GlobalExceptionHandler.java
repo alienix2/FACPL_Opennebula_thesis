@@ -19,7 +19,5 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleIOException(IOException e) {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("File processing error: " + e.getMessage());
     }
-
-    // Additional handlers can be added here for specific exceptions
 }
 

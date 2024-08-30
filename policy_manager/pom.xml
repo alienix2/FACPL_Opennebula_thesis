@@ -32,7 +32,7 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
-		<!-- Exclude default logging (Logback) -->
+		<!-- Spring Boot Starter Web with exclusions -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -44,14 +44,47 @@
 			</exclusions>
 		</dependency>
 
-		<!-- Add Log4j dependencies -->
+		<!-- Spring Boot Starter Test with JUnit Jupiter -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 
+		<!-- Mockito dependencies -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>4.8.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-inline</artifactId>
+			<version>4.8.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Byte Buddy dependencies -->
+		<dependency>
+			<groupId>net.bytebuddy</groupId>
+			<artifactId>byte-buddy</artifactId>
+			<version>1.12.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>net.bytebuddy</groupId>
+			<artifactId>byte-buddy-agent</artifactId>
+			<version>1.12.0</version>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Log4j dependencies -->
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
-
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
@@ -70,8 +103,6 @@
 			<artifactId>org.eclipse.emf.ecore</artifactId>
 			<version>2.20.0</version>
 		</dependency>
-
-		<!-- EMF Common -->
 		<dependency>
 			<groupId>org.eclipse.emf</groupId>
 			<artifactId>org.eclipse.emf.common</artifactId>
@@ -85,12 +116,12 @@
 			<version>5.0.1</version>
 		</dependency>
 
+		<!-- FACPL dependencies -->
 		<dependency>
 			<groupId>com.facpl</groupId>
 			<artifactId>facpl-xtext</artifactId>
 			<version>2.0.5</version>
 		</dependency>
-
 		<dependency>
 			<groupId>com.facpl</groupId>
 			<artifactId>facpl-library</artifactId>
@@ -101,6 +132,12 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.5.0</version>
+			</plugin>
+
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>

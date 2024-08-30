@@ -22,15 +22,20 @@ public class RequestService {
 
     @Value("${facpl.temp.filepath}")
     private String tempFilePath;
-    
+
     @Value("${facpl.compile.folderpath}")
     private String compilePath;
-    
+
     @Value("${logging.compile.file.name}")
     private String compileLog;
 
     private final Logger logger = LoggerFactory.getLogger(RequestService.class);
-    
+    private final RequestExecution requestExecution;
+
+    public RequestService(RequestExecution requestExecution) {
+        this.requestExecution = requestExecution;
+    }
+
     public ResponseEntity<List<String>> getRequests() throws IOException {
         Path path = Paths.get(requestsFilePath);
         if (!Files.exists(path)) {
@@ -53,7 +58,7 @@ public class RequestService {
 
     public ResponseEntity<String> submitRequest() throws IOException {
         try {
-            new RequestExecution(compileLog, compilePath).execute(new String[]{requestsFilePath});
+            requestExecution.execute(new String[]{requestsFilePath});
             return ResponseEntity.ok("Request executed");
         } catch (Exception e) {
             logger.error("Error executing request", e);

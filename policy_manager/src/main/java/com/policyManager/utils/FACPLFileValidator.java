@@ -17,13 +17,11 @@ import java.util.List;
 
 public class FACPLFileValidator {
 	
-	private static FACPLFileValidator instance;
+	static FACPLFileValidator instance;
 
-    @Inject
-    private IResourceValidator validator;
+    @Inject IResourceValidator validator;
 
-	@Inject
-	private Provider<ResourceSet> resourceSetProvider;
+	@Inject Provider<ResourceSet> resourceSetProvider;
     
 	private static void getInstance() {
 		Injector injector = new it.unifi.xtext.facpl.Facpl2StandaloneSetupGenerated()
@@ -39,7 +37,7 @@ public class FACPLFileValidator {
 		return instance.validateFile(filePath);
     }
     
-    public boolean validateFile(String filePath) {
+    private boolean validateFile(String filePath) {
     	ResourceSet set = resourceSetProvider.get();
 		Resource resource = set.getResource(URI.createURI(filePath), true);
 		
