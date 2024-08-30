@@ -4,12 +4,12 @@
 
 ## Resource management:
 **Installation:**
-- run mvn install inside the *resource_management* folder
+- run **mvn install** inside the *resource_management* folder
 
 **Description:**
 - If you just want to implement different commands that allow to dialogate with the openNebula API in a simpler way you can import the resource_management project and use it as is.
 - The *entryPoint* package contains classes that allow to use all the functionalities, if all you need is to compile a policy and/or to execute a request in your java code you can take a look at them.
-- The contextStub and PEPActions file are provided inside the *opennebula_context_actions* folder
+- The *contextStub* and *PEPActions* files are provided inside the *opennebula_context_actions* folder
 - The other packages contain an abstraction of the OpenNebula APIs and some interfaces.
 - Implementing or extending some of them allows you to easily reuse the concrete implementations with FACPL without having to redo all the work
 
@@ -22,7 +22,10 @@
 
 **Description:**
 - Inside the *policy_manager* folder there is a simple backend and fronted implementation of the funcionalities provided by the *resource_management* project.
-- A default PAS and a set of default policies are preloaded.
-- The PAS cannot be changed from the web UI.
+- A default PAS is already compiled and implemented. An example of policy set is compiled and implemented, and is the same visible on the UI, an example of a request is also visible from the UI.
 - The user can change the set of policies and send requests from the web UI
+- The PAS cannot be changed from the web UI.
+- If you want to change the PAS you can compile a PAS separately and then move it to the *src/onlinePolicies* folder. Examples of policy sets can be found in the *resource_management* project.
+- The *contextStub* and *PEPActions* files are provided inside the *opennebula_context_actions* folder, they are needed to run the requests, do not remove them from the folder.
+- If you want to change the *contextStub* and/or *PEPActions* files you can create them and then put them in the *opennebula_context_actions* folder, they will be used in the evaluation process.
 - From the file located inside *policy_manager/src/main/resources* you can change where certain files are stored (logs, files to run ecc.)
