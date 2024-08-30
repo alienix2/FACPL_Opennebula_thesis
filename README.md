@@ -16,7 +16,7 @@
 ## Policy manager:
 **Installation:**
 - run **mvn install** inside the *resource_management* folder
-- run **mvn install** inside the *policy_manager* folder
+- run **mvn test** inside the *policy_manager* folder (optional, ensures that everything is fine)
 - run **mvn spring-boot:run** inside the *policy_manager* folder (keep the term open for the springboot logs)
 - use the browser to connect to *localhost:8080* (or *host_ip:8080*)
 
