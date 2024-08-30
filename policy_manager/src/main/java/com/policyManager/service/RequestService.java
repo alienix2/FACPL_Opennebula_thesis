@@ -44,7 +44,7 @@ public class RequestService {
         Files.write(Paths.get(tempFilePath), request.getBytes(), StandardOpenOption.CREATE, StandardOpenOption.TRUNCATE_EXISTING);
 
         if (FACPLFileValidator.validate(tempFilePath)) {
-            Files.copy(Paths.get(tempFilePath), Paths.get(requestsFilePath), StandardCopyOption.REPLACE_EXISTING);
+            Files.move(Paths.get(tempFilePath), Paths.get(requestsFilePath), StandardCopyOption.REPLACE_EXISTING);
             return ResponseEntity.ok("Valid FACPL file!");
         } else {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Request validation failed");

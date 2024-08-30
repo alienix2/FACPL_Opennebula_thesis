@@ -11,8 +11,10 @@ public class PolicySet_Release_Policies extends PolicySet {
 		addCombiningAlg(new it.unifi.facpl.lib.algorithm.PermitOverridesGreedy());
 		//Target
 		addTarget(new ExpressionBooleanTree(ExprBooleanConnector.AND,new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.Equal(), "RELEASE",new AttributeName("action","action-id") 
-		)),new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.Equal(), "P_1",new AttributeName("subject","profile-id") 
+		)),new ExpressionBooleanTree(new ExpressionBooleanTree(ExprBooleanConnector.OR,new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.Equal(), "P_1",new AttributeName("subject","profile-id") 
+		)),new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.Equal(), "P_2",new AttributeName("subject","profile-id") 
 		)))
+		))
 		);
 		//PolElements
 		addPolicyElement(new Rule_hyper_1_release());
