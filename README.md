@@ -24,6 +24,7 @@
 - Inside the *policy_manager* folder there is a simple backend and fronted implementation of the funcionalities provided by the *resource_management* project.
 - A default PAS is already compiled and implemented. An example of policy set is compiled and implemented, and is the same visible on the UI, an example of a request is also visible from the UI.
 - The user can change the set of policies and send requests from the web UI
+- **MUST DO:** change: *TYPE_1*, *TYPE_2*, *HYPER_1* and *HYPER_2* accordingly to you OpenNebula setup. 
 - The PAS cannot be changed from the web UI.
 - If you want to change the PAS you can compile a PAS separately and then move it to the *src/onlinePolicies* folder. Examples of policy sets can be found in the *resource_management* project.
 - The *contextStub* and *PEPActions* files are provided inside the *opennebula_context_actions* folder, they are needed to run the requests, do not remove them from the folder.
