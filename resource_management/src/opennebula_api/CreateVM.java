@@ -19,7 +19,7 @@ public class CreateVM extends OpenNebulaActionBase {
 		logResponse(instantiateResponse);
 		if (!instantiateResponse.isError()){
 			VirtualMachine vm = 
-					new VirtualMachine(Integer.parseInt(instantiateResponse.getMessage()), ONActionContext.getClient());
+					new VirtualMachine(instantiateResponse.getIntMessage(), ONActionContext.getClient());
 			logResponse(vm.deploy((int) args.get(0)));
 		}		
 	}
