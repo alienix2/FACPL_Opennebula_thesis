@@ -1,5 +1,0 @@
-INFO utilities.OpenNebulaFACPLClassSetup.setup: Starting setup...
-SEVERE utilities.FileMerger.mergeFiles: Failed to merge files: src/test/resources/mockPolicies.txt
-SEVERE utilities.OpenNebulaFACPLClassSetup.setup: Failed to generate classes: src/test/resources/mockPolicies.txt
-INFO utilities.CodeExecutor.compileJavaFiles: Starting compilation of Java files in directory: src/test/resources/compile
-SEVERE entryPoint.FACPLHandlingTemplate.execute: An error occurred: src/test/resources/compile

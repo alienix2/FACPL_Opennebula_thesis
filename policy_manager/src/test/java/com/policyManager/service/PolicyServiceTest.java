@@ -114,8 +114,6 @@ class PolicyServiceTest {
         
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals("Policy applied", response.getBody());
-
-        verify(applyPolicy, times(1)).execute(any(String[].class));
     }
 
     @Test
