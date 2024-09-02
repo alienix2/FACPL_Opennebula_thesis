@@ -1,0 +1,16 @@
+\babel@toc {italian}{}
+\babel@toc {italian}{}
+\vspace {-\cftbeforepartskip }
+\contentsline {chapter}{Elenco delle figure}{3}{Doc-Start}%
+\contentsline {chapter}{\numberline {1}{Introduction}}{7}{chapter.1}%
+\contentsline {chapter}{\numberline {2}{State of the Art}}{9}{chapter.2}%
+\contentsline {chapter}{\numberline {3}{Integrazione di OpenNebula con FACPL}}{11}{chapter.3}%
+\contentsline {section}{\numberline {3.1}{Idea di base}}{11}{section.3.1}%
+\contentsline {section}{\numberline {3.2}{OpenNebula API}}{12}{section.3.2}%
+\contentsline {section}{\numberline {3.3}{Logging}}{14}{section.3.3}%
+\contentsline {section}{\numberline {3.4}{Gestione delle virtual machine}}{15}{section.3.4}%
+\contentsline {section}{\numberline {3.5}{How did I discover a novel type of heated water}}{16}{section.3.5}%
+\contentsline {section}{\numberline {3.6}{How my heated water differs from the previous ones}}{16}{section.3.6}%
+\contentsline {chapter}{\numberline {4}{Numerical results}}{19}{chapter.4}%
+\contentsline {chapter}{\numberline {5}{Conclusions and Future work}}{21}{chapter.5}%
+\contentsline {chapter}{Bibliografia}{23}{chapter.5}%

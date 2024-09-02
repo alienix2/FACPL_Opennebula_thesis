@@ -1,0 +1,124 @@
+%--------------------------------------------------------------
+% thesis.tex 
+%--------------------------------------------------------------
+% Corso di Laurea in Informatica 
+% - template for the main file of Informatica@Unifi Thesis 
+% - based on Classic Thesis Style Copyright (C) 2008 
+%   Andr\'e Miede http://www.miede.de   
+%--------------------------------------------------------------
+\documentclass[twoside,openright,titlepage,fleqn,
+	headinclude,12pt,a4paper,BCOR=5mm,footinclude]{scrbook}
+
+\usepackage[nottoc]{tocbibind}
+%--------------------------------------------------------------
+% Inputs for the title page 
+%--------------------------------------------------------------
+\newcommand{\myItalianTitle}{Titolo italiano\xspace}
+\newcommand{\myEnglishTitle}{English title\xspace}
+% use the right myDegree option
+\newcommand{\myDegree}{Corso di Laurea in Informatica\xspace}
+%\newcommand{\myDegree}{Corso di Laurea Magistrale in Informatica\xspace}
+\newcommand{\myName}{Matteo Monicolini\xspace}
+\newcommand{\mySupervisorTitle}{Relatore\xspace}
+\newcommand{\mySupervisorName}{\textit{Rosario Pugliese}\xspace} 
+\newcommand{\myTime}{Anno Accademico 2023-2024\xspace}
+%--------------------------------------------------------------
+
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 
+
+% switch italian and english, depending on the language of the thesis
+% this will change the chapter titles
+\usepackage[italian]{babel}
+%\usepackage[english]{babel}
+\usepackage{csquotes}
+
+\usepackage[fleqn]{amsmath}  
+\usepackage{ellipsis}
+\usepackage{listings}
+\usepackage{subfig}
+\usepackage{caption}
+\usepackage{appendix}
+\usepackage{siunitx}
+\usepackage[pdftex]{graphicx} 
+\graphicspath{{./Figures/}}
+ \usepackage[eulerchapternumbers,linedheaders,subfig,beramono,eulermath,
+parts,dottedtoc]{classicthesis}
+
+%--------------------------------------------------------------
+% Layout setting
+%--------------------------------------------------------------
+\newlength{\abcd} 
+\newcommand{\myfloatalign}{\centering} 
+\setlength{\extrarowheight}{3pt} 
+\captionsetup{format=hang,font=small}
+
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	ignoremp,
+	bindingoffset = 1cm, 
+	textwidth     = 13.5cm,
+	textheight    = 21.5cm,
+	lmargin       = 3.5cm, 
+	tmargin       = 4cm    
+}
+
+\lstset{
+  	frame=tb,
+  	aboveskip=3mm,
+  	belowskip=3mm,
+  	showstringspaces=false,
+  	columns=flexible,
+  	basicstyle={\small\ttfamily},
+  	breaklines=true,
+  	breakatwhitespace=true,
+  	tabsize=3,
+	escapechar={@}
+}
+%--------------------------------------------------------------
+\begin{document}
+\frenchspacing
+\raggedbottom
+\pagenumbering{roman}
+\pagestyle{plain}
+%--------------------------------------------------------------
+% Frontmatter
+%--------------------------------------------------------------
+\include{FrontMatter/Titlepage}
+\pagestyle{scrheadings}
+%--------------------------------------------------------------
+% Mainmatter
+%--------------------------------------------------------------
+\pagenumbering{arabic}
+\tableofcontents
+\listoffigures
+\cleardoublepage
+\thispagestyle{empty}
+\begin{flushright}
+\null\vspace{\stretch {1}}
+%--------------------------------------------------------------
+% Citation
+%--------------------------------------------------------------
+\emph{"Sarà che prendo troppo spesso Trenitalia ma io non credo nelle coincidenze" \break --- Pinguini tattici nucleari "Test di ingresso di medicina"} \vspace{\stretch{2}}\null
+\end{flushright}
+\cleardoublepage
+
+%--------------------------------------------------------------
+% Chapters
+%--------------------------------------------------------------
+\include{Chapters/01-Introduction}
+\include{Chapters/02-StateOfTheArt}
+\include{Chapters/03-Proposal}
+\include{Chapters/04-Evaluation}
+\include{Chapters/05-Conclusions}
+
+%--------------------------------------------------------------
+% Bibliography
+%--------------------------------------------------------------
+\bibliographystyle{plain} 
+\bibliography{Bibliography} % Entries are in the Bibliography.bib file
+
+%--------------------------------------------------------------
+\end{document}
+%--------------------------------------------------------------

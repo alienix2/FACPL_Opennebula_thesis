@@ -7,7 +7,7 @@ import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class FileLoggerFactory {
+public class FileLoggerFactory{
 
 	public static Logger make(String fileName) {
         return make(fileName, new CreatorClassFormatter(), Level.ALL);
@@ -18,10 +18,8 @@ public class FileLoggerFactory {
         StackTraceElement directCaller = t.getStackTrace()[1];
         String loggerName = directCaller.getClassName() + "-" + fileName;
 
-        // Create or retrieve the logger by name
         Logger logger = Logger.getLogger(loggerName);
 
-        // Avoid adding multiple handlers to the same logger
         if (!isFileHandlerAttached(logger, fileName)) {
             try {
                 FileHandler fileHandler = createFileHandler(fileName, formatter, level);

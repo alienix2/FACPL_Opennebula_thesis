@@ -1,0 +1,46 @@
+\begin{thebibliography}{1}
+
+\bibitem{opennebula}
+Opennebula.
+\newblock \url{https://opennebula.io/}.
+
+\bibitem{effectiveJava}
+Joshua Bloch.
+\newblock {\em Effective Java}.
+\newblock Addison-Wesley, 3rd edition, 2018.
+
+\bibitem{rfc1925}
+Ross Callon.
+\newblock {The Twelve Networking Truths}.
+\newblock RFC 1925, April 1996.
+
+\bibitem{knuth97}
+Donald~E. Knuth.
+\newblock {\em The Art of Computer Programming, Vol. 1: Fundamental
+  Algorithms}.
+\newblock Addison-Wesley, Reading, Mass., 3rd ed. edition, 1997.
+
+\bibitem{facpl}
+Andrea Margheri.
+\newblock Facpl documentation.
+\newblock \url{https://facpl.readthedocs.io/en/latest/index.html}, 2024.
+
+\bibitem{facpl-github}
+Andrea Margheri.
+\newblock Facpl: Flexible and adaptive control programming language.
+\newblock \url{https://github.com/andreamargheri/FACPL}, 2024.
+
+\bibitem{10.1007/978-3-319-08260-8_6}
+Andrea Margheri, Massimiliano Masi, Rosario Pugliese, and Francesco Tiezzi.
+\newblock Developing and enforcing policies for access control, resource usage,
+  and adaptation.
+\newblock In Emilio Tuosto and Chun Ouyang, editors, {\em Web Services and
+  Formal Methods}, pages 85--105, Cham, 2014. Springer International
+  Publishing.
+
+\bibitem{nash51}
+John Nash.
+\newblock Non-cooperative games.
+\newblock {\em Annals of Mathematics}, 54(2):286--295, 1951.
+
+\end{thebibliography}

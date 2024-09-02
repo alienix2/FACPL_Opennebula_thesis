@@ -25,18 +25,19 @@ public class ContextStub_Default implements IContextStub {
 	private static HostInfo hostInfo;
 	
 	public static ContextStub_Default getInstance() {
-		if (instance == null) {
-			try {
-				ContextStub_Default.oneClient = new Client();
-			} catch (ClientConfigurationException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			Logger logger = FileLoggerFactory.make("logs/virtualMachines.log");
-			inizializeStub(oneClient, logger);
-			instance = new ContextStub_Default();
-		}
-		return instance;
+	    if (instance == null) {
+	        try {
+	            ContextStub_Default.oneClient = new Client();
+	            Logger logger = FileLoggerFactory.make("logs/virtualMachines.log");
+	            initializeStub(oneClient, logger);
+	            instance = new ContextStub_Default();
+	        } catch (ClientConfigurationException e) {
+	            throw new RuntimeException("Failed to initialize Client: " + e.getMessage(), e);
+	        } catch (Exception e) {
+	            throw new RuntimeException("Unexpected error during ContextStub_Default initialization: " + e.getMessage(), e);
+	        }
+	    }
+	    return instance;
 	}
 	
 	private static void inizializeStub(Client oneClient, Logger clientLogger) {
