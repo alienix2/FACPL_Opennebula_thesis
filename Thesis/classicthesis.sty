@@ -148,13 +148,13 @@
 %\definecolor{CTsemi}{gray}{0.55} % chapter numbers will be semi transparent .5 .55 .6 .0
 \colorlet{CTsemi}{Cerulean!80}
 %\definecolor{CTcitation}{rgb}{0,0.5,0} % WebGreen
-\definecolor{CTcitation}{HTML}{A85751}
+\definecolor{CTcitation}{HTML}{E57373}
 %\definecolor{CTurl}{named}{Maroon} % Maroon
-\definecolor{CTurl}{HTML}{A85751}
+\definecolor{CTurl}{HTML}{E57373}
 %\definecolor{CTtitle}{named}{Maroon} % Maroon {cmyk}{0, 0.87, 0.68, 0.32}
-\definecolor{CTtitle}{HTML}{A85751}
+\definecolor{CTtitle}{HTML}{E57373}
 %\definecolor{CTlink}{named}{RoyalBlue} % RoyalBlue {cmyk}{1, 0.50, 0, 0}
-\definecolor{CTlink}{HTML}{C97B84}
+\definecolor{CTlink}{HTML}{E57373}
 \definecolor{halfgray}{gray}{0.55} % chapter numbers will be semi transparent .5 .55 .6 .0
 \definecolor{webgreen}{rgb}{0,0.5,0}
 \definecolor{webbrown}{rgb}{0.6,0,0}
@@ -613,6 +613,8 @@
         "marginal" for footnote setup (not 100\% the same as with KOMA)}%
 \fi
 
+\renewcommand{\@makefnmark}{\textsuperscript{\textcolor{CTcitation}{\@thefnmark}}}
+
 % ********************************************************************
 % Drafting Stuff
 % ********************************************************************
@@ -686,6 +688,24 @@
 \definecolor{gruvbox-aqua}{HTML}{689d6a}   % Aqua/Cyan
 \definecolor{gruvbox-orange}{HTML}{d65d0e} % Orange
 
+%Solarized light colors
+\definecolor{solarized-bg}{HTML}{FDF6E3}        % Base3
+\definecolor{solarized-fg}{HTML}{586E75}        % Base00
+\definecolor{solarized-blue}{HTML}{268BD2}      % Blue
+\definecolor{solarized-green}{HTML}{859900}     % Green
+\definecolor{solarized-cyan}{HTML}{2AA198}      % Cyan
+\definecolor{solarized-orange}{HTML}{CB4B16}    % Orange
+\definecolor{solarized-magenta}{HTML}{D33682}   % Magenta
+
+% Everforest Light colors
+\definecolor{everforest-bg}{HTML}{F3EAD3}        % Background color
+\definecolor{everforest-fg}{HTML}{5C6A72}        % Foreground color
+\definecolor{everforest-blue}{HTML}{7FBBB3}      % Blue
+\definecolor{everforest-green}{HTML}{A7C080}     % Green
+\definecolor{everforest-aqua}{HTML}{87C095}      % Aqua
+\definecolor{everforest-yellow}{HTML}{DBBC7F}    % Yellow
+\definecolor{everforest-magenta}{HTML}{D699B6}   % Magenta
+
 
 %Coding using minted: gruvbox style
 \usepackage{minted}
@@ -704,32 +724,58 @@
 
 \newcommand{\highlight}[2]{%
   \draw[gruvbox-orange,line width=14pt,opacity=0.3]%
-    ([yshift=4pt]#1) -- ([yshift=4pt]#2);%
+    ([yshift=3pt]#1) -- ([yshift=3pt]#2);%
 }
+\usepackage{xcolor}
 \lstset{
-  backgroundcolor=\color{gruvbox-bg},    % Set background color
-  basicstyle=\ttfamily\color{gruvbox-fg}, % Set font style and color
-  keywordstyle=\color{gruvbox-blue},      % Keywords in blue
-  commentstyle=\color{gruvbox-aqua},      % Comments in aqua
-  stringstyle=\color{gruvbox-green},      % Strings in green
-  numberstyle=\tiny\color{gruvbox-orange},% Line numbers in orange
-  identifierstyle=\color{gruvbox-fg},     % Identifiers in default color
-  emphstyle=\color{gruvbox-purple},       % Emphasized words (like types) in purple
-  showstringspaces=false,                 % Do not show spaces in strings
-  frame=single,                           % Add a frame around the code
-  framerule=0.5pt,                        % Thickness of the frame
-  rulecolor=\color{gruvbox-fg},           % Frame color
-  breaklines=true,                        % Enable line breaking
-  breakatwhitespace=true,                 % Break lines only at whitespace
-  columns=fullflexible,                   % Better spacing for monospaced fonts
-  morekeywords={def,return,class},        % You can add more keywords here
-  numbers=left,                           % Display line numbers on the left
-  stepnumber=1,                           % Line number step size (show every line)
-  firstnumber=1,                          % Start line numbering at line 1
-  numbersep=3pt,                         % Space between line numbers and code
-  numberstyle=\small,
-  xleftmargin=1em                  % Extra space on the left to avoid overlap
+  backgroundcolor=\color{solarized-bg},    % Set background color
+  basicstyle=\ttfamily\color{solarized-fg}, % Set font style and color
+  keywordstyle=\color{solarized-blue},      % Keywords in blue
+  commentstyle=\color{solarized-green},     % Comments in green
+  stringstyle=\color{solarized-cyan},       % Strings in cyan
+  identifierstyle=\color{solarized-fg},     % Identifiers in default color
+  emphstyle=\color{solarized-magenta},      % Emphasized words (like types) in magenta
+  showstringspaces=false,                   % Do not show spaces in strings
+  frame=single,                             % Add a frame around the code
+  framerule=0.5pt,                          % Thickness of the frame
+  rulecolor=\color{solarized-fg},           % Frame color
+  breaklines=true,                          % Enable line breaking
+  breakatwhitespace=true,                   % Break lines only at whitespace
+  columns=fullflexible,                     % Better spacing for monospaced fonts
+  morekeywords={def,class},          % You can add more keywords here
+  emph={Client, Template, Logger, VMDescriptor, String, OneResponse, return, attribute}
+  numbers=left,                             % Display line numbers on the left
+  stepnumber=1,                             % Line number step size (show every line)
+  firstnumber=1,                            % Start line numbering at line 1
+  numbersep=3pt,                            % Space between line numbers and code
+  numberstyle=\footnotesize,                % Set the line number font size
+  xleftmargin=1em                           % Extra space on the left to avoid overlap
 }
+
+% \lstset{
+%   backgroundcolor=\color{gruvbox-bg},    % Set background color
+%   basicstyle=\ttfamily\color{gruvbox-fg}, % Set font style and color
+%   keywordstyle=\color{gruvbox-blue},      % Keywords in blue
+%   commentstyle=\color{gruvbox-aqua},      % Comments in aqua
+%   stringstyle=\color{gruvbox-green},      % Strings in green
+%   numberstyle=\tiny\color{gruvbox-orange},% Line numbers in orange
+%   identifierstyle=\color{gruvbox-fg},     % Identifiers in default color
+%   emphstyle=\color{gruvbox-purple},       % Emphasized words (like types) in purple
+%   showstringspaces=false,                 % Do not show spaces in strings
+%   frame=single,                           % Add a frame around the code
+%   framerule=0.5pt,                        % Thickness of the frame
+%   rulecolor=\color{gruvbox-fg},           % Frame color
+%   breaklines=true,                        % Enable line breaking
+%   breakatwhitespace=true,                 % Break lines only at whitespace
+%   columns=fullflexible,                   % Better spacing for monospaced fonts
+%   morekeywords={def,return,class},        % You can add more keywords here
+%   numbers=left,                           % Display line numbers on the left
+%   stepnumber=1,                           % Line number step size (show every line)
+%   firstnumber=1,                          % Start line numbering at line 1
+%   numbersep=3pt,                         % Space between line numbers and code
+%   numberstyle=\footnotesize,
+%   xleftmargin=1em                  % Extra space on the left to avoid overlap
+% }
 
 
 % ********************************************************************

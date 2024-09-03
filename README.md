@@ -5,6 +5,7 @@
 ## Resource management:
 **Installation:**
 - run **mvn install** inside the *resource_management* folder
+- edit the file */resource_maangement/config.properties* with your actual hosts IDs (you can read them from OpenNebula UI or from the shell)
 
 **Description:**
 - If you just want to implement different commands that allow to dialogate with the openNebula API in a simpler way you can import the resource_management project and use it as is.
@@ -19,6 +20,7 @@
 - run **mvn test** inside the *policy_manager* folder (optional, ensures that everything is fine)
 - run **mvn spring-boot:run** inside the *policy_manager* folder (keep the term open for the springboot logs)
 - use the browser to connect to *localhost:8080* (or *host_ip:8080*)
+- - edit the file */policy_manager/config.properties* with your actual hosts IDs (you can read them from OpenNebula UI or from the shell)
 
 **Description:**
 - Inside the *policy_manager* folder there is a simple backend and fronted implementation of the funcionalities provided by the *resource_management* project.
