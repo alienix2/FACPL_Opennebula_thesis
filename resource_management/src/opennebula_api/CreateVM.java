@@ -23,5 +23,4 @@ public class CreateVM extends OpenNebulaActionBase {
 			logResponse(vm.deploy((int) args.get(0)));
 		}		
 	}
-
 }

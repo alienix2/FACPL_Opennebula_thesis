@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.9.1)  2 SEP 2024 12:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.9.1)  3 SEP 2024 14:31
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1060,9 +1060,9 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip137
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 742.
-Package hyperref Info: Option `linktocpage' set `true' on input line 742.
-Package hyperref Info: Option `breaklinks' set `true' on input line 742.
+Package hyperref Info: Option `colorlinks' set `true' on input line 788.
+Package hyperref Info: Option `linktocpage' set `true' on input line 788.
+Package hyperref Info: Option `breaklinks' set `true' on input line 788.
 )
 \abcd=\skip138
  (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
@@ -1094,27 +1094,27 @@ runsystem(rm Thesis.aex)...executed.
  (/var/lib/one/eclipse-workspace/Thesis/Thesis.aux (/var/lib/one/eclipse-workspace/Thesis/FrontMatter/Titlepage.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/01-Introduction.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/02-StateOfTheArt.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/03-Proposal.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/04-Evaluation.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/05-Conclusions.aux))
 \openout1 = `Thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 80.
-LaTeX Font Info:    ... okay on input line 80.
-LaTeX Font Info:    Trying to load font information for T1+pplx on input line 80.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 82.
+LaTeX Font Info:    ... okay on input line 82.
+LaTeX Font Info:    Trying to load font information for T1+pplx on input line 82.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pplx.fd
 File: t1pplx.fd 2004/09/06 font definitions for T1/pplx.
 )
-Package tocbasic Info: usage of `tocbibind' detected on input line 80.
+Package tocbasic Info: usage of `tocbibind' detected on input line 82.
 
 
 Package tocbasic Warning: `tocbibind' redefinition of `\listoffigures'
@@ -1128,9 +1128,9 @@ Package tocbasic Warning: `tocbibind' redefinition of `\listoftables'
 (tocbasic)                Note: Loading `tocbibind' without option `notlot'
 (tocbasic)                can break several features of `tocbasic'.
 
-LaTeX Info: Redefining \it@ocap on input line 80.
-LaTeX Info: Redefining \it@ccap on input line 80.
-LaTeX Info: Redefining \dots on input line 80.
+LaTeX Info: Redefining \it@ocap on input line 82.
+LaTeX Info: Redefining \it@ccap on input line 82.
+LaTeX Info: Redefining \dots on input line 82.
 \c@lstlisting=\count384
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
@@ -1160,14 +1160,14 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Info: Redefining \microtypecontext on input line 80.
+LaTeX Info: Redefining \microtypecontext on input line 82.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 80.
+LaTeX Info: Redefining \showhyphens on input line 82.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1175,7 +1175,7 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 ) ABD: EveryShipout initializing macros
 \AtBeginShipoutBox=\box91
-Package hyperref Info: Link coloring ON on input line 80.
+Package hyperref Info: Link coloring ON on input line 82.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -1185,9 +1185,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count391
 )
-LaTeX Info: Redefining \ref on input line 80.
-LaTeX Info: Redefining \pageref on input line 80.
-LaTeX Info: Redefining \nameref on input line 80.
+LaTeX Info: Redefining \ref on input line 82.
+LaTeX Info: Redefining \pageref on input line 82.
+LaTeX Info: Redefining \nameref on input line 82.
  (/var/lib/one/eclipse-workspace/Thesis/Thesis.out) (/var/lib/one/eclipse-workspace/Thesis/Thesis.out)
 \@outlinefile=\write8
 \openout8 = `Thesis.out'.
@@ -1199,7 +1199,7 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           `bookmarkpackage=false' before \begin{document} and
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
-(scrbook)           before \begin{document} on input line 80.
+(scrbook)           before \begin{document} on input line 82.
  (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2019/12/03 v1.28 PDF bookmarks (HO)
  (/usr/share/texlive/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
@@ -1243,23 +1243,23 @@ Package auxhook Info: \AddLineBeginMainAux comes a little late,
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+zeur on input line 80.
+LaTeX Font Info:    Trying to load font information for U+zeur on input line 82.
 (/usr/share/texlive/texmf-dist/tex/latex/eulervm/uzeur.fd
 File: uzeur.fd 2005/01/11 v4.0 (WaS)
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-eur.cfg
 File: mt-eur.cfg 2006/07/31 v1.1 microtype config. file: AMS Euler Roman (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+zeus on input line 80.
+LaTeX Font Info:    Trying to load font information for U+zeus on input line 82.
  (/usr/share/texlive/texmf-dist/tex/latex/eulervm/uzeus.fd
 File: uzeus.fd 2005/01/11 v4.0 (WaS)
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-eus.cfg
 File: mt-eus.cfg 2006/07/28 v1.2 microtype config. file: AMS Euler Script (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+zeuex on input line 80.
+LaTeX Font Info:    Trying to load font information for U+zeuex on input line 82.
  (/usr/share/texlive/texmf-dist/tex/latex/eulervm/uzeuex.fd
 File: uzeuex.fd 2005/01/11 v4.0 (WaS)
 )
-LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 80.
+LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 82.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1zplm.fd
 File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
 )
@@ -1267,7 +1267,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `zplm' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for T1+cmss on input line 80.
+LaTeX Font Info:    Trying to load font information for T1+cmss on input line 82.
  (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmss.fd
 File: t1cmss.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
@@ -1275,20 +1275,20 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmss' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for T1+fvm on input line 80.
+LaTeX Font Info:    Trying to load font information for T1+fvm on input line 82.
  (/usr/share/texlive/texmf-dist/tex/latex/bera/t1fvm.fd
 File: t1fvm.fd 2004/09/07 scalable font definitions for T1/fvm.
 )
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 10.20007pt on input line 80.
+(Font)              scaled to size 10.20007pt on input line 82.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `fvm' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 7.65005pt on input line 80.
+(Font)              scaled to size 7.65005pt on input line 82.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 5.95004pt on input line 80.
+(Font)              scaled to size 5.95004pt on input line 82.
 \openout2 = `FrontMatter/Titlepage.aux'.
 
  (/var/lib/one/eclipse-workspace/Thesis/FrontMatter/TitlePage.tex
@@ -1298,22 +1298,22 @@ File: logo/LOGO.pdf Graphic file (type pdf)
 Package pdftex.def Info: logo/LOGO.pdf  used on input line 15.
 (pdftex.def)             Requested size: 149.5021pt x 72.568pt.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 12.24008pt on input line 27.
+(Font)              scaled to size 12.24008pt on input line 26.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 8.50006pt on input line 27.
+(Font)              scaled to size 8.50006pt on input line 26.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 6.80005pt on input line 27.
+(Font)              scaled to size 6.80005pt on input line 26.
  [1
 
 
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </var/lib/one/eclipse-workspace/Thesis/logo/LOGO.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+pplx on input line 63.
+LaTeX Font Info:    Trying to load font information for TS1+pplx on input line 62.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pplx.fd
 File: ts1pplx.fd 2004/09/06 font definitions for TS1/pplx.
 )) [2]
-Package tocbasic Info: character protrusion at toc deactivated on input line 94.
+Package tocbasic Info: character protrusion at toc deactivated on input line 96.
  (/var/lib/one/eclipse-workspace/Thesis/Thesis.toc
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplx/m/sc/12'.
@@ -1323,9 +1323,9 @@ Package microtype Info: Character `029' is missing
 \openout9 = `Thesis.toc'.
 
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.30756pt on input line 95.
+(Font)              scaled to size 9.30756pt on input line 97.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 5.10004pt on input line 95.
+(Font)              scaled to size 5.10004pt on input line 97.
  [1
 
 
@@ -1381,41 +1381,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--26
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 25--28
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 29--29
+Underfull \hbox (badness 10000) in paragraph at lines 28--28
 [][][][]$\T1/fvm/m/n/10 https : / / docs . opennebula . io / 6 . 8 / integration _ and _ development / system _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--29
+Underfull \hbox (badness 10000) in paragraph at lines 28--28
 [][][][]$\T1/fvm/m/n/10 https : / / docs . opennebula . io / 6 . 8 / integration _ and _ development / system _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 29--30
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 32--32
+Underfull \hbox (badness 10000) in paragraph at lines 30--30
 [][][][]$\T1/fvm/m/n/10 https : / / docs . opennebula . io / doc / 6 . 4 / oca / java / org / opennebula / client /
  []
 
-[12] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
-File: lstlang1.sty 2019/09/10 1.8c listings language file
-)
-Underfull \hbox (badness 10000) in paragraph at lines 47--49
-
- []
-
+[12]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplx/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
-[13] [14] [15]
+ [13] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+) [14] [15]
+
+Package caption Warning: \captionsetup{type*=...} or \captionof
+(caption)                outside box or environment on input line 124.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 124.
+See the caption package documentation for explanation.
+
+[16] [17]
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 7.22505pt on input line 159.
+ [18] [19] [20]
+Underfull \hbox (badness 10000) in paragraph at lines 247--249
+
+ []
+
+[21]
 \openout3 = `Thesis.pyg'.
 
  (/var/lib/one/eclipse-workspace/Thesis/_minted-Thesis/default-pyg-prefix.pygstyle) (/var/lib/one/eclipse-workspace/Thesis/_minted-Thesis/tango.pygstyle) (/var/lib/one/eclipse-workspace/Thesis/_minted-Thesis/57F4AEA5A657C6BAE065646BDA1F6151652400CCFCF6585C49CDA9A099C65A39.pygtex
@@ -1425,17 +1430,17 @@ LaTeX Font Info:    Font shape `T1/fvm/m/it' in size <8> not available
 (Font)              Font shape `T1/fvm/m/sl' tried instead on input line 14.
 LaTeX Font Info:    Font shape `T1/fvm/m/sl' will be
 (Font)              scaled to size 6.80005pt on input line 14.
-) [16]) [17] [18]
+) [22]) [23] [24]
 \openout2 = `Chapters/04-Evaluation.aux'.
 
  (/var/lib/one/eclipse-workspace/Thesis/Chapters/04-Evaluation.tex
 Capitolo 4.
-<./Figures/DaveSecurity.jpg, id=253, 602.25pt x 418.56375pt>
+<./Figures/DaveSecurity.jpg, id=396, 602.25pt x 418.56375pt>
 File: ./Figures/DaveSecurity.jpg Graphic file (type jpg)
 <use ./Figures/DaveSecurity.jpg>
 Package pdftex.def Info: ./Figures/DaveSecurity.jpg  used on input line 11.
 (pdftex.def)             Requested size: 268.87737pt x 186.8766pt.
-) [19
+) [25
 
 
 
@@ -1445,12 +1450,12 @@ Package pdftex.def Info: ./Figures/DaveSecurity.jpg  used on input line 11.
 
  (/var/lib/one/eclipse-workspace/Thesis/Chapters/05-Conclusions.tex
 Capitolo 5.
-[20
+[26
 
 
 
 
-]) [21] (/var/lib/one/eclipse-workspace/Thesis/Thesis.bbl [22
+]) [27] (/var/lib/one/eclipse-workspace/Thesis/Thesis.bbl [28
 
 
 
@@ -1459,30 +1464,30 @@ Underfull \hbox (badness 4217) in paragraph at lines 24--27
 []\T1/pplx/m/n/12 (+20) Andrea Mar-ghe-ri.  Fa-c-pl do-cu-men-ta-tion.  [][]$\T1/fvm/m/n/12 https : / / facpl .
  []
 
-) [23]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 123.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 123.
+) [29]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 125.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 125.
  (/var/lib/one/eclipse-workspace/Thesis/Thesis.aux (/var/lib/one/eclipse-workspace/Thesis/FrontMatter/Titlepage.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/01-Introduction.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/02-StateOfTheArt.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/03-Proposal.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/04-Evaluation.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/05-Conclusions.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 123.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 123.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 125.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 125.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 runsystem(rm Thesis.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 36958 strings out of 481239
- 752474 string characters out of 5920378
- 1414371 words of memory out of 5000000
- 51045 multiletter control sequences out of 15000+600000
- 635298 words of font info for 327 fonts, out of 8000000 for 9000
+ 37402 strings out of 481239
+ 758983 string characters out of 5920378
+ 1414328 words of memory out of 5000000
+ 51354 multiletter control sequences out of 15000+600000
+ 638823 words of font info for 343 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 73i,22n,97p,10139b,1282s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 72i,23n,94p,10139b,2400s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /var/lib/one/eclipse-workspace/Thesis/Thesis.pdf (25 pages, 819691 bytes).
+Output written on /var/lib/one/eclipse-workspace/Thesis/Thesis.pdf (31 pages, 840652 bytes).
 PDF statistics:
- 377 PDF objects out of 1000 (max. 8388607)
- 335 compressed objects within 4 object streams
- 123 named destinations out of 1000 (max. 500000)
- 99967 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 549 PDF objects out of 1000 (max. 8388607)
+ 500 compressed objects within 5 object streams
+ 240 named destinations out of 1000 (max. 500000)
+ 101007 words of extra memory for PDF output out of 106986 (max. 10000000)
 

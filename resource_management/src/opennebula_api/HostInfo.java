@@ -19,13 +19,11 @@ public class HostInfo {
     private int availableCpu = -1;
     private long availableMem = -1;
 
-    // Private constructor to enforce the use of static factory methods
     private HostInfo(Client oneClient, Logger logger) {
         this.oneClient = oneClient;
         this.logger = logger;
     }
 
-    // Static factory methods
     public static HostInfo withDefaultLogger(String auth, String endpoint) {
         try {
             return new HostInfo(new Client(auth, endpoint), Logger.getLogger(HostInfo.class.getName()));
@@ -50,11 +48,9 @@ public class HostInfo {
         return new HostInfo(client, logger);
     }
 
-    private void updateHostResources(int hostId) {
-        // Retrieve the host object
-        Host host = new Host(hostId, oneClient);
+    private void updateHostResources(String hostId) {
+        Host host = new Host(Integer.parseInt(hostId), oneClient);
 
-        // Fetch the host info
         OneResponse info = host.info();
 
         if (info.isError()) {
@@ -62,11 +58,9 @@ public class HostInfo {
             return;
         }
 
-        // Parse the XML response
         String xmlData = info.getMessage();
         Document document = XmlUtils.parseXml(xmlData);
 
-        // Extract values directly
         NodeList maxCpuList = document.getElementsByTagName("TOTAL_CPU");
         NodeList usedCpuList = document.getElementsByTagName("CPU_USAGE");
         NodeList maxMemList = document.getElementsByTagName("TOTAL_MEM");
@@ -83,12 +77,12 @@ public class HostInfo {
         logger.info("Resources available on host: " + hostId + ": [CPU, MEM]: " + "[" + availableCpu + "," + availableMem + "]");
     }
 
-    public int getAvailableCpu(int hostId) {
+    public int getAvailableCpu(String hostId) {
         updateHostResources(hostId);
         return availableCpu;
     }
 
-    public long getAvailableMem(int hostId) {
+    public long getAvailableMem(String hostId) {
         updateHostResources(hostId);
         return availableMem;
     }

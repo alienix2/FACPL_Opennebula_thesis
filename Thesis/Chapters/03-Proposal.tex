@@ -2,14 +2,14 @@
 
 \chapter{Integrazione di OpenNebula con FACPL}
 \label{cap:proposal}
-Come già discusso nel capitolo \ref{cap:stateOfArt}, grazie al modo in cui FACPL\cite{facpl} è costruito risulta molto facile andare a fornire un'implementazione concreta dei PEP (\emph{Policy Enforcement Point}) e PDP (\emph{Policy Decision Point}) avendo conoscenza  di quali sono le esigenze a cui devono rispondere.\\
+Come già discusso nel capitolo \ref{cap:stateOfArt}, grazie al modo in cui FACPL\cite{facpl} è costruito risulta molto facile andare a fornire un'implementazione concreta dei PEP (\emph{Policy Enforcement Point}) e PDP (\emph{Policy Decision Point}) avendo conoscenza  di quali sono le esigenze a cui devono rispondere.\medbreak
 Per validare ulteriormente questo punto abbiamo deciso di utilizzare FACPL in una situazione in cui fosse necessario interfacciarsi con un software già esistente così da mostrare le effettive potenzialità e semplicità di implementazione della libreria.
 Il caso concreto che abbiamo deciso di considerare deriva da un possibile sviluppo futuro già proposto all'interno di \cite{10.1007/978-3-319-08260-8_6}, ovvero un'integrazione con un "sistema di IaaS open-source sul cloud" come OpenNebula\cite{opennebula}, software che è stato già presentato all'interno del capitolo \ref{cap:stateOfArt}.
 
 \section{Idea di base}
 Per iniziare abbiamo considerato due esempi di gestione delle risorse disponibili aderenti alla realtà e una spiegazione abbastanza dettagliata del loro funzionamento, presenti all'interno di \cite{10.1007/978-3-319-08260-8_6}.
 Abbiamo inoltre potuto osservare due primi tentativi di implementazione descritti sempre all'interno di \cite{10.1007/978-3-319-08260-8_6}:
-\begin{itemize} 
+\begin{itemize}
     \item il primo sviluppato basandosi su una completa astrazione, ovvero dei files che simulano un sistema con diverse virtual machine, che è presente anche in \cite{facpl-github} fra gli esempi nella cartella "\emph{EXAMPLES}"
     \item il secondo basato su uno XEN Hypervisor, che però non è presente fra gli esempi forniti assieme alla libreria e di cui non vengono esplicitati i dettagli di implementazione.
 \end{itemize}
@@ -22,12 +22,10 @@ Nel concreto era quindi necessario pensare a due parti distinte:
 Il cloud manager che abbiamo deciso di utilizzare è stato OpenNebula per i motivi presentati nel capitolo \ref{cap:stateOfArt}
 
 \section{OpenNebula API}
-Il primo approccio che avevamo pensato di percorrere era quello di utilizzare il codice Java per invocare dei comandi da shell che fossero in grando di interagire con OpenNebula. Questo approccio sembrava il più immediato anche dato lo studio preliminare di OpenNebula che avevamo svolto che era stato soprattutto attraverso la shell (oltre che la web ui).\\
+Il primo approccio che avevamo pensato di percorrere era quello di utilizzare il codice Java per invocare dei comandi da shell che fossero in grando di interagire con OpenNebula. Questo approccio sembrava il più immediato anche dato lo studio preliminare di OpenNebula che avevamo svolto che era stato soprattutto attraverso la shell (oltre che la web ui).\medbreak
 Per utilizzare i comandi da shell che permettono di interagire con OpenNebula occorre aver effettuato l'autenticazione come utente OpenNebula\footnote{\url{https://docs.opennebula.io/6.8/management_and_operations/users_groups_management/manage_users.html}}.
-Questa soluzione aveva il principale vantaggio di poter fornire un'interfaccia generica che permettava in un futuro di far interagire con sforzo minimo FACPL anche con comandi di natura completamente diversa, tuttavia presentava anche diverse problematiche come la forte dipendenza dalla versione di OpenNebula installata nel sistema e una grande inefficienza nello svolgimento di alcune operazioni.\\
-
-La strada su cui ci siamo orientati è stata quindi quella di utilizzare le API di OpenNebula per Java\footnote{\url{https://docs.opennebula.io/6.8/integration_and_development/system_interfaces/java.html}} in quanto queste semplificavano l'ottenimento di alcune informazioni. Come è possibile leggere dal sito di OpenNebula stesso, queste API sono a loro volta un wrapper dei metodi XML-RPC\footnote{\url{https://docs.opennebula.io/6.8/integration_and_development/system_interfaces/api.html\#api}}\\
-
+Questa soluzione aveva il principale vantaggio di poter fornire un'interfaccia generica che permettava in un futuro di far interagire con sforzo minimo FACPL anche con comandi di natura completamente diversa, tuttavia presentava anche diverse problematiche come la forte dipendenza dalla versione di OpenNebula installata nel sistema e una grande inefficienza nello svolgimento di alcune operazioni.\medbreak
+La strada su cui ci siamo orientati è stata quindi quella di utilizzare le API di OpenNebula per Java\footnote{\url{https://docs.opennebula.io/6.8/integration_and_development/system_interfaces/java.html}} in quanto queste semplificavano l'ottenimento di alcune informazioni. Come è possibile leggere dal sito di OpenNebula stesso, queste API sono a loro volta un wrapper dei metodi XML-RPC\footnote{\url{https://docs.opennebula.io/6.8/integration_and_development/system_interfaces/api.html\#api}}.
 Le API utilizzate sono quelle della versione 5.12.0\footnote{\url{https://downloads.opennebula.io/packages/opennebula-5.12.0/}} dato che dopo la major version 5 sono compilate con la versione di Java 11 (al contrario di quato riportato sul sito stesso) e di conseguenza non erano compatibili con la versione di Java 8 con cui è stato sviluppato FACPL.
 I principali attori che sono stati utilizzati dalle API\footnote{\url{https://docs.opennebula.io/doc/6.4/oca/java/org/opennebula/client/package-summary.html}} sono stati:
 \begin{itemize}
@@ -36,17 +34,17 @@ I principali attori che sono stati utilizzati dalle API\footnote{\url{https://do
     \item \emph{OneResponse}: è la classe che incapsula le risposta XML-RPC di OpenNebula, viene istanziata con un \emph{boolean} e una \emph{String} che rappresentano rispettivamente l'esito della richiesta (positivo o negativo) e un eventuale messaggio che lo descrive. Quasi tutte le azioni eseguibili sui \emph{PoolElement} ritornano un oggetto di questo tipo.
     \item \emph{Pool}: è la classe che rappresenta un insieme di \emph{PoolElement} e fornisce la possibilità di scorrere gli stessi ed eseguire in modo agevolato alcune operazioni
     \item \emph{PoolElement}: è la superclasse della maggior parte delle classi che rappresentano gli elementi di OpenNebula, quelli più interessati nel progetto sono stati
-    \begin{itemize}
-        \item \emph{VirtualMachine}
-        \item \emph{Host}
-        \item \emph{Template}
-    \end{itemize}
+          \begin{itemize}
+              \item \emph{VirtualMachine}
+              \item \emph{Host}
+              \item \emph{Template}
+          \end{itemize}
 \end{itemize}
 
 \section{Logging}
-Prima ancora di pensare ai comandi da eseguire sulle virtual machine si è reso necessario pensare ad una modalità di logging. Dato l'ambito di applicazione si è reso fondamentale pensare ad una scrittura di logs su file di modo da rendere gli stessi facilmente accessibili in futuro, anche a distanza di tempo.\\
-All'interno del progetto è quindi fornita una classe \texttt{FileLoggerFactory} che utilizza il design pattern \emph{Static Factory Methods} \cite{effectiveJava} e permette di creare dei file di log, di modo da evitare la necessità di interagire coi file in ogni classe che intende eseguire il log di informazioni oltre che gestire in modo consono gli handler dei files evitando duplicati. Questa classe permette di creare dei \texttt{Logger} con un'implementazione di \texttt{Level} e \texttt{Formatter} di default oppure di specificare questi parametri in input.\\
-\begin{lstlisting}[language=Java, caption=Metodo make di FileLoggerFactory, label=code:FileLoggerFactoryMake]
+Prima ancora di pensare ai comandi da eseguire sulle virtual machine si è reso necessario pensare ad una modalità di logging. Dato l'ambito di applicazione si è reso fondamentale pensare ad una scrittura di logs su file di modo da rendere gli stessi facilmente accessibili in futuro, anche a distanza di tempo.\medbreak
+All'interno del progetto è quindi fornita una classe \texttt{FileLoggerFactory} che utilizza il design pattern \emph{Static Factory Methods} \cite{effectiveJava} e permette di creare dei file di log, di modo da evitare la necessità di interagire coi file in ogni classe che intende eseguire il log di informazioni oltre che gestire in modo consono gli handler dei files evitando duplicati. Questa classe permette di creare dei \texttt{Logger} con un'implementazione di \texttt{Level} e \texttt{Formatter} di default oppure di specificare questi parametri in input.
+\begin{lstlisting}[language=Java, caption=Metodo make di FileLoggerFactory, float, label=code:FileLoggerFactoryMake]
 public static Logger make(String fileName, Formatter formatter, Level level) {
     Throwable t = new Throwable();
     StackTraceElement directCaller = t.getStackTrace()[1];
@@ -54,7 +52,7 @@ public static Logger make(String fileName, Formatter formatter, Level level) {
 
     Logger logger = Logger.getLogger(loggerName);
 
-    @\mytikzmark{hl1Start}@if (!isFileHandlerAttached(logger, fileName)) {@\mytikzmark{hl1End}@
+    @+\mytikzmark{hl1Start}@+if (!isFileHandlerAttached(logger, fileName)) {@+\mytikzmark{hl1End}@+
         try {
             FileHandler fileHandler = createFileHandler(fileName, formatter, level);
             logger.addHandler(fileHandler);
@@ -62,15 +60,15 @@ public static Logger make(String fileName, Formatter formatter, Level level) {
         } catch (IOException e) {
             throw new RuntimeException("Failed to initialize logger handler.", e);
         }
-        @\mytikzmark{hl2Start}@}@\mytikzmark{hl2End}@
+    @+\mytikzmark{hl2Start}@+}@+\mytikzmark{hl2End}@+
 
     return logger;
 }
     \end{lstlisting}
-    \begin{tikzpicture}[remember picture, overlay]
-        \highlight{hl1Start}{hl1End}
-        \highlight{hl2Start}{hl2End}
-    \end{tikzpicture}
+\begin{tikzpicture}[remember picture, overlay]
+    \highlight{hl1Start}{hl1End}
+    \highlight{hl2Start}{hl2End}
+\end{tikzpicture}
 Nonostante la presenza di questa classe, tutte le classi all'interno del progetto hanno i logger passati tramite dependency injection e forniscono un'implementazione di default che esegue logging nello stsandard output (solitamente la console). L'unica classe che fa eccezione in questo è proprio \texttt{ContextStub\_Default} che è il primo punto di ingresso della dipendenza.\\
 L'idea è che nel caso in cui si preferisca eseguire logging in modo diverso si possa definire un logger diverso al posto dell'implementazione proposta. Per farlo occorre semplicemente modificare una riga all'interno del costruttore di \texttt{ContextStub\_Default}:
 \begin{lstlisting}[language=Java, caption=Costruttore ContextStub\_Default, label=code:CostContextStub]
@@ -78,7 +76,7 @@ public static ContextStub_Default getInstance() {
     if (instance == null) {
         try {
             ContextStub_Default.oneClient = new Client();
-            @\mytikzmark{hl1Start}@Logger logger =@\mytikzmark{hl1End}@ @\mytikzmark{hl2Start}@FileLoggerFactory.make("logs/virtualMachines.log");@\mytikzmark{hl2End}@
+            @+\mytikzmark{hl1Start}@+Logger logger =@+\mytikzmark{hl1End}@+ @+\mytikzmark{hl2Start}@+FileLoggerFactory.make("logs/virtualMachines.log");@+\mytikzmark{hl2End}@+
             initializeStub(oneClient, logger);
             instance = new ContextStub_Default();
         } catch (ClientConfigurationException e) {
@@ -94,8 +92,7 @@ public static ContextStub_Default getInstance() {
     \highlight{hl1Start}{hl1End}
     \highlight{hl2Start}{hl2End}
 \end{tikzpicture}
-
-\section{Gestione delle virtual machine}
+\section{Gestione delle virtual machine generiche}
 Per gestire le virtual machine l'approccio iniziale è stato quello di fornire un'interfaccia che permettesse in un futuro di poter interagire con le stesse anche in modo.\\
 E' stata creata una classe wrapper chiamata \texttt{VMDescriptor} che contiene le informazioni sulle virtual machine utili per il nostro progetto, questa classe serve per creare una prima astrazione dalle API utilizzate, in effetti questa stessa classe permetterebbe, ad esempio, di fornire un'implementazione come quella precedentemente pensata basata sui comandi da shell.
 L'interfaccia \texttt{VirtualMachineService} presenta due metodi che servono per lavorare all'effettivo con i \texttt{VMDescriptor}.
@@ -105,8 +102,161 @@ public interface VirtualMachineService {
     List<VMDescriptor> getRunningVirtualMachineInfo();
 }
 \end{lstlisting}
-La scelta di avere due metodi separati per restituire tutte le macchine virtuali oppure solo quelle attualmente in esecuzione deriva dal fatto che in effetti spesso queste due liste vorranno essere utilizzate in modo diverso. Di solito le VirtualMachine presenti nel sistema sono molte più di quelle effettivamente in esecuzione e questo avrebbe portato una buona parte delle classi che volevano utilizzare un'implementazione di questa interfaccia a dover sempre inserire un controllo sullo stato delle VM.
-Nel codice da me scritto viene utilizzata la sua implementazione concreta \texttt{VirtualMachineService} che, interfacciandosi con le API di OpenNebula già descritte, riesce ad ottenere tutte le informazioni richieste sulle VM e a popolare le liste.
+La scelta di avere due metodi separati per restituire tutte le macchine virtuali oppure solo quelle attualmente in esecuzione deriva dal fatto che in effetti spesso queste due liste vorranno essere utilizzate in modo diverso. Di solito le VirtualMachine presenti nel sistema sono molte più di quelle effettivamente in esecuzione e quindi non inserire il secondo metodo avrebbe portato una buona parte delle classi che volevano utilizzare un'implementazione di questa interfaccia a dover sempre inserire un controllo sullo stato delle virtual machine.
+Nel codice da me scritto viene utilizzata la sua implementazione concreta \texttt{OpenNebulaVMService} che, interfacciandosi con le API di OpenNebula già descritte, riesce ad ottenere tutte le informazioni richieste sulle VM e a popolare le liste.\\
+Una volta ottenuta una lista di \texttt{VMDescriptor} è possibile filtrare le virtual machine sia a partire dal nome che a partire da altre loro caratteristiche come l'\emph{ID} o il \emph{template} utilizzato per crearle come spiegato nel capitolo \ref{cap:stateOfArt}.
+È stata implementata un'ulteriormente classe di comodo che mette a disposizione la possibilità di eseguire alcuni tipi di filtraggio sulle virtual machine in automatico, questa classe fornisce inoltre un meccaniscmo di logging ogni volta che viene eseguita un'operazione di filtraggio, come si può vedere nel codice di esempio:
+\begin{lstlisting}[language=Java, label=code:VMsInfoLogging]
+private List<VMDescriptor> getAndLogVMs() {
+    List<VMDescriptor> vmDescriptors = vmService.getRunningVirtualMachineInfo();
+    logger.info("The VMs running are: " + vmDescriptors.toString());
+    return vmDescriptors;
+}
+\end{lstlisting}
+\begin{lstlisting}[language=Java, label=code:VMsInfoFilter]
+public List<VMDescriptor> getRunningVMsByHostTemplate(String host, String templateId) {
+    return getAndLogVMs()
+            .stream()
+            .filter(x -> x.getHostId().equals(host) && x.getTemplateId().equals(templateId))
+            .collect(Collectors.toList());
+}
+\end{lstlisting}
+\captionof{lstlisting}{Esempio di metodo di filtraggio e metodo di logging}
+Non è necessario usare questa classe, però risulta comoda per fare sì che le classi che si occupano di eseguire un comando su una o più virtual machine non abbiano anche il compito di eseguire il filtraggio e fare logging.
+
+\section{gestione delle virtual machine di OpenNebula}
+Da qui in avanti saranno presentate tutte le classi che interagiscono effettivamente con degli oggetti che rappresentano delle \texttt{VirtualMachine} come indicato nelle API di OpenNebula.
+La prima classe implementata è \texttt{OpenNebulaActionContext}, questa classe può essere istanziata usando un \texttt{Client} (e opzionalmente anche un \texttt{Logger}) e fornisce semplicemente uno stato da utilizzare per eseguire i comandi che richiedono informazioni sulle \texttt{VirtualMachine} attualmente in esecuzione, che in questo caso concreto saranno tutti tranne la creazione di una nuova virtual machine.\\
+La classe per eseguire i comandi ha la seguente base:
+\begin{lstlisting}[language=Java, caption=Classe astratta per i comandi, label=code:OpenNebulaActionBase]
+public abstract class OpenNebulaActionBase implements IPepAction{
+    protected final OpenNebulaActionContext ONActionContext;
+
+    public OpenNebulaActionBase(OpenNebulaActionContext ONActionContext) {
+        this.ONActionContext = ONActionContext;
+    }
+    
+    public abstract void eval(List<Object> args);
+    
+    protected void logResponse(OneResponse response) {
+        if (response.isError()) {
+            ONActionContext.getLogger().severe(response.getErrorMessage());
+        } else {
+            ONActionContext.getLogger().info(response.getMessage());
+        }
+    }
+}
+\end{lstlisting}
+Per questa classe è stato valutato l'utilizzo di un \texttt{Themplate method}, tuttavia risultava abbastanza scomodo da applicare dato che alcune delle classi concrete potrebbero dover seguire un workflow diverso fra loro (es. sospensione di una virtual machine e creazione di una virtual machine) per il modo in cui le API di OpenNebula sono scritte. Inoltre si suppone la possibilità di scrivere comandi futuri che agiscano su più di una virtual machine in un solo comando, questa logica era già stata testata ma non si è rivelata necessaria nel nostro caso concreto e di conseguenza è stata successivamente rimossa ma il modo in cui è scritta la classe astratta lascia spazio ad una facile implementazione concreta.\medbreak
+L'approccio scelto è quello di costruire l'oggetto di tipo \texttt{VirtualMachine} corrispondente all'ID ottenibile dal \texttt{VMdescriptor}. Questo passaggio può sembrare controintuitivo perchè partendo da un oggetto \texttt{VirtualMachine} si ottengono le sue informazioni per poi andare a ricreare un oggetto sostanzialmente identico per eseguire le operazioni, tuttavia questi passaggi hanno diversi lati positivi:
+\begin{itemize}
+    \item Rendono il codice indipendente dalla modalità con cui si ottengono le informazioni sulle virtual machine
+    \item Rendono il codice più aperto a modifiche e future implementazioni
+    \item Rendono il codice molto più semplice da testare
+    \item Isolano l'ottenimento delle informazioni ad una classe che estende \texttt{OpenNebulaVMService}
+\end{itemize}
+Le classi concrete per eseguire i comandi sulle virtual machine a partire da questa classe hanno tutte chiaramente una forma simile sebbene con alcuni accorgimenti.
+\begin{lstlisting}[language=Java, caption=Classe per avviare una \texttt{VirtualMachine}, label=code:CreateVM, basicstyle=\fontsize{8.5}{13}\ttfamily]
+public class CreateVM extends OpenNebulaActionBase {
+	public CreateVM(OpenNebulaActionContext ONActionContext) {
+		super(ONActionContext);
+	}
+
+	public void eval(List<Object> args) {
+		ONActionContext.getLogger().info("Starting VM: " + "[" + args.get(2) + ", " + args.get(1) + "]");
+		Template template = new Template((int) args.get(2), ONActionContext.getClient());
+		OneResponse instantiateResponse = template.instantiate((String) args.get(1));
+		logResponse(instantiateResponse);
+		if (!instantiateResponse.isError()){
+			VirtualMachine vm = 
+					new VirtualMachine(instantiateResponse.getIntMessage(), ONActionContext.getClient());
+			logResponse(vm.deploy((int) args.get(0)));
+		}		
+	}
+}
+\end{lstlisting}
+\begin{lstlisting}[language=Java, caption=Classe per freezzare(sospendere) una \texttt{VirtualMachine}, label=code:FreezeVM, basicstyle=\fontsize{8.5}{13}\ttfamily]
+public class FreezeVM extends OpenNebulaActionBase {
+	public FreezeVM(OpenNebulaActionContext ONActionContext) {
+		super(ONActionContext);
+	}
+
+	public void eval(List<Object> args) {
+		ONActionContext.getLogger().info("Suspending (Freezing) 1 VM of [host, template]: " + "[" + args.get(0) + " " + args.get(2) + "]");
+		List<VMDescriptor> suspendList = 
+				ONActionContext.getVMsInfo()
+                    .getRunningVMsByHostTemplate((String)args.get(0), (String)args.get(2));
+		if (suspendList.isEmpty()) {
+			ONActionContext.getLogger().severe("No VM found");
+            return;
+        }
+		logResponse(
+				new VirtualMachine(Integer.parseInt(suspendList.get(0).getVmId()), ONActionContext.getClient())
+				.suspend());
+	}
+}
+\end{lstlisting}
+
+La classe \texttt{CreateVM}, utilizza un oggetto di tipo \texttt{Template}, che, come già anticipato all'interno del capitolo \ref{cap:stateOfArt} permette di definire le caratteristiche per la creazione di una specifica virtual machine. Nel nostro caso concreto l'oggetto template risulta utilissimo per fare sì che la definizione delle caratteristiche delle virtual machine da utilizzare sia fatta attraverso la UI di OpenNebula (o comunque con dei file appositi validati da OpenNebula tramite UI o comando da shell). Nel caso di studio\footnote{\cite{10.1007/978-3-319-08260-8_6}} vengono considerati due tipi di virtual machine istanziabili, quindi nei nostri test abbiamo spesso considerato due template che fossero in grado di riprodurre i comportamenti richiesti, tuttavia grazie al \texttt{Template} si apre la strada all'utilizzo di virtual machine dalle caratteristiche più disparate senza neanche bisogno di cambiare il codice Java. Infatti grazie al modo in cui è scritto il codice basta definire in OpenNebula un nuovo template e utilizzare il suo ID all'interno di policy e richieste FACPL per poter creare (o distruggere, frezzare ecc.) delle virtual machine di quel tipo.\medbreak
+
+La classe \texttt{suspendVM} dall'altra parte raffigura la struttura che hanno tutti i comandi che agiscono sulle virtual machine attualmente in esecuzione, viene eseguita una ricerca per \texttt{Host} e \texttt{Template} fra tutte le virtual machine in esecuzione e dopodichè viene creato un oggetto di tipo \texttt{VirtualMachine} su cui eseguire in effettivo il comando, il tutto con appropriato logging a contorno. La necessità di filtrare per \texttt{Host} e \texttt{Template} è definita dalle politiche che stiamo applicando nel caso concreto.
+
+\section{Interazione con il ContextStub}
+La gestione della classe \texttt{ContextStub\_Default} è definita dall'implementazione in Java di FACPL, la classe è stata quindi soltanto modificata affinchè potesse recuperare le informazioni necessarie ad eseguire le valutazioni sullo stato del sistema, in particolare sono stati aggiunte le seguenti variabili di sistema:
+\begin{lstlisting}[language=Java, caption=Context di OpenNebula, label=code:ContextStubChoice, basicstyle=\fontsize{9}{13}\ttfamily]
+@Override
+public Object getContextValues(AttributeName attribute) {
+    ...
+    if (attribute.getCategory().equals("system") && attribute.getIDAttribute().equals("vm-name")) {
+        @+\mytikzmark{hl1Start}@+return UUID.randomUUID().toString();@+\mytikzmark{hl1End}@+
+    }
+
+    if (attribute.getCategory().equals("system") && attribute.getIDAttribute().equals("hyper1.vm-names")) {
+        @+\mytikzmark{hl2Start}@+Set runningHyper1VMs = new Set();@+\mytikzmark{hl2End}@+
+        vmsInfo.getRunningVMsByHost(hyper1HostId).forEach(vm -> runningHyper1VMs.addValue(vm.getVmName()));
+        return runningHyper1VMs;
+    }@+\begin{tikzpicture}[remember picture, overlay]
+        \highlight{hl1Start}{hl1End}
+        \highlight{hl2Start}{hl2End}
+    \end{tikzpicture}@+
+    if (attribute.getCategory().equals("system") && attribute.getIDAttribute().equals("hyper2.vm-names")) {
+        Set runningHyper2VMs = new Set();
+        vmsInfo.getRunningVMsByHost(hyper2HostId).forEach(vm -> runningHyper2VMs.addValue(vm.getVmName()));
+        return runningHyper2VMs;
+    }
+    if (attribute.getCategory().equals("system") && attribute.getIDAttribute().equals("hyper1.vm1-counter")) {
+        return vmsInfo.countRunningVMsByHost(hyper1HostId).doubleValue();
+    }
+    if (attribute.getCategory().equals("system") && attribute.getIDAttribute().equals("hyper2.vm1-counter")) {
+        return vmsInfo.countRunningVMsByHost(hyper2HostId).doubleValue();
+    }
+    if (attribute.getCategory().equals("system")
+            && attribute.getIDAttribute().equals("hyper1.availableResources")) {
+        @+\mytikzmark{hl3Start}@+return hostInfo.getAvailableCpu(hyper1HostId);@+\mytikzmark{hl3End}@+
+    }
+    if (attribute.getCategory().equals("system")
+            && attribute.getIDAttribute().equals("hyper2.availableResources")) {
+        return hostInfo.getAvailableCpu(hyper2HostId);
+    }
+    return null;
+}
+\end{lstlisting}
+\begin{tikzpicture}[remember picture, overlay]
+    \highlight{hl3Start}{hl3End}
+
+\end{tikzpicture}
+Guardando questo snippet notiamo alcune parti da evidenziare:\\
+\begin{itemize}
+    \item \texttt{UUID.randomUUID().toString()} è un metodo che permette di ottenere un identificativo unico che verrà usato come nome per le virtual machine. In OpenNebula le virtual machine non sono istanziabili a partire da un ID, dato che questo viene assegnato dal software alla creazione, tuttavia è possibile assegnare un nome ad una virtual machine e quindi quello che abbiamo deciso di fare è usare il nome come identificativo all'interno del nostro progetto. Questa logica permette di assegnare degli identificativi più significativi in un futuro se fosse necessario e permette di disaccoppiare la nostra logica dalla logica con cui OpenNebula associa gli ID.
+    \item \texttt{Set} è una classe libreria di FACPL per Java che permette di creare un insieme di oggetti, l'utilizzo di un oggetto di questo tipo è obbligatorio per usare i metodi di confronto presenti nella libreria, usare un oggetto della classe \texttt{Set} incluso nelle Collections causerà un errore nell'analisi delle Policy
+    \item \texttt{hostInfo} è un oggetto della classe \texttt{HostInfo}, questa classe non è stata presentata ma è semplicemente una classe che permette, come si può notare dal codice, di ottenere informazioni riguardo CPU e quantità di memoria disponibili.
+    \item Come si può notare ci sono diverse parti di codice in cui si fa riferimento a \texttt{host1Info} e \texttt{host2Info}, questi due parametri sono letti direttamente dal file \texttt{config.properties} locato nella directory del progetto grazie all'utilizzo di alcuni metodi forniti all'interno della libreria \texttt{Apache Commons}:
+    \begin{lstlisting}[language=Java, caption=Importazione dal file \texttt{config.properties}, label=code:hostConfigImport]
+Configuration config = new Configurations().properties(CONFIG_FILE);
+hyper1HostId = config.getString("hyper1.host.id");
+hyper2HostId = config.getString("hyper2.host.id");    
+        \end{lstlisting}
+\end{itemize}
 
 \section{How did I discover a novel type of heated water}
 
@@ -197,16 +347,16 @@ public class ObjectVarsAsParameters
 \end{lstlisting}
 
 \begin{table}[tbp]
-\centering
-\caption{Example table}
-\label{tab:example}
-\begin{tabular}{@{}lll@{}}
-\toprule
-Country       & Country code & ISO codes \\ \midrule
-Canada        & 1            & CA / CAN  \\
-Italy         & 39           & IT / ITA  \\
-Spain         & 34           & ES / ESP  \\
-United States & 1            & US / USA  \\ \bottomrule
-\end{tabular}
+    \centering
+    \caption{Example table}
+    \label{tab:example}
+    \begin{tabular}{@{}lll@{}}
+        \toprule
+        Country       & Country code & ISO codes \\ \midrule
+        Canada        & 1            & CA / CAN  \\
+        Italy         & 39           & IT / ITA  \\
+        Spain         & 34           & ES / ESP  \\
+        United States & 1            & US / USA  \\ \bottomrule
+    \end{tabular}
 \end{table}
 

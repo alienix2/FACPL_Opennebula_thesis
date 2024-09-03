@@ -8,7 +8,7 @@ import org.opennebula.client.Client;
 
 class HostInfoTest {
 
-	private static final int TEST_HOST_ID = 123;
+	private static final String TEST_HOST_ID = "123";
 	private Client validMockClient;
 	private Client invalidMockClient;
 	private HostInfo hostInfo;

@@ -36,3 +36,15 @@ INFO opennebula_api.ReleaseVM.eval: Powering off (Releasing) the VM: HYPER1_TYPE
 INFO opennebula_api.VMsInfo.getAndLogVMs: The VMs running are: [VMDescriptor [vmId=747, vmName=HYPER1_TYPE1-747, templateId=6, host=6, state=ACTIVE, virtualMachine=]
 ]
 INFO opennebula_api.OpenNebulaActionBase.logResponse: 747
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 0: [CPU, MEM]: [800,16240352]
+INFO opennebula_api.CreateVM.eval: Starting VM: [6, 2b97c1dd-3e95-4e9c-b2bc-4e138a284f82]
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 760
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 760
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 0: [CPU, MEM]: [700,15453920]
+INFO opennebula_api.CreateVM.eval: Starting VM: [4, 09e08f38-71ed-47ad-a022-153b5b175c9b]
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 761
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 761
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 0: [CPU, MEM]: [500,14667488]
+INFO opennebula_api.CreateVM.eval: Starting VM: [6, 1c6a6534-cf5b-4aa3-b170-c931837aebd2]
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 762
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 762

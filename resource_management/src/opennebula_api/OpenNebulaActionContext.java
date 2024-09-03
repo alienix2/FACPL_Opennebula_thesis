@@ -14,6 +14,12 @@ public class OpenNebulaActionContext {
         this.logger = logger;
         this.vmsInfo = VMsInfo.withCustomLogger(new OpenNebulaVMService(oneClient), logger);
     }
+    
+    public OpenNebulaActionContext(Client oneClient) {
+        this.oneClient = oneClient;
+        logger = Logger.getLogger(VMsInfo.class.getName());
+        this.vmsInfo = VMsInfo.withDefaultLogger(new OpenNebulaVMService(oneClient));
+    }
 
     public Client getClient() {
         return oneClient;
