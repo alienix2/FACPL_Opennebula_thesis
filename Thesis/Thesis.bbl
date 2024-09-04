@@ -1,8 +1,4 @@
-\begin{thebibliography}{1}
-
-\bibitem{opennebula}
-Opennebula.
-\newblock \url{https://opennebula.io/}.
+\begin{thebibliography}{10}
 
 \bibitem{effectiveJava}
 Joshua Bloch.
@@ -13,6 +9,17 @@ Joshua Bloch.
 Ross Callon.
 \newblock {The Twelve Networking Truths}.
 \newblock RFC 1925, April 1996.
+
+\bibitem{opennebula}
+OpenNebula Community.
+\newblock Opennebula.
+\newblock \url{https://opennebula.io/}.
+
+\bibitem{GOF}
+Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides.
+\newblock {\em Design Patterns: Elements of Reusable Object-Oriented Software}.
+\newblock Addison-Wesley, Reading, MA, 1994.
+\newblock Professional eBook edition.
 
 \bibitem{knuth97}
 Donald~E. Knuth.
@@ -42,5 +49,9 @@ Andrea Margheri, Massimiliano Masi, Rosario Pugliese, and Francesco Tiezzi.
 John Nash.
 \newblock Non-cooperative games.
 \newblock {\em Annals of Mathematics}, 54(2):286--295, 1951.
+
+\bibitem{apache_commons}
+{The Apache Software Foundation}.
+\newblock Apache commons, 2024.
 
 \end{thebibliography}

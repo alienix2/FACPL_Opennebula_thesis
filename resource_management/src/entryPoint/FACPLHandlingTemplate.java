@@ -5,46 +5,47 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.logging.Logger;
 
-import utilities.CodeExecutor;
+import org.apache.commons.configuration2.builder.fluent.Configurations;
+
+import utilities.ClassSetup;
+import utilities.CodeExecutorInterface;
 import utilities.FileLoggerFactory;
-import utilities.OpenNebulaFACPLClassSetup;
 
 public abstract class FACPLHandlingTemplate {
 
+	private final String CONFIG_FILE = "config.properties";
     protected Logger logger;
-    protected CodeExecutor executor;
+    protected CodeExecutorInterface executor;
     protected String javaFilesDir;
+    protected ClassSetup setupper;
 
     public FACPLHandlingTemplate(String logFilePath, String javaFilesDir) throws IOException {
         this.logger = FileLoggerFactory.make(logFilePath);
-        this.executor = new CodeExecutor(javaFilesDir, logger);
         this.javaFilesDir = javaFilesDir;
     }
     
     public FACPLHandlingTemplate(Logger logger, String javaFilesDir) throws IOException {
         this.logger = logger;
-        this.executor = new CodeExecutor(javaFilesDir, logger);
         this.javaFilesDir = javaFilesDir;
     }
 
     public final void execute(String[] args) throws Exception {
         try {
             List<String> fileLocations = Arrays.asList(args[0]);
-
-            setup(fileLocations);
+            initializeConcreteSetupperExecutor(fileLocations);
+            setup();
             compile();
             postProcess();
-
         } catch (Exception e) {
             logger.severe("An error occurred: " + e.getMessage());
-            e.printStackTrace();
             throw e;
         }
     }
+    
+    protected abstract void initializeConcreteSetupperExecutor(List<String> fileLocations) throws Exception;
 
-    protected void setup(List<String> fileLocations) throws Exception {
-        OpenNebulaFACPLClassSetup setup = new OpenNebulaFACPLClassSetup(logger, fileLocations);
-        setup.setup("opennebula_context_actions", javaFilesDir);
+    protected void setup() throws Exception {
+        setupper.setup(new Configurations().properties(CONFIG_FILE).getString("context.file.location"), javaFilesDir);
     }
 
     protected void compile() throws Exception {
@@ -57,6 +58,5 @@ public abstract class FACPLHandlingTemplate {
         }
     }
 
-    protected abstract void postProcess() throws Exception; // This will be implemented by subclasses
+    protected abstract void postProcess() throws Exception;
 }
-

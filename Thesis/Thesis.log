@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.9.1)  3 SEP 2024 14:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.9.1)  4 SEP 2024 11:18
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -641,12 +641,7 @@ Package tocloft Info: The document has chapter divisions on input line 51.
 \listingslabelwidth=\skip131
  Using KOMA-command "deffootnote" for footnote setup (/usr/share/texlive/texmf-dist/tex/latex/koma-script/scrtime.sty
 Package: scrtime 2020/01/24 v3.29 KOMA-Script package (time of LaTeX run)
-) (/usr/share/texlive/texmf-dist/tex/latex/carlisle/remreset.sty
-
-Package remreset Warning: The remreset package is obsolete:
-(remreset)                \@removefomresset is defined.
-
-) (/usr/share/texlive/texmf-dist/tex/latex/minted/minted.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/carlisle/remreset.sty) (/usr/share/texlive/texmf-dist/tex/latex/minted/minted.sty
 Package: minted 2017/07/19 v2.5 Yet another Pygments shim for LaTeX
  (/usr/share/texlive/texmf-dist/tex/latex/fvextra/fvextra.sty
 Package: fvextra 2019/02/04 v1.4 fvextra - extensions and patches for fancyvrb
@@ -1401,26 +1396,36 @@ Package microtype Info: Character `029' is missing
 (microtype)             Ignoring protrusion settings for this character.
  [13] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
-) [14] [15]
+) [14] [15] [16]
 
 Package caption Warning: \captionsetup{type*=...} or \captionof
-(caption)                outside box or environment on input line 124.
+(caption)                outside box or environment on input line 131.
 See the caption package documentation for explanation.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 124.
+(caption)                particular \caption on input line 131.
 See the caption package documentation for explanation.
 
-[16] [17]
+[17]
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 7.22505pt on input line 159.
+(Font)              scaled to size 7.22505pt on input line 167.
  [18] [19] [20]
-Underfull \hbox (badness 10000) in paragraph at lines 247--249
+Underfull \hbox (badness 10000) in paragraph at lines 254--256
 
  []
 
-[21]
+[21] [22]
+Overfull \hbox (4.03221pt too wide) in paragraph at lines 319--320
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[23] [24]
+Underfull \hbox (badness 2042) in paragraph at lines 379--380
+[]\T1/fvm/m/n/12 classGenerator \T1/pplx/m/n/12 (+20) è un og-get-to crea-to a par-ti-re dal-la clas-se
+ []
+
+[25]
 \openout3 = `Thesis.pyg'.
 
  (/var/lib/one/eclipse-workspace/Thesis/_minted-Thesis/default-pyg-prefix.pygstyle) (/var/lib/one/eclipse-workspace/Thesis/_minted-Thesis/tango.pygstyle) (/var/lib/one/eclipse-workspace/Thesis/_minted-Thesis/57F4AEA5A657C6BAE065646BDA1F6151652400CCFCF6585C49CDA9A099C65A39.pygtex
@@ -1430,17 +1435,17 @@ LaTeX Font Info:    Font shape `T1/fvm/m/it' in size <8> not available
 (Font)              Font shape `T1/fvm/m/sl' tried instead on input line 14.
 LaTeX Font Info:    Font shape `T1/fvm/m/sl' will be
 (Font)              scaled to size 6.80005pt on input line 14.
-) [22]) [23] [24]
+) [26]) [27] [28]
 \openout2 = `Chapters/04-Evaluation.aux'.
 
  (/var/lib/one/eclipse-workspace/Thesis/Chapters/04-Evaluation.tex
 Capitolo 4.
-<./Figures/DaveSecurity.jpg, id=396, 602.25pt x 418.56375pt>
+<./Figures/DaveSecurity.jpg, id=521, 602.25pt x 418.56375pt>
 File: ./Figures/DaveSecurity.jpg Graphic file (type jpg)
 <use ./Figures/DaveSecurity.jpg>
 Package pdftex.def Info: ./Figures/DaveSecurity.jpg  used on input line 11.
 (pdftex.def)             Requested size: 268.87737pt x 186.8766pt.
-) [25
+) [29
 
 
 
@@ -1450,21 +1455,21 @@ Package pdftex.def Info: ./Figures/DaveSecurity.jpg  used on input line 11.
 
  (/var/lib/one/eclipse-workspace/Thesis/Chapters/05-Conclusions.tex
 Capitolo 5.
-[26
+[30
 
 
 
 
-]) [27] (/var/lib/one/eclipse-workspace/Thesis/Thesis.bbl [28
+]) [31] (/var/lib/one/eclipse-workspace/Thesis/Thesis.bbl [32
 
 
 
 ]
-Underfull \hbox (badness 4217) in paragraph at lines 24--27
+Underfull \hbox (badness 3019) in paragraph at lines 31--34
 []\T1/pplx/m/n/12 (+20) Andrea Mar-ghe-ri.  Fa-c-pl do-cu-men-ta-tion.  [][]$\T1/fvm/m/n/12 https : / / facpl .
  []
 
-) [29]
+) [33]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 125.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 125.
  (/var/lib/one/eclipse-workspace/Thesis/Thesis.aux (/var/lib/one/eclipse-workspace/Thesis/FrontMatter/Titlepage.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/01-Introduction.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/02-StateOfTheArt.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/03-Proposal.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/04-Evaluation.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/05-Conclusions.aux))
@@ -1476,18 +1481,18 @@ runsystem(rm Thesis.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 37402 strings out of 481239
- 758983 string characters out of 5920378
- 1414328 words of memory out of 5000000
- 51354 multiletter control sequences out of 15000+600000
- 638823 words of font info for 343 fonts, out of 8000000 for 9000
+ 37641 strings out of 481239
+ 762746 string characters out of 5920378
+ 1415041 words of memory out of 5000000
+ 51481 multiletter control sequences out of 15000+600000
+ 639269 words of font info for 349 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,23n,94p,10139b,2400s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 72i,23n,94p,10139b,2413s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /var/lib/one/eclipse-workspace/Thesis/Thesis.pdf (31 pages, 840652 bytes).
+Output written on /var/lib/one/eclipse-workspace/Thesis/Thesis.pdf (35 pages, 856098 bytes).
 PDF statistics:
- 549 PDF objects out of 1000 (max. 8388607)
- 500 compressed objects within 5 object streams
- 240 named destinations out of 1000 (max. 500000)
- 101007 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 702 PDF objects out of 1000 (max. 8388607)
+ 647 compressed objects within 7 object streams
+ 344 named destinations out of 1000 (max. 500000)
+ 101023 words of extra memory for PDF output out of 106986 (max. 10000000)
 

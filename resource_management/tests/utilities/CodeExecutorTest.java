@@ -17,15 +17,15 @@ public class CodeExecutorTest {
     Path tempDir;
 
     private Logger logger;
-    private CodeExecutor codeExecutor;
+    private BaseCodeExecutor codeExecutor;
     private StringBuilderLogHandler logHandler;
 
     @BeforeEach
     void setUp() {
         logHandler = new StringBuilderLogHandler();
-        logger = Logger.getLogger(CodeExecutor.class.getName());
+        logger = Logger.getLogger(BaseCodeExecutor.class.getName());
         logger.addHandler(logHandler);
-        codeExecutor = new CodeExecutor(tempDir.toString(), logger);
+        codeExecutor = new BaseCodeExecutor(tempDir.toString(), logger);
     }
 
     @Test

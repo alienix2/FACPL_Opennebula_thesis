@@ -16,12 +16,12 @@ import java.util.stream.Stream;
 import javax.tools.JavaCompiler;
 import javax.tools.ToolProvider;
 
-public class CodeExecutor {
+public class BaseCodeExecutor implements CodeExecutorInterface{
 
     private final String outputDir;
     private final Logger logger;
 
-    public CodeExecutor(String outputDir, Logger logger) {
+    public BaseCodeExecutor(String outputDir, Logger logger) {
         this.outputDir = outputDir;
         this.logger = logger;
     }

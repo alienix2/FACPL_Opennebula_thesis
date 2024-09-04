@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.logging.Logger;
 
-public class OpenNebulaFACPLClassSetup {
+public class OpenNebulaFACPLClassSetup implements ClassSetup{
 
     private final Logger logger;
     OpenNebulaFACPLClassGenerator classGenerator;
@@ -24,6 +24,7 @@ public class OpenNebulaFACPLClassSetup {
         this.classGenerator = classGenerator;
     }
 
+    @Override
     public void setup(String additionalFilesFolder, String outputFolder) {
         logger.info("Starting setup...");
 
@@ -39,8 +40,8 @@ public class OpenNebulaFACPLClassSetup {
         try {
             FolderContentHandler folderManager = new FolderContentHandler(logger);
             folderManager.processFolderContents("tmp/FACPLFiles/", outputFolder, new MoveStrategy());
-            //folderManager.processFolderContents(additionalFilesFolder, outputFolder, new CopyStrategy());
-            logger.info("Folder contents moved successfully.");
+            folderManager.processFolderContents(additionalFilesFolder, outputFolder, new CopyStrategy());
+            logger.info("Folder contents handled successfully.");
         } catch (IOException e) {
             logger.severe("Failed to move folder contents: " + e.getMessage());
             e.printStackTrace();

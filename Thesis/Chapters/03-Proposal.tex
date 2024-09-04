@@ -75,18 +75,25 @@ L'idea è che nel caso in cui si preferisca eseguire logging in modo diverso si 
 public static ContextStub_Default getInstance() {
     if (instance == null) {
         try {
+            Configuration config = new Configurations().properties(CONFIG_FILE);
+            hyper1HostId = config.getString("hyper1.host.id");
+            hyper2HostId = config.getString("hyper2.host.id");
             ContextStub_Default.oneClient = new Client();
-            @+\mytikzmark{hl1Start}@+Logger logger =@+\mytikzmark{hl1End}@+ @+\mytikzmark{hl2Start}@+FileLoggerFactory.make("logs/virtualMachines.log");@+\mytikzmark{hl2End}@+
-            initializeStub(oneClient, logger);
+            @+\mytikzmark{hl1Start}@+Logger logger =@+\mytikzmark{hl1End}@+ @+\mytikzmark{hl2Start}@+FileLoggerFactory.make("logs/virtualMachines.log");@+\mytikzmark{hl2End}@+				inizializeStub(oneClient, logger);
             instance = new ContextStub_Default();
         } catch (ClientConfigurationException e) {
             throw new RuntimeException("Failed to initialize Client: " + e.getMessage(), e);
+        } catch (ConfigurationException e) {
+            throw new RuntimeException(
+                    "Errors in the config gile: " + e.getMessage(), e);
         } catch (Exception e) {
-            throw new RuntimeException("Unexpected error during ContextStub_Default initialization: " + e.getMessage(), e);
+            throw new RuntimeException(
+                    "Unexpected error during ContextStub_Default initialization: " + e.getMessage(), e);
         }
     }
     return instance;
 }
+
 \end{lstlisting}
 \begin{tikzpicture}[remember picture, overlay]
     \highlight{hl1Start}{hl1End}
@@ -147,7 +154,8 @@ public abstract class OpenNebulaActionBase implements IPepAction{
     }
 }
 \end{lstlisting}
-Per questa classe è stato valutato l'utilizzo di un \texttt{Themplate method}, tuttavia risultava abbastanza scomodo da applicare dato che alcune delle classi concrete potrebbero dover seguire un workflow diverso fra loro (es. sospensione di una virtual machine e creazione di una virtual machine) per il modo in cui le API di OpenNebula sono scritte. Inoltre si suppone la possibilità di scrivere comandi futuri che agiscano su più di una virtual machine in un solo comando, questa logica era già stata testata ma non si è rivelata necessaria nel nostro caso concreto e di conseguenza è stata successivamente rimossa ma il modo in cui è scritta la classe astratta lascia spazio ad una facile implementazione concreta.\medbreak
+Per questa classe è stato valutato l'utilizzo di un \texttt{Themplate method}, tuttavia risultava abbastanza scomodo da applicare dato che alcune delle classi concrete potrebbero dover seguire un workflow diverso fra loro (es. sospensione di una virtual machine e creazione di una virtual machine) per il modo in cui le API di OpenNebula sono scritte. Inoltre si suppone la possibilità di scrivere comandi futuri che agiscano su più di una virtual machine in un solo comando, questa logica era già stata testata ma non si è rivelata necessaria nel nostro caso concreto e di conseguenza è stata successivamente rimossa ma il modo in cui è scritta la classe astratta lascia spazio ad una facile implementazione concreta in questo senso.\medbreak
+La scelta del nome \texttt{eval} è obbligata dal modo in cui FACPL accederà alla classe per eseguire i comandi.
 L'approccio scelto è quello di costruire l'oggetto di tipo \texttt{VirtualMachine} corrispondente all'ID ottenibile dal \texttt{VMdescriptor}. Questo passaggio può sembrare controintuitivo perchè partendo da un oggetto \texttt{VirtualMachine} si ottengono le sue informazioni per poi andare a ricreare un oggetto sostanzialmente identico per eseguire le operazioni, tuttavia questi passaggi hanno diversi lati positivi:
 \begin{itemize}
     \item Rendono il codice indipendente dalla modalità con cui si ottengono le informazioni sulle virtual machine
@@ -201,7 +209,7 @@ La classe \texttt{CreateVM}, utilizza un oggetto di tipo \texttt{Template}, che,
 
 La classe \texttt{suspendVM} dall'altra parte raffigura la struttura che hanno tutti i comandi che agiscono sulle virtual machine attualmente in esecuzione, viene eseguita una ricerca per \texttt{Host} e \texttt{Template} fra tutte le virtual machine in esecuzione e dopodichè viene creato un oggetto di tipo \texttt{VirtualMachine} su cui eseguire in effettivo il comando, il tutto con appropriato logging a contorno. La necessità di filtrare per \texttt{Host} e \texttt{Template} è definita dalle politiche che stiamo applicando nel caso concreto.
 
-\section{Interazione con il ContextStub}
+\section{Interazione con il ContextStub e le PEPActions}
 La gestione della classe \texttt{ContextStub\_Default} è definita dall'implementazione in Java di FACPL, la classe è stata quindi soltanto modificata affinchè potesse recuperare le informazioni necessarie ad eseguire le valutazioni sullo stato del sistema, in particolare sono stati aggiunte le seguenti variabili di sistema:
 \begin{lstlisting}[language=Java, caption=Context di OpenNebula, label=code:ContextStubChoice, basicstyle=\fontsize{9}{13}\ttfamily]
 @Override
@@ -243,20 +251,137 @@ public Object getContextValues(AttributeName attribute) {
 \end{lstlisting}
 \begin{tikzpicture}[remember picture, overlay]
     \highlight{hl3Start}{hl3End}
-
 \end{tikzpicture}
 Guardando questo snippet notiamo alcune parti da evidenziare:\\
 \begin{itemize}
     \item \texttt{UUID.randomUUID().toString()} è un metodo che permette di ottenere un identificativo unico che verrà usato come nome per le virtual machine. In OpenNebula le virtual machine non sono istanziabili a partire da un ID, dato che questo viene assegnato dal software alla creazione, tuttavia è possibile assegnare un nome ad una virtual machine e quindi quello che abbiamo deciso di fare è usare il nome come identificativo all'interno del nostro progetto. Questa logica permette di assegnare degli identificativi più significativi in un futuro se fosse necessario e permette di disaccoppiare la nostra logica dalla logica con cui OpenNebula associa gli ID.
     \item \texttt{Set} è una classe libreria di FACPL per Java che permette di creare un insieme di oggetti, l'utilizzo di un oggetto di questo tipo è obbligatorio per usare i metodi di confronto presenti nella libreria, usare un oggetto della classe \texttt{Set} incluso nelle Collections causerà un errore nell'analisi delle Policy
     \item \texttt{hostInfo} è un oggetto della classe \texttt{HostInfo}, questa classe non è stata presentata ma è semplicemente una classe che permette, come si può notare dal codice, di ottenere informazioni riguardo CPU e quantità di memoria disponibili.
-    \item Come si può notare ci sono diverse parti di codice in cui si fa riferimento a \texttt{host1Info} e \texttt{host2Info}, questi due parametri sono letti direttamente dal file \texttt{config.properties} locato nella directory del progetto grazie all'utilizzo di alcuni metodi forniti all'interno della libreria \texttt{Apache Commons}:
-    \begin{lstlisting}[language=Java, caption=Importazione dal file \texttt{config.properties}, label=code:hostConfigImport]
-Configuration config = new Configurations().properties(CONFIG_FILE);
-hyper1HostId = config.getString("hyper1.host.id");
-hyper2HostId = config.getString("hyper2.host.id");    
-        \end{lstlisting}
+    \item Come si può notare ci sono diverse parti di codice in cui si fa riferimento a \texttt{hyper1HostId} e \texttt{hyper2HostId}, questi due parametri sono letti direttamente dal file \texttt{config.properties} locato nella directory del progetto grazie all'utilizzo di alcuni metodi forniti all'interno della libreria \texttt{Apache Commons}\cite{apache_commons}, come si può vedere guardando il codice del costruttore (listing \ref{code:CostContextStub}).
 \end{itemize}
+
+Per quanto riguarda le \texttt{PEPAction}, anche in questo caso basandosi sulla struttura fornita dalla libreria FACPL non ci sono molte scelte implementative che si possono fare e il risultato è il seguente:
+\begin{lstlisting}[language=Java, caption=Classe PEPAction adattata, label=code:PEPAction]
+public class PEPAction{
+    public static HashMap<String, IPepAction> getPepActions() {
+        ContextStub_Default.getInstance();
+        HashMap<String, IPepAction> pepAction = new HashMap<String, IPepAction>();
+        pepAction.put("release", 
+                new ReleaseVM(ContextStub_Default.getONContext()));
+        pepAction.put("create", 
+                new CreateVM(ContextStub_Default.getONContext()));
+        pepAction.put("freeze", 
+                new FreezeVM(ContextStub_Default.getONContext()));
+        
+        return pepAction;
+    }
+}
+\end{lstlisting}
+
+\section{Accesso dall'esterno del progetto}
+Per il modo in cui il progetto è scritto ci sono diversi punti di entrata da cui una persona esterna può iniziare sviluppare codice che sfrutti le classi sopra discusse, alcuni dei quali sono anche stati già esposti durante la presentazione delle classi stesse. Il progetto è distribuito con due package contenenti le due implementazioni concrete delle tecniche di gestione presentate in \cite{10.1007/978-3-319-08260-8_6} oltre che con il codice FACPL che le ha generate, di conseguenza aprendo il progetto con Eclipse si può facilmente cominciare a generare nuove richieste e trasformarle in codice Java tramite la UI di Eclipse\footnote{\url{https://facpl.readthedocs.io/en/latest/txt/facpl.html}}. Inoltre è anche fornita la cartella \texttt{/opennebula\_context\_actions} che contiene i file java delle classi \texttt{PEPAction} e \texttt{ContextStub\_Default}\medbreak
+Nonstante questo si è pensato di fornire delle classi che permettessero, dato un file FACPL, di: validarlo, generare il codice Java corrispondente, compilarlo e, nel caso lo si voglia, anche di eseguire direttamente il \texttt{main} di \texttt{MainFACPL}. Il motivo principale per cui le classi che saranno discusse in questo paragrafo sono state ideate è che all'interno della documentazione di FACPL non è mai esplicitato un workflow da seguire per poter eseguire a runtime la decisione delle policy e/o la generazione di una nuova richiesta, di conseguenza si è reso utile idearne uno.
+\begin{lstlisting}[language=Java, caption=Classe FACPLHandlingTemplate, label=code:FACPLHandlingTemplate, basicstyle=\fontsize{8.5}{10}\ttfamily]
+public abstract class FACPLHandlingTemplate {
+
+	private final String CONFIG_FILE = "config.properties";
+    protected Logger logger;
+    protected CodeExecutorInterface executor;
+    protected String javaFilesDir;
+    protected ClassSetup setupper;
+
+    public FACPLHandlingTemplate(String logFilePath, String javaFilesDir) throws IOException {
+        this.logger = FileLoggerFactory.make(logFilePath);
+        this.javaFilesDir = javaFilesDir;
+    }
+    
+    public FACPLHandlingTemplate(Logger logger, String javaFilesDir) throws IOException {
+        this.logger = logger;
+        this.javaFilesDir = javaFilesDir;
+    }
+
+    public final void execute(String[] args) throws Exception {
+        try {
+            List<String> fileLocations = Arrays.asList(args[0]);
+            initializeConcreteSetupperExecutor(fileLocations);
+            setup();
+            compile();
+            postProcess();
+        } catch (Exception e) {
+            logger.severe("An error occurred: " + e.getMessage());
+            throw e;
+        }
+    }
+    
+    protected abstract void initializeConcreteSetupperExecutor(List<String> fileLocations) throws Exception;
+
+    protected void setup() throws Exception {
+        setupper.setup(new Configurations().properties(CONFIG_FILE).getString("context.file.location"), javaFilesDir);
+    }
+
+    protected void compile() throws Exception {
+        boolean success = executor.compileJavaFiles();
+        if (success) {
+            logger.info("Compilation successful.");
+        } else {
+            logger.severe("Compilation failed.");
+            throw new RuntimeException("Compilation failed");
+        }
+    }
+
+    protected abstract void postProcess() throws Exception;
+}
+\end{lstlisting}
+La classe base che è stata ideata è \texttt{FACPLHandlingTemplate}, come si può intuire dal nome e dalla struttura della classe, è una rappresentazione del pattern \emph{Template Method}\cite{GOF}. Questa classe permette di istanziare degli oggetti a partire da una locazione dove verranno inseriti e successivamente compilati, i file Java. Lanciando il comando \texttt{execute} infatti quello che succede effetivamente è:
+\begin{enumerate}
+    \item Vengono inizializzati gli oggetti che servono per eseguire il setup della cartella che dovrà contenere i file Java, compilarli ed eseguirli.
+    \item I file Java prodotti a partire dai file FACPL vengono messi tutti nella cartella di destinazione finale, che è determinata dal parametro con cui viene eseguito il metodo \texttt{execute}
+    \item I file aggiuntivi (solitamente \texttt{PEPAction} e \texttt{ContextStub\_Default}) vengono messi nella cartella finale
+    \item I file vengono compilati
+    \item I file compilati possono essere eseguiti o, più in generale, utilizzati per qualunque scopo si voglia definire.
+\end{enumerate}
+Questi passaggi all'apparenza molto semplici in realtà nella loro implementazione concreta necessitano di diversi passaggi intermedi\medbreak
+Le implementazioni concrete di questa classe astratta che vengono fornite sono \texttt{ApplyPolicy} e \texttt{RequestExecution}, che servono rispettivamente per applicare una policy al sistema e eseguire la valutazione di una richiesta, ed entrambe utilizzano come \texttt{setupper} la classe \texttt{OpenNebulaFACPLClassSetup} che presenta il seguente metodo \texttt{setup}:
+\begin{lstlisting}[language=Java, caption=Metodo di setup per OpenNebula, label=code:setupper]
+@Override
+public void setup(String additionalFilesFolder, String outputFolder) {
+    logger.info("Starting setup...");
+
+    try {
+        @+\mytikzmark{hl1Start}@+classGenerator.generateClasses("tmp/FACPLFiles");@+\mytikzmark{hl1End}@+
+        logger.info("Class generation completed successfully.");
+    } catch (Exception e) {
+        logger.severe("Failed to generate classes: " + e.getMessage());
+        e.printStackTrace();
+        return;
+    }
+
+    try {
+        FolderContentHandler folderManager = new FolderContentHandler(logger);
+        @+\mytikzmark{hl2Start}@+folderManager.processFolderContents("tmp/FACPLFiles/",@+\mytikzmark{hl2End}@+ @+\mytikzmark{hl3Start}@+outputFolder, new MoveStrategy());@+\mytikzmark{hl3End}@+
+        @+\mytikzmark{hl4Start}@+folderManager.processFolderContents(additionalFilesFolder,@+\mytikzmark{hl4End}@+ @+\mytikzmark{hl5Start}@+outputFolder, new CopyStrategy());@+\mytikzmark{hl5End}@+
+        logger.info("Folder contents handled successfully.");
+    } catch (IOException e) {
+        logger.severe("Failed to move folder contents: " + e.getMessage());
+        e.printStackTrace();
+    }
+}
+\end{lstlisting}
+\begin{tikzpicture}[remember picture, overlay]
+    \highlight{hl1Start}{hl1End}
+    \highlight{hl2Start}{hl2End}
+    \highlight{hl3Start}{hl3End}
+    \highlight{hl4Start}{hl4End}
+    \highlight{hl5Start}{hl5End}
+\end{tikzpicture}
+In questo caso si evidenziano due punti necessari di ulteriore spiegazioni:
+\begin{itemize}
+    \item \texttt{classGenerator} è un oggetto creato a partire dalla classe \texttt{OpenNebulaFACPLClassGenerator} che sfrutta la libreria di FACPL e il generatore fornito come esempio dalla stessa per generare tutte le classi Java necessarie.
+    \item \texttt{FolderContentHandler} è una classe che grazie ad uno stragegy\cite{GOF} applicato ad un metodo, permette di definire diversi modi per gestire i contenuti di due cartelle. In questo caso vengono utilizzate due implementazioni dello strategy \texttt{MoveStrategy} e \texttt{CopyStrategy} per muovere e copiare i file dalla prima cartella nella seconda.
+\end{itemize}
+Il modo in cui questa parte di codice è scritta lascia molta possibilità in un futuro di implementare classi concrete che gestiscono i file FACPL in modi completamente diversi. Il package \texttt{entryPoint} infatti è pensato per essere utile anche in progetti di altra natura rispetto a quello in esame, fornendo però un metodo semplice per eseguire il logging su un file e uno scheletro delle operazioni da eseguire.
+
+\section{Utilizzo di Maven}
 
 \section{How did I discover a novel type of heated water}
 

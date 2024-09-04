@@ -723,7 +723,7 @@
   \tikz[overlay,remember picture,baseline] \coordinate (#1) at (0,0) {};}
 
 \newcommand{\highlight}[2]{%
-  \draw[gruvbox-orange,line width=14pt,opacity=0.3]%
+  \draw[gruvbox-orange,line width=13pt,opacity=0.3]%
     ([yshift=3pt]#1) -- ([yshift=3pt]#2);%
 }
 \usepackage{xcolor}
@@ -743,7 +743,7 @@
   breakatwhitespace=true,                   % Break lines only at whitespace
   columns=fullflexible,                     % Better spacing for monospaced fonts
   morekeywords={def,class},          % You can add more keywords here
-  emph={Client, Template, Logger, VMDescriptor, String, OneResponse, return, attribute}
+  emph={Client, Template, Logger, VMDescriptor, String, OneResponse, return, attribute, IPepAction},
   numbers=left,                             % Display line numbers on the left
   stepnumber=1,                             % Line number step size (show every line)
   firstnumber=1,                            % Start line numbering at line 1
