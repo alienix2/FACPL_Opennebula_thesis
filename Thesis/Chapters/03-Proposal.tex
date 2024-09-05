@@ -42,9 +42,9 @@ I principali attori che sono stati utilizzati dalle API\footnote{\url{https://do
 \end{itemize}
 
 \section{Logging}
-Prima ancora di pensare ai comandi da eseguire sulle virtual machine si è reso necessario pensare ad una modalità di logging. Dato l'ambito di applicazione si è reso fondamentale pensare ad una scrittura di logs su file di modo da rendere gli stessi facilmente accessibili in futuro, anche a distanza di tempo.\medbreak
+Prima ancora di pensare ai comandi da eseguire sulle virtual machine si è reso necessario pensare ad una modalità di logging. Dato l'ambito di applicazione si è resa fondamentale la scrittura di logs su file di modo da rendere gli stessi facilmente accessibili in futuro, anche a distanza di tempo.\medbreak
 All'interno del progetto è quindi fornita una classe \texttt{FileLoggerFactory} che utilizza il design pattern \emph{Static Factory Methods} \cite{effectiveJava} e permette di creare dei file di log, di modo da evitare la necessità di interagire coi file in ogni classe che intende eseguire il log di informazioni oltre che gestire in modo consono gli handler dei files evitando duplicati. Questa classe permette di creare dei \texttt{Logger} con un'implementazione di \texttt{Level} e \texttt{Formatter} di default oppure di specificare questi parametri in input.
-\begin{lstlisting}[language=Java, caption=Metodo make di FileLoggerFactory, float, label=code:FileLoggerFactoryMake]
+\begin{lstlisting}[language=Java, caption=Metodo make di FileLoggerFactory, label=code:FileLoggerFactoryMake]
 public static Logger make(String fileName, Formatter formatter, Level level) {
     Throwable t = new Throwable();
     StackTraceElement directCaller = t.getStackTrace()[1];
@@ -100,27 +100,27 @@ public static ContextStub_Default getInstance() {
     \highlight{hl2Start}{hl2End}
 \end{tikzpicture}
 \section{Gestione delle virtual machine generiche}
-Per gestire le virtual machine l'approccio iniziale è stato quello di fornire un'interfaccia che permettesse in un futuro di poter interagire con le stesse anche in modo.\\
+Per gestire le virtual machine l'approccio iniziale è stato quello di fornire un'interfaccia che permettesse in un futuro di poter interagire con le stesse anche in modo diverso.
 E' stata creata una classe wrapper chiamata \texttt{VMDescriptor} che contiene le informazioni sulle virtual machine utili per il nostro progetto, questa classe serve per creare una prima astrazione dalle API utilizzate, in effetti questa stessa classe permetterebbe, ad esempio, di fornire un'implementazione come quella precedentemente pensata basata sui comandi da shell.
 L'interfaccia \texttt{VirtualMachineService} presenta due metodi che servono per lavorare all'effettivo con i \texttt{VMDescriptor}.
-\begin{lstlisting}[language=Java, caption=VirtualMachineService, label=code:VirtualMachineService]
+\begin{lstlisting}[language=Java, caption=VirtualMachineService, label=code:VirtualMachineService, xleftmargin=1em]
 public interface VirtualMachineService {
     List<VMDescriptor> getVirtualMachinesInfo();
     List<VMDescriptor> getRunningVirtualMachineInfo();
 }
 \end{lstlisting}
 La scelta di avere due metodi separati per restituire tutte le macchine virtuali oppure solo quelle attualmente in esecuzione deriva dal fatto che in effetti spesso queste due liste vorranno essere utilizzate in modo diverso. Di solito le VirtualMachine presenti nel sistema sono molte più di quelle effettivamente in esecuzione e quindi non inserire il secondo metodo avrebbe portato una buona parte delle classi che volevano utilizzare un'implementazione di questa interfaccia a dover sempre inserire un controllo sullo stato delle virtual machine.
-Nel codice da me scritto viene utilizzata la sua implementazione concreta \texttt{OpenNebulaVMService} che, interfacciandosi con le API di OpenNebula già descritte, riesce ad ottenere tutte le informazioni richieste sulle VM e a popolare le liste.\\
+Nel codice da me scritto viene utilizzata la sua implementazione concreta \texttt{OpenNebulaVMService} che, interfacciandosi con le API di OpenNebula già descritte, riesce ad ottenere tutte le informazioni richieste sulle VM e a popolare le liste.
 Una volta ottenuta una lista di \texttt{VMDescriptor} è possibile filtrare le virtual machine sia a partire dal nome che a partire da altre loro caratteristiche come l'\emph{ID} o il \emph{template} utilizzato per crearle come spiegato nel capitolo \ref{cap:stateOfArt}.
 È stata implementata un'ulteriormente classe di comodo che mette a disposizione la possibilità di eseguire alcuni tipi di filtraggio sulle virtual machine in automatico, questa classe fornisce inoltre un meccaniscmo di logging ogni volta che viene eseguita un'operazione di filtraggio, come si può vedere nel codice di esempio:
-\begin{lstlisting}[language=Java, label=code:VMsInfoLogging]
+\begin{lstlisting}[language=Java, label=code:VMsInfoLogging, xleftmargin=1em, basicstyle=\fontsize{9}{10}\ttfamily]
 private List<VMDescriptor> getAndLogVMs() {
     List<VMDescriptor> vmDescriptors = vmService.getRunningVirtualMachineInfo();
     logger.info("The VMs running are: " + vmDescriptors.toString());
     return vmDescriptors;
 }
 \end{lstlisting}
-\begin{lstlisting}[language=Java, label=code:VMsInfoFilter]
+\begin{lstlisting}[language=Java, label=code:VMsInfoFilter, xleftmargin=1em, basicstyle=\fontsize{9}{10}\ttfamily]
 public List<VMDescriptor> getRunningVMsByHostTemplate(String host, String templateId) {
     return getAndLogVMs()
             .stream()
@@ -131,7 +131,7 @@ public List<VMDescriptor> getRunningVMsByHostTemplate(String host, String templa
 \captionof{lstlisting}{Esempio di metodo di filtraggio e metodo di logging}
 Non è necessario usare questa classe, però risulta comoda per fare sì che le classi che si occupano di eseguire un comando su una o più virtual machine non abbiano anche il compito di eseguire il filtraggio e fare logging.
 
-\section{gestione delle virtual machine di OpenNebula}
+\section{Gestione delle virtual machine di OpenNebula}
 Da qui in avanti saranno presentate tutte le classi che interagiscono effettivamente con degli oggetti che rappresentano delle \texttt{VirtualMachine} come indicato nelle API di OpenNebula.
 La prima classe implementata è \texttt{OpenNebulaActionContext}, questa classe può essere istanziata usando un \texttt{Client} (e opzionalmente anche un \texttt{Logger}) e fornisce semplicemente uno stato da utilizzare per eseguire i comandi che richiedono informazioni sulle \texttt{VirtualMachine} attualmente in esecuzione, che in questo caso concreto saranno tutti tranne la creazione di una nuova virtual machine.\\
 La classe per eseguire i comandi ha la seguente base:
@@ -154,7 +154,7 @@ public abstract class OpenNebulaActionBase implements IPepAction{
     }
 }
 \end{lstlisting}
-Per questa classe è stato valutato l'utilizzo di un \texttt{Themplate method}, tuttavia risultava abbastanza scomodo da applicare dato che alcune delle classi concrete potrebbero dover seguire un workflow diverso fra loro (es. sospensione di una virtual machine e creazione di una virtual machine) per il modo in cui le API di OpenNebula sono scritte. Inoltre si suppone la possibilità di scrivere comandi futuri che agiscano su più di una virtual machine in un solo comando, questa logica era già stata testata ma non si è rivelata necessaria nel nostro caso concreto e di conseguenza è stata successivamente rimossa ma il modo in cui è scritta la classe astratta lascia spazio ad una facile implementazione concreta in questo senso.\medbreak
+Per questa classe è stato valutato l'utilizzo di un \texttt{Themplate method}, tuttavia risultava abbastanza scomodo da applicare dato che alcune delle classi concrete potrebbero dover seguire un workflow diverso fra loro (es. sospensione di una virtual machine e creazione di una virtual machine) per il modo in cui le API di OpenNebula sono scritte. Inoltre si suppone la possibilità di scrivere comandi futuri che agiscano su più di una virtual machine in un solo comando, questa logica era già stata testata ma non si è rivelata necessaria nel nostro caso concreto e di conseguenza è stata successivamente rimossa, tuttavia il modo in cui è scritta la classe astratta lascia spazio ad una facile implementazione concreta in questo senso.\medbreak
 La scelta del nome \texttt{eval} è obbligata dal modo in cui FACPL accederà alla classe per eseguire i comandi.
 L'approccio scelto è quello di costruire l'oggetto di tipo \texttt{VirtualMachine} corrispondente all'ID ottenibile dal \texttt{VMdescriptor}. Questo passaggio può sembrare controintuitivo perchè partendo da un oggetto \texttt{VirtualMachine} si ottengono le sue informazioni per poi andare a ricreare un oggetto sostanzialmente identico per eseguire le operazioni, tuttavia questi passaggi hanno diversi lati positivi:
 \begin{itemize}
@@ -164,7 +164,7 @@ L'approccio scelto è quello di costruire l'oggetto di tipo \texttt{VirtualMachi
     \item Isolano l'ottenimento delle informazioni ad una classe che estende \texttt{OpenNebulaVMService}
 \end{itemize}
 Le classi concrete per eseguire i comandi sulle virtual machine a partire da questa classe hanno tutte chiaramente una forma simile sebbene con alcuni accorgimenti.
-\begin{lstlisting}[language=Java, caption=Classe per avviare una \texttt{VirtualMachine}, label=code:CreateVM, basicstyle=\fontsize{8.5}{13}\ttfamily]
+\begin{lstlisting}[language=Java, caption=Classe per avviare una \texttt{VirtualMachine}, label=code:CreateVM, basicstyle=\fontsize{8.5}{9.5}\ttfamily]
 public class CreateVM extends OpenNebulaActionBase {
 	public CreateVM(OpenNebulaActionContext ONActionContext) {
 		super(ONActionContext);
@@ -183,7 +183,7 @@ public class CreateVM extends OpenNebulaActionBase {
 	}
 }
 \end{lstlisting}
-\begin{lstlisting}[language=Java, caption=Classe per freezzare(sospendere) una \texttt{VirtualMachine}, label=code:FreezeVM, basicstyle=\fontsize{8.5}{13}\ttfamily]
+\begin{lstlisting}[language=Java, caption=Classe per freezzare(sospendere) una \texttt{VirtualMachine}, label=code:FreezeVM, basicstyle=\fontsize{8.5}{9.5}\ttfamily]
 public class FreezeVM extends OpenNebulaActionBase {
 	public FreezeVM(OpenNebulaActionContext ONActionContext) {
 		super(ONActionContext);
@@ -211,7 +211,7 @@ La classe \texttt{suspendVM} dall'altra parte raffigura la struttura che hanno t
 
 \section{Interazione con il ContextStub e le PEPActions}
 La gestione della classe \texttt{ContextStub\_Default} è definita dall'implementazione in Java di FACPL, la classe è stata quindi soltanto modificata affinchè potesse recuperare le informazioni necessarie ad eseguire le valutazioni sullo stato del sistema, in particolare sono stati aggiunte le seguenti variabili di sistema:
-\begin{lstlisting}[language=Java, caption=Context di OpenNebula, label=code:ContextStubChoice, basicstyle=\fontsize{9}{13}\ttfamily]
+\begin{lstlisting}[language=Java, caption=Context di OpenNebula, label=code:ContextStubChoice, basicstyle=\fontsize{9}{10}\ttfamily]
 @Override
 public Object getContextValues(AttributeName attribute) {
     ...
@@ -252,11 +252,11 @@ public Object getContextValues(AttributeName attribute) {
 \begin{tikzpicture}[remember picture, overlay]
     \highlight{hl3Start}{hl3End}
 \end{tikzpicture}
-Guardando questo snippet notiamo alcune parti da evidenziare:\\
+Guardando questo snippet notiamo alcune caratteristiche da evidenziare:\\
 \begin{itemize}
     \item \texttt{UUID.randomUUID().toString()} è un metodo che permette di ottenere un identificativo unico che verrà usato come nome per le virtual machine. In OpenNebula le virtual machine non sono istanziabili a partire da un ID, dato che questo viene assegnato dal software alla creazione, tuttavia è possibile assegnare un nome ad una virtual machine e quindi quello che abbiamo deciso di fare è usare il nome come identificativo all'interno del nostro progetto. Questa logica permette di assegnare degli identificativi più significativi in un futuro se fosse necessario e permette di disaccoppiare la nostra logica dalla logica con cui OpenNebula associa gli ID.
-    \item \texttt{Set} è una classe libreria di FACPL per Java che permette di creare un insieme di oggetti, l'utilizzo di un oggetto di questo tipo è obbligatorio per usare i metodi di confronto presenti nella libreria, usare un oggetto della classe \texttt{Set} incluso nelle Collections causerà un errore nell'analisi delle Policy
-    \item \texttt{hostInfo} è un oggetto della classe \texttt{HostInfo}, questa classe non è stata presentata ma è semplicemente una classe che permette, come si può notare dal codice, di ottenere informazioni riguardo CPU e quantità di memoria disponibili.
+    \item \texttt{Set} è una classe fornita da FACPL per Java che permette di creare un insieme di oggetti, l'utilizzo di un oggetto di questo tipo è obbligatorio per usare i metodi di confronto presenti nella libreria, usare un oggetto della classe \texttt{Set} incluso nelle Collections causerà un errore nell'analisi delle Policy.
+    \item \texttt{hostInfo} è un oggetto della classe \texttt{HostInfo}, questa non è stata presentata ma, come si può notare dal codice, è semplicemente una classe che permette di ottenere informazioni riguardo CPU e quantità di memoria disponibili.
     \item Come si può notare ci sono diverse parti di codice in cui si fa riferimento a \texttt{hyper1HostId} e \texttt{hyper2HostId}, questi due parametri sono letti direttamente dal file \texttt{config.properties} locato nella directory del progetto grazie all'utilizzo di alcuni metodi forniti all'interno della libreria \texttt{Apache Commons}\cite{apache_commons}, come si può vedere guardando il codice del costruttore (listing \ref{code:CostContextStub}).
 \end{itemize}
 
@@ -272,14 +272,13 @@ public class PEPAction{
                 new CreateVM(ContextStub_Default.getONContext()));
         pepAction.put("freeze", 
                 new FreezeVM(ContextStub_Default.getONContext()));
-        
         return pepAction;
     }
 }
 \end{lstlisting}
 
 \section{Accesso dall'esterno del progetto}
-Per il modo in cui il progetto è scritto ci sono diversi punti di entrata da cui una persona esterna può iniziare sviluppare codice che sfrutti le classi sopra discusse, alcuni dei quali sono anche stati già esposti durante la presentazione delle classi stesse. Il progetto è distribuito con due package contenenti le due implementazioni concrete delle tecniche di gestione presentate in \cite{10.1007/978-3-319-08260-8_6} oltre che con il codice FACPL che le ha generate, di conseguenza aprendo il progetto con Eclipse si può facilmente cominciare a generare nuove richieste e trasformarle in codice Java tramite la UI di Eclipse\footnote{\url{https://facpl.readthedocs.io/en/latest/txt/facpl.html}}. Inoltre è anche fornita la cartella \texttt{/opennebula\_context\_actions} che contiene i file java delle classi \texttt{PEPAction} e \texttt{ContextStub\_Default}\medbreak
+Per il modo in cui il progetto è scritto ci sono diversi punti di entrata da cui una persona esterna può iniziare a sviluppare codice che sfrutti le classi sopra discusse, alcuni dei quali sono anche stati già esposti durante la presentazione delle classi stesse. Il progetto è distribuito con due package contenenti le due implementazioni concrete delle tecniche di gestione presentate in \cite{10.1007/978-3-319-08260-8_6} oltre che con il codice FACPL che le ha generate, di conseguenza aprendo il progetto con Eclipse si può facilmente cominciare a generare nuove richieste e trasformarle in codice Java tramite la UI di Eclipse\footnote{\url{https://facpl.readthedocs.io/en/latest/txt/facpl.html}}. Inoltre è anche fornita la cartella \texttt{/opennebula\_context\_actions} che contiene i file java delle classi \texttt{PEPAction} e \texttt{ContextStub\_Default}\medbreak
 Nonstante questo si è pensato di fornire delle classi che permettessero, dato un file FACPL, di: validarlo, generare il codice Java corrispondente, compilarlo e, nel caso lo si voglia, anche di eseguire direttamente il \texttt{main} di \texttt{MainFACPL}. Il motivo principale per cui le classi che saranno discusse in questo paragrafo sono state ideate è che all'interno della documentazione di FACPL non è mai esplicitato un workflow da seguire per poter eseguire a runtime la decisione delle policy e/o la generazione di una nuova richiesta, di conseguenza si è reso utile idearne uno.
 \begin{lstlisting}[language=Java, caption=Classe FACPLHandlingTemplate, label=code:FACPLHandlingTemplate, basicstyle=\fontsize{8.5}{10}\ttfamily]
 public abstract class FACPLHandlingTemplate {
@@ -316,7 +315,8 @@ public abstract class FACPLHandlingTemplate {
     protected abstract void initializeConcreteSetupperExecutor(List<String> fileLocations) throws Exception;
 
     protected void setup() throws Exception {
-        setupper.setup(new Configurations().properties(CONFIG_FILE).getString("context.file.location"), javaFilesDir);
+        setupper.setup(new Configurations()
+            .properties(CONFIG_FILE).getString("context.file.location"), javaFilesDir);
     }
 
     protected void compile() throws Exception {
@@ -332,12 +332,12 @@ public abstract class FACPLHandlingTemplate {
     protected abstract void postProcess() throws Exception;
 }
 \end{lstlisting}
-La classe base che è stata ideata è \texttt{FACPLHandlingTemplate}, come si può intuire dal nome e dalla struttura della classe, è una rappresentazione del pattern \emph{Template Method}\cite{GOF}. Questa classe permette di istanziare degli oggetti a partire da una locazione dove verranno inseriti e successivamente compilati, i file Java. Lanciando il comando \texttt{execute} infatti quello che succede effetivamente è:
+La classe base che è stata scritta è \texttt{FACPLHandlingTemplate}, come si può intuire dal nome e dalla struttura della classe, è una rappresentazione del pattern \emph{Template Method}\cite{GOF}. Questa classe permette di istanziare degli oggetti a partire da una locazione dove verranno inseriti e successivamente compilati, i file Java. Lanciando il comando \texttt{execute} infatti quello che succede effetivamente è:
 \begin{enumerate}
-    \item Vengono inizializzati gli oggetti che servono per eseguire il setup della cartella che dovrà contenere i file Java, compilarli ed eseguirli.
-    \item I file Java prodotti a partire dai file FACPL vengono messi tutti nella cartella di destinazione finale, che è determinata dal parametro con cui viene eseguito il metodo \texttt{execute}
-    \item I file aggiuntivi (solitamente \texttt{PEPAction} e \texttt{ContextStub\_Default}) vengono messi nella cartella finale
-    \item I file vengono compilati
+    \item Vengono inizializzati concretamente gli oggetti che servono per compilare, eseguire e posizionare i file Java.
+    \item I file Java prodotti a partire dai file FACPL vengono messi tutti nella cartella di destinazione finale, che è determinata dal parametro con cui viene eseguito il metodo \texttt{execute}.
+    \item I file aggiuntivi (solitamente \texttt{PEPAction} e \texttt{ContextStub\_Default}) vengono messi nella cartella finale.
+    \item I file vengono compilati.
     \item I file compilati possono essere eseguiti o, più in generale, utilizzati per qualunque scopo si voglia definire.
 \end{enumerate}
 Questi passaggi all'apparenza molto semplici in realtà nella loro implementazione concreta necessitano di diversi passaggi intermedi\medbreak
@@ -374,14 +374,86 @@ public void setup(String additionalFilesFolder, String outputFolder) {
     \highlight{hl4Start}{hl4End}
     \highlight{hl5Start}{hl5End}
 \end{tikzpicture}
-In questo caso si evidenziano due punti necessari di ulteriore spiegazioni:
+In questo caso si evidenziano due punti necessari di ulteriori spiegazioni:
 \begin{itemize}
-    \item \texttt{classGenerator} è un oggetto creato a partire dalla classe \texttt{OpenNebulaFACPLClassGenerator} che sfrutta la libreria di FACPL e il generatore fornito come esempio dalla stessa per generare tutte le classi Java necessarie.
-    \item \texttt{FolderContentHandler} è una classe che grazie ad uno stragegy\cite{GOF} applicato ad un metodo, permette di definire diversi modi per gestire i contenuti di due cartelle. In questo caso vengono utilizzate due implementazioni dello strategy \texttt{MoveStrategy} e \texttt{CopyStrategy} per muovere e copiare i file dalla prima cartella nella seconda.
+    \item \texttt{classGenerator} è un oggetto creato a partire dalla classe \texttt{OpenNebulaFACPLClassGenerator} che sfrutta la libreria di FACPL e il generatore fornito come esempio dalla stessa, per generare tutte le classi Java necessarie.
+    \item \texttt{FolderContentHandler} è una classe che grazie ad uno stragegy\cite{GOF} applicato ad un metodo, permette di definire diversi modi per gestire i contenuti di due cartelle.
+    \begin{lstlisting}[language=Java, caption=Metodo processFolderContent, label=code:processFolderContent, basicstyle=\fontsize{9.5}{10}\ttfamily]
+public void processFolderContents(String sourceDir, String targetDir, FolderContentStrategy strategy) throws IOException {
+    Path sourcePath = Paths.get(sourceDir);
+    Path targetPath = Paths.get(targetDir);
+    processFolderContentsInternal(sourcePath, targetPath, strategy);
+}
+            \end{lstlisting}
+    Come si può notare il suo metodo \texttt{processFolderContents} isola inoltre le classi che la utilizzano dalla logica dei \texttt{Path}, usandoli internamente ma chiedendo soltanto stringhe nei suoi metodi pubblici.
+    \begin{lstlisting}[language=Java, caption=Interfaccia FolderContentStrategy, label=code:FolderContentStrategy, basicstyle=\fontsize{9.5}{10}\ttfamily]
+interface FolderContentStrategy {
+    void processFile(String source, String target) throws IOException;
+    String getOperationName();
+}
+    \end{lstlisting}
+    L'interfaccia dello strategy è semplice, oltre all'operazione di base che si vuole che sia in grado di eseguire, basta specificare un \texttt{operationName} così da sapere che operazione viene svolta dal metodo che l'ha invocata, se questo è interessato a saperla.
+    In questo caso vengono utilizzate due implementazioni dello strategy: \texttt{MoveStrategy} e \texttt{CopyStrategy}, rispettivamente per muovere e copiare i file dalla prima cartella nella seconda.
 \end{itemize}
-Il modo in cui questa parte di codice è scritta lascia molta possibilità in un futuro di implementare classi concrete che gestiscono i file FACPL in modi completamente diversi. Il package \texttt{entryPoint} infatti è pensato per essere utile anche in progetti di altra natura rispetto a quello in esame, fornendo però un metodo semplice per eseguire il logging su un file e uno scheletro delle operazioni da eseguire.
+Il modo in cui questa parte di codice è scritta, lascia molta possibilità in un futuro di implementare classi concrete che gestiscano i file FACPL in modi completamente diversi. Il package \texttt{entryPoint} infatti è pensato per essere utile anche in progetti di altra natura rispetto a quello in esame, fornendo però un metodo semplice per eseguire il logging su un file e uno scheletro del workflow da seguire.
 
 \section{Utilizzo di Maven}
+L'implementazione di Maven\cite{maven} è stata fatta verso la fine della scrittura del codice del progetto, questo perchè il codice FACPL è rilasciato senza utilizzare alcun tipo di tool per la gestione del progetto, infatti anche nella documentazione\footnote{\url{https://facpl.readthedocs.io/en/latest/txt/install.html}} il modo indicato per utilizzare la libreria è quello di scaricare un file .zip manualmente dalla pagina github\cite{facpl-github}. Le API di OpenNebula sono inoltre distribuite sotto forma di file .jar \footnote{\url{https://downloads.opennebula.io/packages/opennebula-5.12.0.4/}}. Per questi motivi in prima battuta si è cercato di importare tutte le dipendenze a mano ma questa opzione si è rivelata impraticabile nel lungo periodo. Dato il largo utilizzo di librerie esterne che è stato fatto e la necessità di utilizzare diversi package con versioni specifiche per garantire la compatibilità con la versione di Java 8 utilizzata da FACPL, cercare e scaricare i file .jar giusti stava diventando praticamente impossibile senza grandi perdite di tempo.\medbreak
+Utilizzare Maven è stata una scelta molto comoda anche per il rilascio del codice una volta ultimato, dato che ha permesso di fornire delle indicazioni di utilizzo e installazione chiare.\medbreak
+Il primo passo in questo senso è stato quello di utilizzare la UI di Eclipse per convertire automaticamente il progetto Java in un progetto Maven\footnote{\url{https://wiki.eclipse.org/Converting_Eclipse_Java_Project_to_Maven_Project}}. La conversione automatica in questo caso era abbastanza funzionante, tuttavia si è reso necessario rimuovere le dipendenze dalle librerie locali di OpenNebula e FACPL e inserire queste dipendenze all'interno del file \texttt{pom.xml} affinchè il progetto fosse utilizzabile in un ambiente nuovo. Per fare questo passaggio sono state valutate due strade:
+\begin{itemize}
+    \item richiedere agli utente di installare tramite \texttt{mvn install} a mano le librerie prima di poter avviare il progetto
+    \item installare queste librerie in una cartella locale che sarà poi usata come repository nel file \texttt{pom.xml}
+\end{itemize}
+Per rendere più comoda l'installazione all'utente finale si è optato di scegliere la seconda strada, includendo nel progetto la cartella \texttt{libs} e installando in quella cartella le librerie di OpenNebula e FACPL, dopodichè è stato sufficiente inserire le seguenti righe nel file \texttt{pom.xml}:
+\begin{lstlisting}[language=XML, caption=Repository locale, label=code:libsxml]
+<repositories>
+    <repository>
+        <id>local-libs</id>
+        <url>file://${project.basedir}/libs</url>
+    </repository>
+</repositories>
+\end{lstlisting}
+Per far sì che le librerie in questione fossero accessibili come tutte le altre dipendenze disponibili nelle repository online.
+\begin{lstlisting}[language=XML, caption=Dipendenza di OpenNebula, label=code:dependencyOpenNebula]
+<dependencies>
+...
+    <dependency>
+        <groupId>com.opennebula</groupId>
+        <artifactId>opennebula</artifactId>
+        <version>5.12.0.4</version>
+    </dependency>
+...
+<dependencies>
+\end{lstlisting}
+
+\section{Introduzione alla Web app e ideazione del front-end}
+Al termine dello sviluppo della logica discussa in questo paragrafo fino alla sezione precedente, il progetto era adatto per essere utilizzato ed implementato in un ambiente reale, tuttavia non veniva fornito alcun modo diretto per interagire con le classi senza aprire il progetto con un IDE. Non era presente un esempio delle potenzialità del package \texttt{entryPoint} dato che se non si definisce una forma di intefaccia utente che permetta di creare dei file .fpl senza passare da un IDE che è proprio il punto fondamentale dell'esistenza di quelle classi.\medbreak
+L'esempio concreto che abbiamo deciso di implementare è una web-app simile a quella descritta all'interno di \cite{10.1007/978-3-319-08260-8_6}. È stato quindi pensato quali caratteristiche avrebbe dovuto avere la UI e solo successivamente si è deciso come implementarle effettivamente sia a livello di frontend che a livello di backend. Le funzioni che doveva necessariamente fornire la UI erano:
+\begin{itemize}
+    \item Un modo per decidere le policy da avere attive nel sistema
+    \item Un modo per inviare delle richieste
+    \item Un modo per garantire che le policy attivate e le richieste inviate rispettassero la sintassi di FACPL
+\end{itemize}
+Per fornire queste tre caratteristiche si è pensato alla creazione di una UI che permetta di scrivere policy e richieste e consenta prima di validarle e successivamente anche di inviarle. Per le richieste è stato fornito un menù a scelta multipla che permette di inviare richieste senza bisogno di ricordare la sintassi corretta, tuttavia tale menù mette anche a disposizione la possibilità di aggiungere a mano dei parametri diversi da quelli di default. Non tutti i parametri sono sempre necessari, di conseguenza è anche possibile lasciarne alcuni vuoti e avere comunque la richiesta validata. La validazione di una richiesta controlla soltanto che la sintassi sia corretta e di conseguenza anche richieste che non hanno logicamente senso vengono validate, tuttavia una volta inviate al sistema FACPL sarà il \emph{PDP} a rifiutarle.\medbreak
+Un'ulteriore logica che sarà necessario aggiungere prima di inserire l'applicazione in un vero sistema cloud è che, usando il sistema di accesso presente, si definiscano i diritti di accesso alle funzionalità dell'utente, a seconda dell'utente alcune opzioni potrebbero quindi essere bloccate, prima fra tutte la possibilità di cambiare le policy e la selezione del Profile ID che dovrebbe essere sicuramente legato strettamente all'utente che ha eseguito l'accesso. Alcuni utenti potrebbero anche del tutto rimanere all'oscuro delle policy e quindi vedere soltanto la parte relativa alle richieste.\medbreak
+il semplice frontend che è fornito nel progetto si presenta come si può vedere nella figura \ref{fig:policyManagerFrontEnd}, la tecnologià utilizzata è JavaScript con una configurazione di HTML e CSS per rendere il tutto più carino alla vista, questo vuole però essere soltanto uno spunto che necessita di ulteriore sviluppo prima di essere inserito in un vero sistema cloud. A livello implementativo si evidenzia però l'utilizzo della libreria \emph{highlight.js}\cite{highlightjs} per colorare la sintassi delle policy e delle richieste, questa libreria è stata scelta per la sua semplicità di utilizzo ma anche perchè permette di definire colori personalizzati per ogni linguaggio e anche di aggiungere linguaggi aggiuntivi con uno sforzo minimo grazie all'utilizzo di file JavaScript appositi come si può leggere dalla documentazione ufficiale\footnote{\url{https://highlightjs.readthedocs.io/en/latest/language-guide.html}}.\medbreak
+\begin{figure}[H]
+    \begin{center}
+    \includegraphics[width=.8\textwidth]{policyManagerFrontEnd}
+    \caption{Front-end di policy manager (web app)}
+    \label{fig:policyManagerFrontEnd}
+    \end{center}
+\end{figure}
+
+
+\section{Sviluppo del backend}
+Il backend è stato realizzando sfruttando il framework Spring Boot\cite{springboot}, La cui idea di base è quella di semplificare la realizzazione di applicazioni basate su Spring\cite{spring}. Usare Spring Boot Permette di evitare la configurazione manuale di Spring e nel nostro caso ci ha consentito di realizzare un backend per la nostra web app in un modo molto semplice ma comunque modulare. Integrare la logica già descritta nei paragrafi precedenti è stato immediato sia grazie al modo in cui era stato ralizzato il package \texttt{entryPoint} che grazie alla gestione automatica del server web che viene fatta da Spring Boot. In questo esempio infatti le funzionalità di Spring sono state esplorate soltanto in parte ma per il modo in cui è scritto il codice sarà semplice integrare in futuro un database, un servizio di autenticazione o qualunque altro tipo di servizio che si renderà necessario. Inoltre sebbene siano state lasciate le configurazioni di default per springboot e queste fossero sufficienti per il nostro caso di esempio, il framework ha un'ottima documentazione, una grande community e permette di adattarsi a un gran numero di casi concreti.\medbreak
+Gli unici due accorgimenti preliminari che sono stati necessari sono stati:
+\begin{itemize}
+    \item scegliere una versione di Spring Boot compatibile con Java 8: a partire dalla major version 3, Spring Boot richiede obbligatoriamente una versione di Java 17 o maggiore e quindi la versione da noi è scelta è la 2.7, ovvero l'ultima compatibile con Java 8.
+    \item scegliere un framework di logging: di default Spring Boot utilizza logback, ma nel nostro caso abbiamo scelto di usare log4j perchè è quello utilizzato anche da FACPL e quindi è più facile integrarlo.
+\end{itemize}
 
 \section{How did I discover a novel type of heated water}
 

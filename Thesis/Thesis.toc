@@ -9,12 +9,14 @@
 \contentsline {section}{\numberline {3.2}{OpenNebula API}}{12}{section.3.2}%
 \contentsline {section}{\numberline {3.3}{Logging}}{14}{section.3.3}%
 \contentsline {section}{\numberline {3.4}{Gestione delle virtual machine generiche}}{15}{section.3.4}%
-\contentsline {section}{\numberline {3.5}{gestione delle virtual machine di OpenNebula}}{17}{section.3.5}%
+\contentsline {section}{\numberline {3.5}{Gestione delle virtual machine di OpenNebula}}{17}{section.3.5}%
 \contentsline {section}{\numberline {3.6}{Interazione con il ContextStub e le PEPActions}}{20}{section.3.6}%
 \contentsline {section}{\numberline {3.7}{Accesso dall'esterno del progetto}}{22}{section.3.7}%
 \contentsline {section}{\numberline {3.8}{Utilizzo di Maven}}{26}{section.3.8}%
-\contentsline {section}{\numberline {3.9}{How did I discover a novel type of heated water}}{26}{section.3.9}%
-\contentsline {section}{\numberline {3.10}{How my heated water differs from the previous ones}}{26}{section.3.10}%
-\contentsline {chapter}{\numberline {4}{Numerical results}}{29}{chapter.4}%
-\contentsline {chapter}{\numberline {5}{Conclusions and Future work}}{31}{chapter.5}%
-\contentsline {chapter}{Bibliografia}{33}{chapter.5}%
+\contentsline {section}{\numberline {3.9}{Introduzione alla Web app e ideazione del front-end}}{27}{section.3.9}%
+\contentsline {section}{\numberline {3.10}{Sviluppo del backend}}{29}{section.3.10}%
+\contentsline {section}{\numberline {3.11}{How did I discover a novel type of heated water}}{30}{section.3.11}%
+\contentsline {section}{\numberline {3.12}{How my heated water differs from the previous ones}}{30}{section.3.12}%
+\contentsline {chapter}{\numberline {4}{Numerical results}}{33}{chapter.4}%
+\contentsline {chapter}{\numberline {5}{Conclusions and Future work}}{35}{chapter.5}%
+\contentsline {chapter}{Bibliografia}{37}{chapter.5}%

@@ -21,6 +21,11 @@ Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides.
 \newblock Addison-Wesley, Reading, MA, 1994.
 \newblock Professional eBook edition.
 
+\bibitem{highlightjs}
+highlight.js contributors.
+\newblock highlight.js - javascript syntax highlighter.
+\newblock \url{https://highlightjs.org/}, 2024.
+
 \bibitem{knuth97}
 Donald~E. Knuth.
 \newblock {\em The Art of Computer Programming, Vol. 1: Fundamental
@@ -49,6 +54,19 @@ Andrea Margheri, Massimiliano Masi, Rosario Pugliese, and Francesco Tiezzi.
 John Nash.
 \newblock Non-cooperative games.
 \newblock {\em Annals of Mathematics}, 54(2):286--295, 1951.
+
+\bibitem{springboot}
+{Spring.io}.
+\newblock {Spring Boot Project}, 2024.
+
+\bibitem{spring}
+{Spring.io}.
+\newblock {Spring Framework}, 2024.
+
+\bibitem{maven}
+{The Apache Software Foundation}.
+\newblock {Maven Project}.
+\newblock \url{https://maven.apache.org/}.
 
 \bibitem{apache_commons}
 {The Apache Software Foundation}.

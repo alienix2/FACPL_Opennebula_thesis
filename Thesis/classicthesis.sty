@@ -613,7 +613,7 @@
         "marginal" for footnote setup (not 100\% the same as with KOMA)}%
 \fi
 
-\renewcommand{\@makefnmark}{\textsuperscript{\textcolor{CTcitation}{\@thefnmark}}}
+\renewcommand{\@makefnmark}{\textsuperscript{\textcolor{Black}{\@thefnmark}}}
 
 % ********************************************************************
 % Drafting Stuff
@@ -742,14 +742,14 @@
   breaklines=true,                          % Enable line breaking
   breakatwhitespace=true,                   % Break lines only at whitespace
   columns=fullflexible,                     % Better spacing for monospaced fonts
-  morekeywords={def,class},          % You can add more keywords here
-  emph={Client, Template, Logger, VMDescriptor, String, OneResponse, return, attribute, IPepAction},
+  morekeywords={def,class,repositories,repository,id,url},          % You can add more keywords here
+  emph={Client, Template, Logger, VMDescriptor, String, OneResponse, return, attribute, IPepAction, def,class,repositories, dependencies},
   numbers=left,                             % Display line numbers on the left
   stepnumber=1,                             % Line number step size (show every line)
   firstnumber=1,                            % Start line numbering at line 1
   numbersep=3pt,                            % Space between line numbers and code
   numberstyle=\footnotesize,                % Set the line number font size
-  xleftmargin=1em                           % Extra space on the left to avoid overlap
+  xleftmargin=2em                           % Extra space on the left to avoid overlap
 }
 
 % \lstset{
