@@ -1,13 +1,12 @@
 package com.policyManager.service;
 
 import entryPoint.ApplyPolicy;
+
 import com.policyManager.utils.FACPLFileValidator;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.nio.file.*;
@@ -20,13 +19,7 @@ public class PolicyService {
     @Value("${facpl.policies.filepath}") String policiesFilePath;
 
     @Value("${facpl.temp.filepath}") String tempFilePath;
-
-    @Value("${facpl.compile.folderpath}") String compilePath;
     
-    @Value("${logging.compile.file.name}") String compileLog;
-    
-    private final Logger logger = LoggerFactory.getLogger(PolicyService.class);
-
     private final ApplyPolicy applyPolicy;
 
     public PolicyService(ApplyPolicy applyPolicy) {
@@ -58,7 +51,6 @@ public class PolicyService {
             applyPolicy.execute(new String[]{policiesFilePath});
             return ResponseEntity.ok("Policy applied");
         } catch (Exception e) {
-            logger.error("Error submitting policies", e);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Something went wrong");
         }
     }

@@ -48,7 +48,7 @@ public class OpenNebulaFACPLClassSetupTest {
         
         String logOutput = logHandler.getLogBuilder();
         assertTrue(logOutput.contains("Class generation completed successfully."));
-        assertTrue(logOutput.contains("Folder contents moved successfully."));
+        assertTrue(logOutput.contains("Folder contents handled successfully."));
     }
 
     @Test

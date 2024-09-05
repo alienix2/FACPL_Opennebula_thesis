@@ -28,4 +28,3 @@ hljs.registerLanguage('facpl', function(hljs) {
     ]
   };
 });
-

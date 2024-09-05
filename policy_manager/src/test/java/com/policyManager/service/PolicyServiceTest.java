@@ -44,8 +44,6 @@ class PolicyServiceTest {
     void setUp() throws IOException {
         ReflectionTestUtils.setField(policyService, "policiesFilePath", TEST_POLICIES_PATH);
         ReflectionTestUtils.setField(policyService, "tempFilePath", TEST_TEMP_PATH);
-        ReflectionTestUtils.setField(policyService, "compilePath", TEST_DIR_PATH);
-        ReflectionTestUtils.setField(policyService, "compileLog", "test-compile.log");
     }
 
     @AfterEach

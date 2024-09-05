@@ -44,8 +44,6 @@ class RequestServiceTest {
     void setUp() throws IOException {
         ReflectionTestUtils.setField(requestService, "requestsFilePath", TEST_REQUESTS_PATH);
         ReflectionTestUtils.setField(requestService, "tempFilePath", TEST_TEMP_PATH);
-        ReflectionTestUtils.setField(requestService, "compilePath", TEST_DIR_PATH);
-        ReflectionTestUtils.setField(requestService, "compileLog", "test-compile.log");
     }
 
     @AfterEach

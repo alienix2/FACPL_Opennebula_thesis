@@ -2,12 +2,11 @@ package com.policyManager.service;
 
 import entryPoint.RequestExecution;
 import com.policyManager.utils.FACPLFileValidator;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.nio.file.*;
@@ -23,13 +22,6 @@ public class RequestService {
     @Value("${facpl.temp.filepath}")
     private String tempFilePath;
 
-    @Value("${facpl.compile.folderpath}")
-    private String compilePath;
-
-    @Value("${logging.compile.file.name}")
-    private String compileLog;
-
-    private final Logger logger = LoggerFactory.getLogger(RequestService.class);
     private final RequestExecution requestExecution;
 
     public RequestService(RequestExecution requestExecution) {
@@ -61,7 +53,6 @@ public class RequestService {
             requestExecution.execute(new String[]{requestsFilePath});
             return ResponseEntity.ok("Request executed");
         } catch (Exception e) {
-            logger.error("Error executing request", e);
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Something went wrong");
         }
     }

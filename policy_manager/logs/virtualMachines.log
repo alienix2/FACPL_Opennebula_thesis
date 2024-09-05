@@ -48,3 +48,15 @@ INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 0
 INFO opennebula_api.CreateVM.eval: Starting VM: [6, 1c6a6534-cf5b-4aa3-b170-c931837aebd2]
 INFO opennebula_api.OpenNebulaActionBase.logResponse: 762
 INFO opennebula_api.OpenNebulaActionBase.logResponse: 762
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 0: [CPU, MEM]: [800,16240368]
+INFO opennebula_api.CreateVM.eval: Starting VM: [6, 728207cc-72a5-4aad-baed-946bc958966c]
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 763
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 763
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 0: [CPU, MEM]: [800,16240368]
+INFO opennebula_api.CreateVM.eval: Starting VM: [6, cd1cd283-e4bf-4d06-9a65-e1f26e00336a]
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 764
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 764
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 0: [CPU, MEM]: [700,15453936]
+INFO opennebula_api.CreateVM.eval: Starting VM: [6, 33463c3e-43fb-4ca2-b861-4d7b616eef8c]
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 765
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 765
