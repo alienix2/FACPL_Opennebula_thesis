@@ -1,4 +1,5 @@
-PolicySet Online_Generated{
+PolicySet Online_Generated { permit-overrides
+	policies:
 	PolicySet Energy_Saving { permit-overrides
 		policies:
 		PolicySet Create_Policies{permit-overrides
