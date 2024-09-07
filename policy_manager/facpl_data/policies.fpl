@@ -1,56 +1,60 @@
-PolicySet Online_Generated { permit-overrides
+PolicySet Energy_Saving { permit-overrides
 	policies:
 	PolicySet Create_Policies{permit-overrides
   		target: equal("CREATE", action/action-id)
   		policies:
     	PolicySet SLA_Type1 { deny-unless-permit
 			target:(equal("P_1", subject/profile-id) || equal("P_2", subject/profile-id))
-        		&& equal("6", resource/vm-type)        	
+        		&& equal("TYPE_1", resource/vm-type)        	
 			policies:
       		Rule hyper_1 (permit
-        		target: less-than-or-equal(100, system/hyper1.availableResources)
-        		obl: [M create(0, system/vm-name, 6)])   
+        		target: less-than-or-equal(1, system/hyper1.availableResources)
+        			&& less-than-or-equal(system/hyper2.availableResources, system/hyper1.availableResources)
+        		obl: [M create("HYPER_1", system/vm-id, "TYPE_1")])   
         	Rule hyper_2 (permit
-          		target: less-than-or-equal(100, system/hyper2.availableResources)
-          		obl: [M create(6, system/vm-name, 6)])       
-      		obl-d: [O log("Not enough available resources for TYPE_1 VMs")]
+        		target: less-than-or-equal(1, system/hyper1.availableResources)
+        			&& less-than-or-equal(system/hyper1.availableResources, system/hyper2.availableResources)
+        		obl: [M create("HYPER_2", system/vm-id, "TYPE_1")])       
+      		obl-d: [O warning("Not enough available resources for TYPE_1 VMs")]
     	}
 
     	PolicySet SLA_Type2 { deny-unless-permit
       		target:equal("P_2", subject/profile-id)
-        		&& equal("4", resource/vm-type)
+        		&& equal("TYPE_2", resource/vm-type)
       		policies:
         	Rule hyper_1_create (permit
-          		target: less-than-or-equal(200, system/hyper1.availableResources)
-          		obl: [M create(0, system/vm-name, 4)]
+          		target: less-than-or-equal(2, system/hyper1.availableResources)
+        			&& less-than-or-equal(system/hyper2.availableResources, system/hyper1.availableResources)
+          		obl: [M create("HYPER_1", system/vm-id, "TYPE_2")]
         	)
         	Rule hyper_2_create (permit
-          		target: less-than-or-equal(200, system/hyper2.availableResources)
-          		obl: [M create(6, system/vm-name, 4)]
+          		target: less-than-or-equal(2, system/hyper1.availableResources)
+        			&& less-than-or-equal(system/hyper1.availableResources, system/hyper2.availableResources)
+          		obl: [M create("HYPER_2", system/vm-id, "TYPE_2")]
         	)
         	Rule hyper_1_freeze (permit
           		target:(
               		(equal(0, system/hyper1.availableResources) &&
                   		less-than-or-equal(2, system/hyper1.vm1-counter))
-              		|| (equal(100, system/hyper1.availableResources) &&
+              		|| (equal(1, system/hyper1.availableResources) &&
                   		less-than-or-equal(1, system/hyper1.vm1-counter))
             		)
           		obl:
-            	[M freeze("0", subtract(200, system/hyper1.availableResources), "6")]
-            	[M create(0, system/vm-name, 4)]
+            	[M freeze("HYPER_1", subtract(2, system/hyper1.availableResources), "TYPE_1")]
+            	[M create("HYPER_1", system/vm-id, "TYPE_2")]
         	)
         	Rule hyper_2_freeze (permit
           		target:(
           			(equal(0, system/hyper2.availableResources) &&
                   		less-than-or-equal(2, system/hyper2.vm1-counter))
-             		|| (equal(100, system/hyper2.availableResources) &&
+             		|| (equal(1, system/hyper2.availableResources) &&
                   		less-than-or-equal(1, system/hyper2.vm1-counter))
             	)
           		obl:
-           		[M freeze("6", subtract(200, system/hyper2.availableResources), "6")]
-           		[M create(6, system/vm-name, 4)]
+           		[M freeze("HYPER_2", subtract(2, system/hyper2.availableResources), "TYPE_1")]
+           		[M create("HYPER_2", system/vm-id, "TYPE_2")]
         	)
-      	obl-d: [O log("Not enough available resources for TYPE_2 VMs")]
+      	obl-d: [O warning("Not enough available resources for TYPE_2 VMs")]
     	}
     	
     }
@@ -61,12 +65,11 @@ PolicySet Online_Generated { permit-overrides
   		policies:
     	Rule hyper_1_release (permit
       		target:( in (resource/vm-name, system/hyper1.vm-names))
-      		obl: [M release("0", resource/vm-name)]
+      		obl: [M release("HYPER_1", resource/vm-id)]
     	)
     	Rule hyper_2_release (permit
       		target:( in (resource/vm-name, system/hyper2.vm-names))
-      		obl: [M release("6", resource/vm-name)]
+      		obl: [M release("HYPER_2", resource/vm-id)]
     	)
   	}
 }
-
