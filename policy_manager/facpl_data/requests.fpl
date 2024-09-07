@@ -1,5 +1,5 @@
 Request: { Online_Generated
     (action/action-id, "CREATE")
-    (subject/profile-id, "P_1")
-    (resource/vm-type, "6")
+    (subject/profile-id, "P_2")
+    (resource/vm-type, "4")
 }

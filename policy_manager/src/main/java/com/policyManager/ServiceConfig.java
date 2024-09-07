@@ -10,7 +10,7 @@ import entryPoint.RequestExecution;
 import entryPoint.ApplyPolicy;
 
 @Configuration
-public class AppConfig {
+public class ServiceConfig {
 
     @Value("${logging.compile.file.name}")
     private String compileLog;

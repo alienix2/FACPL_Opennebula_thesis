@@ -2,6 +2,7 @@ package utilities;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -49,17 +50,26 @@ public class BaseCodeExecutor implements CodeExecutorInterface{
         return success;
     }
 
-    public void runCompiledClass(String className, String dir) throws Exception {
+    public void runCompiledClass(String className, String dir) throws Exception{
         logger.info("Running compiled class: " + className);
         File outputDirFile = new File(dir);
-        try (URLClassLoader classLoader = URLClassLoader.newInstance(new URL[] { outputDirFile.toURI().toURL() })) {
+        try (URLClassLoader classLoader = URLClassLoader.newInstance(new URL[]{outputDirFile.toURI().toURL()})) {
             Class<?> clazz = classLoader.loadClass(className);
             Method mainMethod = clazz.getMethod("main", String[].class);
+            logger.info("Successfully loaded class: " + className);
             String[] args = {};
-            mainMethod.invoke(null, (Object) args);
-            logger.info("Successfully ran class: " + className);
+            try {
+                mainMethod.invoke(null, (Object) args);
+                logger.info("Successfully ran class: " + className);
+            } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
+                logger.severe("Error executing main method of class: " + className + e.getMessage());
+                throw e;
+            }
+        } catch (ClassNotFoundException | NoSuchMethodException | SecurityException e) {
+            logger.severe("Error loading or finding main method for class: " + className + e.getMessage());
+            throw e;
         } catch (Exception e) {
-            logger.severe("Error running class: " + className);
+            logger.severe("Unexpected error while running class: " + className + e.getMessage());
             throw e;
         }
     }

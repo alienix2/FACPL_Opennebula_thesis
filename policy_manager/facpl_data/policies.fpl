@@ -1,4 +1,4 @@
-PolicySet Energy_Saving { permit-overrides
+PolicySet Online_Generated { permit-overrides
 	policies:
 	PolicySet Create_Policies{permit-overrides
   		target: equal("CREATE", action/action-id)
@@ -69,3 +69,4 @@ PolicySet Energy_Saving { permit-overrides
     	)
   	}
 }
+

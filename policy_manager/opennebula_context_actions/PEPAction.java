@@ -9,6 +9,13 @@ public class PEPAction{
 
 	public static HashMap<String, IPepAction> getPepActions() {
 		ContextStub_Default.getInstance();
+		/*
+		* Set your own pep action e.g. HashMap<String,new ***** class Action extending IPepAction***()
+		* 
+		* pepAction = new HashMap<String,IPepAction>(); 
+		* pepAction.put("action", Action.class); return
+		* pepAction;
+		*/
 		HashMap<String, IPepAction> pepAction = new HashMap<String, IPepAction>();
 		pepAction.put("release", 
 				new ReleaseVM(ContextStub_Default.getONContext()));

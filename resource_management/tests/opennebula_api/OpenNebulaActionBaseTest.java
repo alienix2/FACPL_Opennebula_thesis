@@ -24,14 +24,11 @@ public class OpenNebulaActionBaseTest {
 	
     @Test
     public void testLogResponseSuccess() {
-        // Set up mock context and response
         MockOpenNebulaActionContext mockContext = new MockOpenNebulaActionContext(null, mockLogger);
         MockOneResponse mockResponse = new MockOneResponse(false, "Operation successful", null);
 
-        // Instantiate the testable class
         TestAction action = new TestAction(mockContext);
 
-        // Call the method under test
         action.logResponse(mockResponse);
 
         assertEquals("INFO: Operation successful\n", mockLogHandler.getLogBuilder());
@@ -39,14 +36,11 @@ public class OpenNebulaActionBaseTest {
 
     @Test
     public void testLogResponseError() {
-        // Set up mock context and response
         MockOpenNebulaActionContext mockContext = new MockOpenNebulaActionContext(null, mockLogger);
         MockOneResponse mockResponse = new MockOneResponse(true, null, "Operation failed");
 
-        // Instantiate the testable class
         TestAction action = new TestAction(mockContext);
 
-        // Call the method under test
         action.logResponse(mockResponse);
 
         assertEquals("SEVERE: Operation failed\n", mockLogHandler.getLogBuilder());

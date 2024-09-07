@@ -26,6 +26,10 @@ highlight.js contributors.
 \newblock highlight.js - javascript syntax highlighter.
 \newblock \url{https://highlightjs.org/}, 2024.
 
+\bibitem{junit5}
+{JUnit Team}.
+\newblock Junit 5, 2024.
+
 \bibitem{knuth97}
 Donald~E. Knuth.
 \newblock {\em The Art of Computer Programming, Vol. 1: Fundamental
@@ -62,6 +66,10 @@ John Nash.
 \bibitem{spring}
 {Spring.io}.
 \newblock {Spring Framework}, 2024.
+
+\bibitem{mockito}
+Mockito Team.
+\newblock Mockito, 2024.
 
 \bibitem{maven}
 {The Apache Software Foundation}.

@@ -13,8 +13,8 @@
 %--------------------------------------------------------------
 % Inputs for the title page 
 %--------------------------------------------------------------
-\newcommand{\myItalianTitle}{Titolo italiano\xspace}
-\newcommand{\myEnglishTitle}{English title\xspace}
+\newcommand{\myItalianTitle}{Applicazione di FACPL per la gestione delle policy nei sistemi cloud: un caso di studio concreto con OpenNebula\xspace}
+\newcommand{\myEnglishTitle}{Applying FACPL to Policy Management in Cloud Systems: A Practical Case Study with OpenNebula\xspace}
 % use the right myDegree option
 \newcommand{\myDegree}{Corso di Laurea in Informatica\xspace}
 %\newcommand{\myDegree}{Corso di Laurea Magistrale in Informatica\xspace}
@@ -93,8 +93,12 @@ parts,dottedtoc]{classicthesis}
 % Mainmatter
 %--------------------------------------------------------------
 \pagenumbering{arabic}
+\let\origcleardoublepage\cleardoublepage
+\let\cleardoublepage\clearpage
 \tableofcontents
+\lstlistoflistings
 \listoffigures
+\let\cleardoublepage\origcleardoublepage
 \cleardoublepage
 \thispagestyle{empty}
 \begin{flushright}

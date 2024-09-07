@@ -1368,3 +1368,37 @@ INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 6
 INFO opennebula_api.CreateVM.eval: Starting VM: [4, 87a9251c-9bae-4c55-b5b6-986ca4d87df1]
 INFO opennebula_api.OpenNebulaActionBase.logResponse: 759
 INFO opennebula_api.OpenNebulaActionBase.logResponse: 759
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 0: [CPU, MEM]: [800,16240368]
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 6: [CPU, MEM]: [800,12125772]
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 0: [CPU, MEM]: [800,16240368]
+INFO opennebula_api.CreateVM.eval: Starting VM: [6, 8d5494b9-7573-46cb-b35c-ca6c2fea473f]
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 766
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 766
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 0: [CPU, MEM]: [700,15453936]
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 6: [CPU, MEM]: [800,12125772]
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 0: [CPU, MEM]: [700,15453936]
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 0: [CPU, MEM]: [700,15453936]
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 0: [CPU, MEM]: [700,15453936]
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 6: [CPU, MEM]: [800,12125772]
+INFO opennebula_api.CreateVM.eval: Starting VM: [6, 30506707-e316-4991-8d9f-0e7ed54350df]
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 767
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 767
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 0: [CPU, MEM]: [700,15453936]
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 6: [CPU, MEM]: [700,11339340]
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 0: [CPU, MEM]: [700,15453936]
+INFO opennebula_api.CreateVM.eval: Starting VM: [4, abace7cb-7e42-4a81-9b32-d551a8e476d0]
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 768
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 768
+INFO opennebula_api.VMsInfo.getAndLogVMs: The VMs running are: []
+INFO opennebula_api.VMsInfo.getAndLogVMs: The VMs running are: []
+INFO opennebula_api.VMsInfo.getAndLogVMs: The VMs running are: []
+INFO opennebula_api.VMsInfo.getAndLogVMs: The VMs running are: []
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 0: [CPU, MEM]: [500,14667504]
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 6: [CPU, MEM]: [700,11339340]
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 0: [CPU, MEM]: [500,14667504]
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 0: [CPU, MEM]: [500,14667504]
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 0: [CPU, MEM]: [500,14667504]
+INFO opennebula_api.HostInfo.updateHostResources: Resources available on host: 6: [CPU, MEM]: [700,11339340]
+INFO opennebula_api.CreateVM.eval: Starting VM: [4, 20f12ba1-265b-4f80-b929-061aa405d3b9]
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 769
+INFO opennebula_api.OpenNebulaActionBase.logResponse: 769

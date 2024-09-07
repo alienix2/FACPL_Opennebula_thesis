@@ -1,7 +1,8 @@
 **A simple interface that provides a real world implementation of the FACPL language**
 
 # Usage instructions:
-
+It is strongly recommended to run all the commands with a OneUser. The program can be edited to run on other users but it's not the intended use and the installation will need fixes in the tests, because they will fail if the current user is not a One User.
+If you still want to procede as a non OneUser, you can skip the tests and run the programs by using *mvn install -DskipTests* instead of *mvn install*, **BUT you must** edit the call to *ContextStub_Default.oneClient = new Client();* with actual credentials in the file *ContextStub_Default* that you are planning to use, otherwise the OpenNebula actions will never work
 ## Resource management:
 **Installation:**
 - run **mvn install** inside the *resource_management* folder

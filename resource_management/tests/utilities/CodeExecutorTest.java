@@ -81,6 +81,6 @@ public class CodeExecutorTest {
         assertThrows(Exception.class, () -> codeExecutor.runCompiledClass("NonExistentClass", tempDir.toString()));
         
         String logOutput = logHandler.getLogBuilder();
-        assertTrue(logOutput.contains("Error running class: NonExistentClass"));
+        assertTrue(logOutput.contains("Error loading or finding main method for class: NonExistentClassNonExistentClass"));
     }
 }

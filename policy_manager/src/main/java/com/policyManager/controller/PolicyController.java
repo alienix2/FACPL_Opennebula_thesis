@@ -28,7 +28,7 @@ public class PolicyController {
     }
 
     @PostMapping("/submit")
-    public ResponseEntity<String> submitPolicies() throws IOException {
+    public ResponseEntity<String> submitPolicies() throws Exception {
         return policyService.submitPolicies();
     }
 }

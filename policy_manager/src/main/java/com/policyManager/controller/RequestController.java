@@ -28,7 +28,7 @@ public class RequestController {
     }
 
     @PostMapping("/submit")
-    public ResponseEntity<String> submitRequest() throws IOException {
+    public ResponseEntity<String> submitRequest() throws Exception {
         return requestService.submitRequest();
     }
 }
