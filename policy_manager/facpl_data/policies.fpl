@@ -75,8 +75,4 @@ PolicySet Online_Generated { permit-overrides
 	    	)
 	  	}
 	}
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> branch 'master' of https://github.com/alienix2/FACPL_Opennebula_thesis.git
