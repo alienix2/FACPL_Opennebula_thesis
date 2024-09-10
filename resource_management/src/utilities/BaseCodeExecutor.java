@@ -62,7 +62,8 @@ public class BaseCodeExecutor implements CodeExecutorInterface{
                 mainMethod.invoke(null, (Object) args);
                 logger.info("Successfully ran class: " + className);
             } catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
-                logger.severe("Error executing main method of class: " + className + e.getMessage());
+            	System.out.println(e.getClass().getName());
+                logger.severe("Error executing main method of class: " + className + " " + e.getMessage());
                 throw e;
             }
         } catch (ClassNotFoundException | NoSuchMethodException | SecurityException e) {

@@ -2,9 +2,9 @@
 
 \chapter{Integrazione di OpenNebula con FACPL}
 \label{cap:proposal}
-Come già discusso nel capitolo \ref{cap:stateOfArt}, grazie al modo in cui FACPL\cite{facpl} è costruito risulta molto facile andare a fornire un'implementazione concreta dei PEP (\emph{Policy Enforcement Point}) e PDP (\emph{Policy Decision Point}) avendo conoscenza  di quali sono le esigenze a cui devono rispondere.\medbreak
+Come già discusso nel capitolo \ref{cap:capitolo2}, grazie al modo in cui FACPL\cite{facpl} è costruito risulta molto facile andare a fornire un'implementazione concreta dei PEP (\emph{Policy Enforcement Point}) e PDP (\emph{Policy Decision Point}) avendo conoscenza  di quali sono le esigenze a cui devono rispondere.\medbreak
 Per validare ulteriormente questo punto abbiamo deciso di utilizzare FACPL in una situazione in cui fosse necessario interfacciarsi con un software già esistente così da mostrare le effettive potenzialità e semplicità di implementazione della libreria.
-Il caso concreto che abbiamo deciso di considerare deriva da un possibile sviluppo futuro già proposto all'interno di \cite{10.1007/978-3-319-08260-8_6}, ovvero un'integrazione con un "sistema di IaaS open-source sul cloud" come OpenNebula\cite{opennebula}, software che è stato già presentato all'interno del capitolo \ref{cap:stateOfArt}.
+Il caso concreto che abbiamo deciso di considerare deriva da un possibile sviluppo futuro già proposto all'interno di \cite{10.1007/978-3-319-08260-8_6}, ovvero un'integrazione con un "sistema di IaaS open-source sul cloud" come OpenNebula\cite{opennebula}, software che è stato già presentato all'interno del capitolo \ref{cap:capitolo2}.
 
 \section{Idea di base}
 Per iniziare abbiamo considerato due esempi di gestione delle risorse disponibili aderenti alla realtà, presenti all'interno di \cite{10.1007/978-3-319-08260-8_6}.
@@ -19,7 +19,7 @@ Nel concreto era quindi necessario pensare a due parti distinte:
     \item una che svolgesse operazioni sulle singole virtual machine (avviarle, inserire nell'host corretto, fermarne l'esecuzione).
     \item una che recuperasse le informazioni generali sugli host e sul sistema tutto.
 \end{itemize}
-Il cloud manager che abbiamo deciso di utilizzare è stato OpenNebula per i motivi presentati nel capitolo \ref{cap:stateOfArt}
+Il cloud manager che abbiamo deciso di utilizzare è stato OpenNebula per i motivi presentati nel capitolo \ref{cap:capitolo2}
 
 \section{OpenNebula API}
 Il primo approccio che avevamo pensato di percorrere era quello di utilizzare il codice Java per invocare dei comandi da shell che fossero in grando di interagire con OpenNebula. Questo approccio sembrava il più immediato anche dato lo studio preliminare di OpenNebula che avevamo svolto che era stato soprattutto attraverso la shell (oltre che la web ui).\medbreak

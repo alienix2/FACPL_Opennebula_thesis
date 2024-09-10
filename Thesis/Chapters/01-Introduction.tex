@@ -1,21 +1,18 @@
 % !TEX root = ../Thesis.tex
 
-\chapter{Introduction}
-
-The introduction is usually a short chapter that can be read in less than 10 minutes.
-
-The goal of the Introduction is to engage the reader (why you should keep reading).
-You don't have to discuss anything in detail. Rather, the goal is to tell the reader:
+\chapter{Introduzione}
+In questa tesi si cercherà di dare una risposta al problema della gestione delle policy nei sistemi cloud, con particolare interesse riguardo le politiche di creazione delle virtual machine e di bilanciamento delle risorse. Il linguaggio utilizzato per le policy è FACPL, ancora poco esplorato nonostante i molti vantaggi rispetto alle alternative presenti in letteratura.\medbreak
+Il sistema di gestione cloud scelto è OpenNebula, un software completamente open-source che permette di gestire infrastrutture cloud su diversi livelli e integra molti servizi utili per la gestione delle risorse.\medbreak
+L'obiettivo finale è quello di fornire un'implementazione concreta di FACPL come gestore di richieste di creazione di virtual machine che sia in grado di funzionare in un ambiente cloud reale su cui è installato OpenNebula. Questo permetterà quindi di decidere le policy con cui si permette a specifici utenti di creare virtual machine su specifici host, così come di bilanciare le risorse tra i vari host o di decidere di spegnere alcune macchine in base a determinate condizioni.\medbreak
+L'implementazione sarà corredata con adeguata metodologia di logging delle informazioni e utilizzo delle pratiche di buona programmazione per rendere il codice facilmente mantenibile e ampliabile in futuro.\medbreak
+I principali problemi che saranno affrontati e risolti sono quelli scaturiti dalla necessità di far interagire le API di OpenNebula con la struttura fornita da FACPL senza snaturare nessuno dei due progetti in modo anche da dimostrare la facile adattabilità di FACPL. Un'altra questione che verrà trattata sarà inoltre l'integrazione di un software di gestione della build come Maven, con due progetti distribuiti esclusivamente come file .jar.\medbreak
+Per concludere verrà fornito uno spunto di web-app da cui sarà possibile provare le funzionalità del progetto sviluppato oltre che partire per una possibile implementazione in un vero server che integra un meccanismo di autenticazione e autorizzazione.\medbreak
+Questa tesi spera di mostrare la semplicitià di utilizzo di FACPL e di evidenziare i suoi pro e contro di modo che una persona che intende realizzare un progetto in cui è richiesta la valutazione di policy di accesso, possa scegliere FACPL come linguaggio se fa al caso suo e con la possibilità di avere un'idea su come può essere utilizzato in un caso concreto.\medbreak
+\section{Guida alla lettura}
+I capitoli che seguono sono così suddivisi:
 \begin{itemize}
-%  \item Why something has to be done (why the thesis topic is important),
-  \item what is the problem dealt with and why the problem is a problem;
-  \item what is the particular topic you're going to talk about in the thesis;
-  \item what are your goals in doing so, and what methodology do you follow;
-  \item what are the implications of your work.
+    \item \emph{Capitolo 2:} introduce i concetti di base su FACPL e OpenNebula, con particolare attenzione alle componenti usate in questa tesi.
+    \item \emph{Capitolo 3:} descrive nel dettaglio l'implementazione fornita con diverse spiegazioni sulle scelte di design effettuate
+    \item \emph{Capitolo 4:} discute i risultati ottenuti;
+    \item \emph{Capitolo 5:} conclude la tesi con un riassunto dei risultati e possibili sviluppi futuri.
 \end{itemize}
-
-The above points will be further expanded in the following chapters, so only a glimpse is essential. 
-
-\medskip
-
-It is customary to conclude the Introduction with a summary of the content of the rest of the thesis. One or two sentences are enough for each chapter.

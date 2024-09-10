@@ -5,15 +5,15 @@ Joshua Bloch.
 \newblock {\em Effective Java}.
 \newblock Addison-Wesley, 3rd edition, 2018.
 
-\bibitem{rfc1925}
-Ross Callon.
-\newblock {The Twelve Networking Truths}.
-\newblock RFC 1925, April 1996.
-
 \bibitem{opennebula}
 OpenNebula Community.
 \newblock Opennebula.
 \newblock \url{https://opennebula.io/}.
+
+\bibitem{eclipseXtext}
+Eclipse Foundation.
+\newblock Eclipse xtext: Language development framework.
+\newblock \url{https://eclipse.dev/Xtext/}, 2023.
 
 \bibitem{GOF}
 Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides.
@@ -30,11 +30,11 @@ highlight.js contributors.
 {JUnit Team}.
 \newblock Junit 5, 2024.
 
-\bibitem{knuth97}
-Donald~E. Knuth.
-\newblock {\em The Art of Computer Programming, Vol. 1: Fundamental
-  Algorithms}.
-\newblock Addison-Wesley, Reading, Mass., 3rd ed. edition, 1997.
+\bibitem{FAPCLTesi}
+Andrea Margheri.
+\newblock {\em Progetto e realizzazione di un linguaggio formale per il
+  controllo degli accessi basato su politiche}.
+\newblock PhD thesis, Università degli Studi di Firenze, Italy, 2012.
 
 \bibitem{facpl}
 Andrea Margheri.
@@ -53,11 +53,6 @@ Andrea Margheri, Massimiliano Masi, Rosario Pugliese, and Francesco Tiezzi.
 \newblock In Emilio Tuosto and Chun Ouyang, editors, {\em Web Services and
   Formal Methods}, pages 85--105, Cham, 2014. Springer International
   Publishing.
-
-\bibitem{nash51}
-John Nash.
-\newblock Non-cooperative games.
-\newblock {\em Annals of Mathematics}, 54(2):286--295, 1951.
 
 \bibitem{springboot}
 {Spring.io}.
@@ -79,5 +74,9 @@ Mockito Team.
 \bibitem{apache_commons}
 {The Apache Software Foundation}.
 \newblock Apache commons, 2024.
+
+\bibitem{xmlrpc}
+Dave Winer.
+\newblock Xml-rpc specification, 2024.
 
 \end{thebibliography}
