@@ -47,7 +47,6 @@ public class OpenNebulaFACPLClassSetupTest {
         setup.setup(additionalFilesFolder.toString(), outputFolder.toString());
         
         String logOutput = logHandler.getLogBuilder();
-        System.out.println(logOutput);
         assertTrue(logOutput.contains("Class generation completed successfully."));
         assertTrue(logOutput.contains("Folder contents handled successfully."));
     }

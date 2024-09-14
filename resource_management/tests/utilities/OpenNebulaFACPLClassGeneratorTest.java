@@ -57,7 +57,6 @@ class OpenNebulaFACPLClassGeneratorTest {
             generator.generateClasses(tempDir.toString());
         });
 
-        System.out.println(exception.getMessage());
         assertTrue(exception.getMessage().contains("java.io.FileNotFoundException:"));
         assertTrue(logHandler.getLogBuilder().contains("java.io.FileNotFoundException:"));
     }
