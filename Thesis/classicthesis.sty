@@ -682,6 +682,8 @@
 
 %Change list of listings title
 \renewcommand{\lstlistlistingname}{Elenco dei listing}
+%Change space between paragraphs
+\setlength{\parskip}{0.5em}
 
 %Gruvbox colors
 \definecolor{gruvbox-bg}{HTML}{fffee6}     % Adjusted lighter background color
@@ -757,6 +759,36 @@
   numberstyle=\footnotesize,                % Set the line number font size
   xleftmargin=2em                           % Extra space on the left to avoid overlap
 }
+
+%Definizione del linguaggio FACPL per lstlisting
+\definecolor{gruvbox-dark-yellow}{RGB}{214,93,14} % Keywords (orange-ish)
+\definecolor{gruvbox-light-green}{RGB}{121,116,14} % Strings (green)
+\definecolor{gruvbox-gray}{RGB}{146,131,116} % Comments (grayish-brown)
+\definecolor{gruvbox-light-purple}{RGB}{177,98,134} % Literal types (purple-pink)
+
+% Define FACPL language with Gruvbox theme
+\lstdefinelanguage{FACPL}{
+  keywords={import, PAS, dec-fun, map, Request, PolicySet, Rule, include}, % FACPL keywords
+  keywordstyle=\color{gruvbox-dark-yellow}, % Gruvbox-style for keywords
+  morekeywords={true, false}, % Built-in values
+  morekeywords=[2]{Int, Double, Bool, String, DateTime, Set, IntLiteral, DoubleLiteral, BooleanLiteral, StringLiteral, DateLiteral, TimeLiteral}, % Literal types
+  keywordstyle=[2]\color{gruvbox-light-purple}, % Gruvbox-style for literal types
+  morekeywords=[3]{equal, not-equal, less-than, less-than-or-equal, greater-than, greater-than-or-equal, in, addition, subtract, divide, multiply}, % Functions
+  keywordstyle=[3]\color{gruvbox-dark-yellow}, % Gruvbox-style for functions
+  sensitive=false, % Case-insensitive keywords
+  morestring=[b]", % Double quote strings
+  morestring=[b]', % Single quote strings
+  stringstyle=\color{gruvbox-light-green}, % Gruvbox-style for strings
+  comment=[l]{//}, % Single line comment style
+  morecomment=[s]{/*}{*/}, % Block comment style
+  commentstyle=\color{gruvbox-gray}\ttfamily, % Gruvbox-style for comments
+  numberstyle=\color{black}, % Black color for numbers
+  identifierstyle=\color{black}, % Default identifiers color
+  basicstyle=\ttfamily, % Basic font style
+  breaklines=true, % Line break
+  breakatwhitespace=false, % Avoid breaking at whitespaces
+}
+
 
 % \lstset{
 %   backgroundcolor=\color{gruvbox-bg},    % Set background color

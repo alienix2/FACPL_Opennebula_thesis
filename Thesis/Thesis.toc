@@ -6,7 +6,7 @@
 \contentsline {section}{\numberline {1.1}{Guida alla lettura}}{8}{section.1.1}%
 \contentsline {chapter}{\numberline {2}{Il linguaggio FACPL e il software OpenNebula}}{9}{chapter.2}%
 \contentsline {section}{\numberline {2.1}{Il linguaggio FACPL}}{9}{section.2.1}%
-\contentsline {section}{\numberline {2.2}{Componenti del sistema FACPL}}{9}{section.2.2}%
+\contentsline {section}{\numberline {2.2}{Componenti del sistema FACPL}}{10}{section.2.2}%
 \contentsline {section}{\numberline {2.3}{Modalità di utilizzo di FACPL}}{11}{section.2.3}%
 \contentsline {section}{\numberline {2.4}{Il software OpenNebula}}{12}{section.2.4}%
 \contentsline {section}{\numberline {2.5}{Architettura di OpenNebula}}{12}{section.2.5}%
@@ -20,13 +20,16 @@
 \contentsline {section}{\numberline {3.6}{Interazione con il ContextStub e le PEPActions}}{24}{section.3.6}%
 \contentsline {section}{\numberline {3.7}{Accesso dall'esterno del progetto}}{26}{section.3.7}%
 \contentsline {section}{\numberline {3.8}{Utilizzo di Maven}}{30}{section.3.8}%
-\contentsline {section}{\numberline {3.9}{Introduzione alla Web app e ideazione del front-end}}{31}{section.3.9}%
+\contentsline {section}{\numberline {3.9}{Introduzione alla Web app e ideazione del front-end}}{32}{section.3.9}%
 \contentsline {section}{\numberline {3.10}{Sviluppo del backend}}{34}{section.3.10}%
 \contentsline {section}{\numberline {3.11}{Integrazione della web-app con Maven}}{38}{section.3.11}%
 \contentsline {section}{\numberline {3.12}{Testing}}{39}{section.3.12}%
 \contentsline {section}{\numberline {3.13}{Rilascio del progetto}}{42}{section.3.13}%
 \contentsline {section}{\numberline {3.14}{How did I discover a novel type of heated water}}{44}{section.3.14}%
 \contentsline {section}{\numberline {3.15}{How my heated water differs from the previous ones}}{44}{section.3.15}%
-\contentsline {chapter}{\numberline {4}{Numerical results}}{47}{chapter.4}%
-\contentsline {chapter}{\numberline {5}{Conclusions and Future work}}{49}{chapter.5}%
-\contentsline {chapter}{Bibliografia}{51}{chapter.5}%
+\contentsline {chapter}{\numberline {4}{Utilizzo dei progetti in un server reale}}{47}{chapter.4}%
+\contentsline {section}{\numberline {4.1}{Installazione dei due progetti}}{48}{section.4.1}%
+\contentsline {section}{\numberline {4.2}{Specifiche dell'esempio}}{49}{section.4.2}%
+\contentsline {chapter}{\numberline {5}{Conclusions and Future work}}{51}{chapter.5}%
+\contentsline {chapter}{Ringraziamenti}{53}{chapter.5}%
+\contentsline {chapter}{Bibliografia}{55}{chapter.5}%

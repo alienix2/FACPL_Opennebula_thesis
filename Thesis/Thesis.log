@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.9.1)  10 SEP 2024 16:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.9.1)  13 SEP 2024 16:40
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1063,9 +1063,9 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 )
 \Hy@SectionHShift=\skip137
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 794.
-Package hyperref Info: Option `linktocpage' set `true' on input line 794.
-Package hyperref Info: Option `breaklinks' set `true' on input line 794.
+Package hyperref Info: Option `colorlinks' set `true' on input line 826.
+Package hyperref Info: Option `linktocpage' set `true' on input line 826.
+Package hyperref Info: Option `breaklinks' set `true' on input line 826.
 )
 \abcd=\skip138
  (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
@@ -1094,7 +1094,7 @@ runsystem(which pygmentize && touch Thesis.aex)...executed.
 
 runsystem(rm Thesis.aex)...executed.
 
- (/var/lib/one/eclipse-workspace/Thesis/Thesis.aux (/var/lib/one/eclipse-workspace/Thesis/FrontMatter/Titlepage.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/01-Introduction.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/02-StateOfTheArt.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/03-Proposal.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/04-Evaluation.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/05-Conclusions.aux))
+ (/var/lib/one/eclipse-workspace/Thesis/Thesis.aux (/var/lib/one/eclipse-workspace/Thesis/FrontMatter/Titlepage.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/01-Introduction.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/02-StateOfTheArt.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/03-Proposal.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/04-RealCaseScenario.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/05-Conclusions.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/06-Ringraziamenti.aux))
 \openout1 = `Thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 82.
@@ -1369,9 +1369,9 @@ Capitolo 1.
 
  (/var/lib/one/eclipse-workspace/Thesis/Chapters/02-StateOfTheArt.tex
 Capitolo 2.
-Package svg Info: Last page of `./svg-inkscape/facplEvaluationProcess_svg-tex.pdf' is 1 on input line 14.
+Package svg Info: Last page of `./svg-inkscape/facplEvaluationProcess_svg-tex.pdf' is 1 on input line 18.
 (/var/lib/one/eclipse-workspace/Thesis/./svg-inkscape/facplEvaluationProcess_svg-tex.pdf_tex
-<./svg-inkscape/facplEvaluationProcess_svg-tex.pdf, id=182, page=1, 441.31216pt x 196.42122pt>
+<./svg-inkscape/facplEvaluationProcess_svg-tex.pdf, id=189, page=1, 441.31216pt x 196.42122pt>
 File: ./svg-inkscape/facplEvaluationProcess_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/facplEvaluationProcess_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/facplEvaluationProcess_svg-tex.pdf , page1 used on input line 56.
@@ -1382,23 +1382,24 @@ Package pdftex.def Info: ./svg-inkscape/facplEvaluationProcess_svg-tex.pdf , pag
 
 
 ] [10 <./svg-inkscape/facplEvaluationProcess_svg-tex.pdf>]
-LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 6.46004pt on input line 31.
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplx/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
  [11]
-Underfull \hbox (badness 10000) in paragraph at lines 37--37
+LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
+(Font)              scaled to size 6.46004pt on input line 35.
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
 [][][][]$\T1/fvm/m/n/10 https : / / docs . opennebula . io / 6 . 8 / overview / opennebula _ concepts / opennebula _
  []
 
 [12] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 49--49
+Underfull \hbox (badness 10000) in paragraph at lines 53--53
 [][][][]$\T1/fvm/m/n/10 https : / / docs . opennebula . io / 6 . 8 / integration _ and _ development / system _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 49--49
+Underfull \hbox (badness 10000) in paragraph at lines 53--53
 [][][][]$\T1/fvm/m/n/10 https : / / docs . opennebula . io / 6 . 8 / integration _ and _ development / system _
  []
 
@@ -1434,56 +1435,52 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--30
 
 [16] [17] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
-) [18] [19]
-
-LaTeX Warning: Reference `cap:stateOfArt' on page 20 undefined on input line 114.
-
-[20]
-
-Package caption Warning: \captionsetup{type*=...} or \captionof
-(caption)                outside box or environment on input line 131.
-See the caption package documentation for explanation.
-
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 131.
-See the caption package documentation for explanation.
-
-[21]
+) [18] [19] [20] [21]
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 7.22505pt on input line 167.
- [22]
-
-LaTeX Warning: Reference `cap:stateOfArt' on page 23 undefined on input line 186.
-
-[23] [24]
+(Font)              scaled to size 7.22505pt on input line 168.
+ [22] [23] [24]
 Underfull \hbox (badness 10000) in paragraph at lines 261--263
 
  []
 
-[25] [26] [27] [28]
-Underfull \hbox (badness 2042) in paragraph at lines 387--388
-[]\T1/fvm/m/n/12 classGenerator \T1/pplx/m/n/12 (+20) è un og-get-to crea-to a par-ti-re dal-la clas-se
+[25] [26] [27]
+Overfull \hbox (38.742pt too wide) in paragraph at lines 352--353
+\T1/pplx/m/n/12 (-20) sta, ed en-tram-be uti-liz-za-no co-me \T1/fvm/m/n/12 setupper \T1/pplx/m/n/12 (-20) la clas-se \T1/fvm/m/n/12 OpenNebulaFACPLClassSetup
+ []
+
+[28]
+Overfull \hbox (120.09207pt too wide) in paragraph at lines 388--389
+[]\T1/fvm/m/n/12 classGenerator \T1/pplx/m/n/12 (-20) è un og-get-to crea-to a par-ti-re dal-la clas-se \T1/fvm/m/n/12 OpenNebulaFACPLClassGenerator
  []
 
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 8.07506pt on input line 389.
+(Font)              scaled to size 8.07506pt on input line 390.
 [29] [30] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
 ) [31] [32]
-<./Figures/policyManagerFrontEnd.png, id=720, 1264.725pt x 1200.485pt>
+<./Figures/policyManagerFrontEnd.png, id=731, 1264.725pt x 1200.485pt>
 File: ./Figures/policyManagerFrontEnd.png Graphic file (type png)
 <use ./Figures/policyManagerFrontEnd.png>
 Package pdftex.def Info: ./Figures/policyManagerFrontEnd.png  used on input line 451.
 (pdftex.def)             Requested size: 345.69862pt x 328.12859pt.
- [33 <./Figures/policyManagerFrontEnd.png>] [34] [35] [36] [37] [38] [39]
-Underfull \hbox (badness 1194) in paragraph at lines 629--630
-[] \T1/pplx/m/n/12 (+20) Quel-lo che pos-sia-mo no-ta-re è l'u-ti-liz-zo di tre clas-si di Mock:
+
+Overfull \hbox (8.14969pt too wide) in paragraph at lines 456--456
+[]\T1/pplx/m/n/12 (-20) A li-vel-lo im-ple-men-ta-ti-vo si evi-den-zia l'u-ti-liz-zo del-la li-bre-ria \T1/pplx/m/it/12 (-20) hi-ghlight.js\T1/pplx/m/n/12 (-20) [[]]
  []
 
-[40] [41] [42] [43]
+[33 <./Figures/policyManagerFrontEnd.png>] [34] [35]
+Overfull \hbox (19.75931pt too wide) in paragraph at lines 509--510
+\T1/pplx/m/n/12 (-20) Il co-strut-to-re di que-sta clas-se ri-ce-ve in in-put un og-get-to di ti-po \T1/fvm/m/n/12 PolicyService
+ []
+
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 551--552
+\T1/pplx/m/n/12 (+20) po-sta-te.
+ []
+
+[37] [38] [39] [40] [41] [42] [43]
 \openout3 = `Thesis.pyg'.
 
  (/var/lib/one/eclipse-workspace/Thesis/_minted-Thesis/default-pyg-prefix.pygstyle) (/var/lib/one/eclipse-workspace/Thesis/_minted-Thesis/tango.pygstyle) (/var/lib/one/eclipse-workspace/Thesis/_minted-Thesis/57F4AEA5A657C6BAE065646BDA1F6151652400CCFCF6585C49CDA9A099C65A39.pygtex
@@ -1494,9 +1491,9 @@ LaTeX Font Info:    Font shape `T1/fvm/m/it' in size <8> not available
 LaTeX Font Info:    Font shape `T1/fvm/m/sl' will be
 (Font)              scaled to size 6.80005pt on input line 14.
 )) [44] [45]
-\openout2 = `Chapters/04-Evaluation.aux'.
+\openout2 = `Chapters/04-RealCaseScenario.aux'.
 
- (/var/lib/one/eclipse-workspace/Thesis/Chapters/04-Evaluation.tex
+ (/var/lib/one/eclipse-workspace/Thesis/Chapters/04-RealCaseScenario.tex
 Capitolo 4.
 [46
 
@@ -1504,22 +1501,43 @@ Capitolo 4.
 
 
 ]
-<./Figures/DaveSecurity.jpg, id=1009, 602.25pt x 418.56375pt>
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
+[][][][]$\T1/fvm/m/n/10 https : / / docs . opennebula . io / 6 . 8 / installation _ and _ configuration / frontend _
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
+[][][][]$\T1/fvm/m/n/10 https : / / docs . opennebula . io / 6 . 8 / open _ cluster _ deployment / kvm _ node / kvm _ node _
+ []
+
+[47] [48] [49]
+
+LaTeX Warning: Reference `cap:proposal' on page 50 undefined on input line 59.
+
+<./Figures/DaveSecurity.jpg, id=1040, 602.25pt x 418.56375pt>
 File: ./Figures/DaveSecurity.jpg Graphic file (type jpg)
 <use ./Figures/DaveSecurity.jpg>
-Package pdftex.def Info: ./Figures/DaveSecurity.jpg  used on input line 11.
+Package pdftex.def Info: ./Figures/DaveSecurity.jpg  used on input line 65.
 (pdftex.def)             Requested size: 268.87737pt x 186.8766pt.
-) [47 <./Figures/DaveSecurity.jpg>]
+) [50 <./Figures/DaveSecurity.jpg>]
 \openout2 = `Chapters/05-Conclusions.aux'.
 
  (/var/lib/one/eclipse-workspace/Thesis/Chapters/05-Conclusions.tex
 Capitolo 5.
-[48
+) [51
 
 
 
 
-]) [49] (/var/lib/one/eclipse-workspace/Thesis/Thesis.bbl [50
+]
+\openout2 = `Chapters/06-Ringraziamenti.aux'.
+
+ (/var/lib/one/eclipse-workspace/Thesis/Chapters/06-Ringraziamenti.tex [52
+
+
+
+
+]) [53] (/var/lib/one/eclipse-workspace/Thesis/Thesis.bbl [54
 
 
 
@@ -1533,12 +1551,12 @@ Underfull \hbox (badness 3019) in paragraph at lines 40--43
 []\T1/pplx/m/n/12 (+20) Andrea Mar-ghe-ri.  Fa-c-pl do-cu-men-ta-tion.  [][]$\T1/fvm/m/n/12 https : / / facpl .
  []
 
-[51]) [52]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 129.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 129.
- (/var/lib/one/eclipse-workspace/Thesis/Thesis.aux (/var/lib/one/eclipse-workspace/Thesis/FrontMatter/Titlepage.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/01-Introduction.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/02-StateOfTheArt.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/03-Proposal.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/04-Evaluation.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/05-Conclusions.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 129.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 129.
+[55]) [56]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 130.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 130.
+ (/var/lib/one/eclipse-workspace/Thesis/Thesis.aux (/var/lib/one/eclipse-workspace/Thesis/FrontMatter/Titlepage.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/01-Introduction.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/02-StateOfTheArt.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/03-Proposal.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/04-RealCaseScenario.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/05-Conclusions.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/06-Ringraziamenti.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 130.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 130.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
@@ -1549,18 +1567,18 @@ runsystem(rm Thesis.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 38747 strings out of 481239
- 782304 string characters out of 5920378
- 1440104 words of memory out of 5000000
- 52217 multiletter control sequences out of 15000+600000
+ 38801 strings out of 481239
+ 783525 string characters out of 5920378
+ 1442767 words of memory out of 5000000
+ 52252 multiletter control sequences out of 15000+600000
  646961 words of font info for 428 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,23n,94p,10139b,2489s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 72i,23n,94p,10139b,2464s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /var/lib/one/eclipse-workspace/Thesis/Thesis.pdf (54 pages, 1113390 bytes).
+Output written on /var/lib/one/eclipse-workspace/Thesis/Thesis.pdf (58 pages, 1122068 bytes).
 PDF statistics:
- 1286 PDF objects out of 1440 (max. 8388607)
- 1154 compressed objects within 12 object streams
- 590 named destinations out of 1000 (max. 500000)
- 102158 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 1332 PDF objects out of 1440 (max. 8388607)
+ 1196 compressed objects within 12 object streams
+ 602 named destinations out of 1000 (max. 500000)
+ 102182 words of extra memory for PDF output out of 106986 (max. 10000000)
 
