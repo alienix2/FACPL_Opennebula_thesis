@@ -12,7 +12,7 @@ public class ReleaseVM extends OpenNebulaActionBase {
 
 	@Override
 	public void eval(List<Object> args) {
-		ONActionContext.getLogger().info("Powering off (Releasing) the VM: " + args.get(1));
+		ONActionContext.getLogger().info("Stopping (Releasing) the VM: " + args.get(1));
 		VMDescriptor toRelease = 
 				ONActionContext.getVMsInfo().getRunningVMByName((String)args.get(1));
 		if (toRelease == null) {
@@ -21,6 +21,6 @@ public class ReleaseVM extends OpenNebulaActionBase {
         }
 		logResponse(
 				new VirtualMachine(Integer.parseInt(toRelease.getVmId()), ONActionContext.getClient())
-				.poweroff());
+				.stop());
 	}
 }
