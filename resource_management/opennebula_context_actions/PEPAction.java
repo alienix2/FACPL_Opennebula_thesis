@@ -2,6 +2,7 @@ import java.util.HashMap;
 import it.unifi.facpl.lib.interfaces.*;
 import opennebula_api.CreateVM;
 import opennebula_api.FreezeVM;
+import opennebula_api.FreezeVMMultiple;
 import opennebula_api.ReleaseVM;
 
 @SuppressWarnings("all")

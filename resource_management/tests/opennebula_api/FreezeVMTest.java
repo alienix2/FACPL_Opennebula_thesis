@@ -53,7 +53,7 @@ public class FreezeVMTest {
         // Assert that the log contains information about the suspension
         String log = logHandler.getLogBuilder();
         System.out.println(log);
-        assertTrue(log.contains("Suspending (Freezing) 1 VM of [host, template]: [host_1 101]"));
+        assertTrue(log.contains("Suspending (Freezing) 1 VM of [host template]: [host_1 101]"));
         assertTrue(log.contains("INFO: 123"));
     }
     
