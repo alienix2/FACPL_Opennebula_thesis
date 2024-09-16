@@ -4,6 +4,7 @@ import java.util.HashMap;
 import it.unifi.facpl.lib.interfaces.*;
 import opennebula_api.CreateVM;
 import opennebula_api.FreezeVM;
+import opennebula_api.FreezeVMMultiple;
 import opennebula_api.ReleaseVM;
 
 @SuppressWarnings("all")
@@ -25,6 +26,8 @@ public class PEPAction{
 				new CreateVM(ContextStub_Default.getONContext()));
 		pepAction.put("freeze", 
 				new FreezeVM(ContextStub_Default.getONContext()));
+		pepAction.put("freezeMultiple", 
+				new FreezeVMMultiple(ContextStub_Default.getONContext()));
 		
 		return pepAction;
    	}

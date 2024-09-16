@@ -11,7 +11,7 @@ public class FreezeVM extends OpenNebulaActionBase {
 
 	@Override
 	public void eval(List<Object> args) {
-		ONActionContext.getLogger().info("Suspending (Freezing) 1 VM of [host, template]: " + "[" + args.get(0) + " " + args.get(2) + "]");
+		ONActionContext.getLogger().info("Suspending (Freezing) 1 VM of [host template]: " + "[" + args.get(0) + " " + args.get(2) + "]");
 		List<VMDescriptor> suspendList = 
 				ONActionContext.getVMsInfo().getRunningVMsByHostTemplate((String)args.get(0), (String)args.get(2));
 		if (suspendList.isEmpty()) {

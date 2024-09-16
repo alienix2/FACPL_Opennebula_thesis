@@ -23,6 +23,8 @@ public class PEPAction{
 				new CreateVM(ContextStub_Default.getONContext()));
 		pepAction.put("freeze", 
 				new FreezeVM(ContextStub_Default.getONContext()));
+		pepAction.put("freezeMultiple", 
+				new FreezeVMMultiple(ContextStub_Default.getONContext()));
 		
 		return pepAction;
    	}
