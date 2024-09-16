@@ -50,7 +50,7 @@ public class ReleaseVMTest {
 
         String log = logHandler.getLogBuilder();
         System.out.println(log);
-        assertTrue(log.contains("Powering off (Releasing) the VM: TestVM"));
+        assertTrue(log.contains("Stopping (Releasing) the VM: TestVM"));
         assertTrue(log.contains("INFO: 123"));
     }
 
