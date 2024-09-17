@@ -32,6 +32,8 @@ In questo caso si vuole testare il funzionamento di \emph{policy\_manager} di co
     \begin{lstlisting}[xleftmargin=1em, label={code:config_properties}, caption={config.properties}]
 hyper1.host.id=0
 hyper2.host.id=1
+type1.template.id=0
+type2.template.id=1
 context.file.location=opennebula_context_actions/
     \end{lstlisting}
 \end{itemize}
@@ -48,24 +50,74 @@ context.file.location=opennebula_context_actions/
         \item inviare la richiesta;
     \end{itemize}
 \end{itemize}
-Nel nostro esempio di test tutti i passaggi hanno funzionato senza alcun problema, anche se in una precedente installazione su un altro server si era evidenziata la necessità di inserire alcune dipendenze nel file \texttt{pom.xml} rispetto a quelle che erano necessari sul computer di test originale.
+Nel nostro esempio di test tutti i passaggi hanno funzionato senza alcun problema, anche se in una precedente installazione su un altro server si era evidenziata la necessità di inserire alcune dipendenze nel file \texttt{pom.xml} rispetto a quelle che erano necessari sul computer di test originale. Si evidenzia inoltre come non sia stato necessario modificare alcun file .java.
 
 \section{Specifiche dell'esempio}
 Le valutazioni fatte da FACPL sono visibili direttamente nel terminale da cui è stato eseguito il comando \texttt{mvn spring-boot\:run}. Le informazioni sull'applicazione delle policy e l'invio delle richieste, oltre che le informazioni sulle azioni svolte sulle virtual machine, sono visibili nei file di log posti nella cartella \emph{logs}.\par
 L'utente può connettersi alla web-app di OpenNebula, accessibile di default sulla porta 9869 del server per vedere la situazione delle macchine virtuali e degli host. Per farlo deve però essere in possesso delle credenziali di un account di OpenNebula.\par
-Nel nostro caso di esempio abbiamo considerato degli utenti che si connettono alla web-app di \emph{policy\_manager} attraverso la rete wifi. Nessun utente ha la possibilità di modificare le policy, però tutti possono vederle e quindi formattare le loro richieste di conseguenza. Alcuni utenti appartengono al gruppo P\_2 mentre altri al gruppo P\_1, quindi è possibile verificare il cambiamento del sistema all'invio di specifiche richieste da entrambi i gruppi.\par
+Nel nostro caso di esempio abbiamo considerato degli utenti che si connettono alla web-app di \emph{policy\_manager} attraverso la rete wifi. Nessun utente ha la possibilità di modificare le policy, però tutti possono vederle e quindi formattare le loro richieste di conseguenza. Alcuni utenti appartengono al gruppo P\_2 mentre altri al gruppo P\_1, quindi è possibile verificare il cambiamento del sistema all'invio di specifiche richieste da entrambi i gruppi.
 
-\par
-This is where you show that the novel `thing' you described in Chapter~\ref{cap:proposal} is, indeed, much better than the existing versions of the same.
-
-You will probably use figures (try to use a high-resolution version), graphs, tables, and so on. An example is shown in Figure~\ref{fig:dave}.
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=.7\textwidth]{DaveSecurity}
-\caption{Network Security - the sad truth}
-\label{fig:dave}
-\end{center}
+\section{Risultati dell'esecuzione}
+Di seguito sono riportate le prime richieste e i risultati del loro invio sulla dashboard di OpenNebula:
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{1\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{tesi_screenshot/OpenNebula_firstVM.png}
+        \caption{Dashboard di OpenNebula con una sola virtual machine}
+    \end{minipage}
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{tesi_screenshot/P1Create_1.png}
+    \end{minipage}
+    \begin{minipage}{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{tesi_screenshot/P2Create_1.png}
+    \end{minipage}
+    \caption{Richieste di P\_1 e P\_2}
+\end{figure}
+Come si può vedere nonostante siano state eseguite due richieste è stata creata soltanto una macchina virtuale. Questa logica è corretta perchè l'utente P\_1 non è autorizzato a creare virtual machine con il template 1. Le valutazione del sistema FACPL sono quindi:
+\begin{figure}[H]
+    \begin{minipage}{0.27\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{tesi_screenshot/DenyP1_1_cut.png}
+    \end{minipage}
+    \begin{minipage}{0.72\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{tesi_screenshot/Permit_P2_1.png}
+    \end{minipage}
+    \caption{Valutazioni di FACPL sulle due richieste}
+\end{figure}
+A questo punto sono state inviate ulteriori richieste da utenti con \emph{ID} P\_2 sia per virtual machine di tipo 1 che per virtual machine di tipo 0. Si nota che il sistema continua ad inserire tutte le virtual machine sul server fino a che non si raggiunge un bilanciamento di risorse rimaste tra il server e il laptop:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{tesi_screenshot/OpenNebula_eavenLoad.png}
+    \caption{Dashboard di OpenNebula con i due host bilanciati}
+\end{figure}
+Il load balancing sembra quindi funzionare correttamente. Per mostrarlo ulteriormente si continuano a creare delle virtual machine di modo da verificare che comincino ad essere aggiunte anche all'interno del laptop:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{tesi_screenshot/alternating.png}
+    \caption{Dashboard con le virtual machine alternate fra i due host}
+\end{figure}
+Continuando in questo modo si raggiunge una situazione in cui entrambi gli host hanno tutte le CPU utilizzate al 100\%. A questo punto secondo le policy scelte il sistema dovrebbe controllare se ci sono alcune virtual machine di tipo 1 da freezzare in favore della creazione di virtual machine di tipo 2. Questo infatti è quello che succede:
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{tesi_screenshot/full_hosts.png}
+        \caption{Dashboard con entrambi gli host al 100\% di utilizzo}
+    \end{minipage}
+    \par \medskip
+    \begin{minipage}{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{tesi_screenshot/stoppedVMS.png}
+        \caption{virtual machine stoppate automaticamente}
+    \end{minipage}
 \end{figure}
 
-Note that, likewise tables and listings, you shall not worry about where the figures are placed. Moreover, you should not add the file extension (LaTeX will pick the `best' one for you) or the figure path.
+Per fare ciò si è deciso di inviare ulteriori 4 (? CAMBIARE) richieste valide per creazioni di virtual machine che richiedevano 200 risorse l'una. Come si può vedere tutte le virtual machine sono state create sul server.\par
+A questo punto mandando ulteriori richieste si nota che le virtual machine cominciano a venire create in modo alternato sia sul server che sul portatile. Questo è esattamente il comportamento che ci si aspettava dato che il server ha esattamente 1600 risose in più del portatile.\par
+Da qui l'unico passo rimasto è testare se le macchine vengono correttamente freezzate per permettere l'inserimento di nuove macchine. Per fare questo occorre terminare tutte le risorse su entrambi gli host.\par
+Come si può vedere anche questa logica funziona correttamente.
+\par

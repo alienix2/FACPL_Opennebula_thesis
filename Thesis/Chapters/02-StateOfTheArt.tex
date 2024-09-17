@@ -1,53 +1,91 @@
 % !TEX root = ../Thesis.tex
 \chapter{Il linguaggio FACPL e il software OpenNebula}
 \label{cap:capitolo2}
-L'obiettivo di questo capitolo è introdurre i concetti di base del linguaggio FACPL e del software OpenNebula, necessari per comprendere il lavoro svolto in questa tesi. In particolare, sarà discusso il funzionamento del linguaggio FACPL, le sue caratteristiche principali e le motivazioni che hanno portato al suo utilizzo. Successivamente verrà presentato il software OpenNebula, sarà descritta la sua architettura e saranno evidenziate funzionalità ritrovabili all'interno dei progetti descritti nei capitoli successivi.\par
+L'obiettivo di questo capitolo è introdurre i concetti di base del linguaggio FACPL e del software OpenNebula, necessari per comprendere il lavoro svolto in questa tesi. In particolare, sarà discusso il linguaggio FACPL, le sue caratteristiche principali e le motivazioni che hanno portato al suo utilizzo. Successivamente verrà presentato il software OpenNebula, sarà descritta la sua architettura e saranno evidenziate funzionalità ritrovabili all'interno dei progetti descritti nei capitoli successivi.\par
 \section{Il linguaggio FACPL}
-Il linguaggio FACPL\footnote{\cite{FAPCLTesi}} è stato ideato nel 2012 come risposta alla necessità di sistemi di controllo degli accessi più flessibili e adattabili di quelli già esistenti. In particolar modo il linguaggio viene spesso paragonato con XACML, questo per due motivi principali: 
+FACPL~\cite{FAPCLTesi} è stato ideato nel 2012 come risposta alla necessità di sistemi di controllo degli accessi più flessibili e adattabili rispetto a quelli già esistenti. In particolar modo il linguaggio viene spesso paragonato con XACML, questo per due motivi principali: 
 \begin{itemize}
     \item XACML è attualmente il inguaggio più largamente utilizzato per il controllo degli accessi;
     \item FACPL è stato sviluppato proprio come risposta ad alcune evidenti problematiche di XACML.
 \end{itemize}
-Il problema principale che FACPL punta a risolvere è la mancanza di una semantica definita formalmente in XACML, il che rende difficile ideare delle tecniche di analisi.
+Il problema principale che FACPL punta a risolvere è la mancanza di una semantica definita formalmente in XACML, il che rende difficile ideare delle tecniche di analisi. Trae comunque larga ispirazione da XACML, in particolar modo per la struttura base delle policy e anche per una parte della terminologia.\par
+
+\section{Struttura delle policy e delle richieste di FACPL}
+In FACPL le policy sono composte da regole e insiemi di policy, indicati come \texttt{Rule} e \texttt{PolicySet}:
+\begin{itemize}
+    \item le \texttt{Rule} presentano un nome, la decisione positiva o negativa che è data dalla loro valutatione (che può essere \texttt{Permit} o \texttt{Deny}) e un'espressione che viene confrontata con la richiesta che sta venendo valutata;
+    \item i \texttt{PolicySet} presentano un nome, un algoritmo, detto \emph{combining algorithm}, e un'espressione che valuta se l'insieme è applicabile alla richiesta. I \emph{combining algorithm}\footnote{\url{https://facpl.readthedocs.io/en/latest/txt/facpl.html?highlight=policy\#evaluation}} sono funzioni che prendono in input le decisioni delle policy e restituiscono una decisione unica. Le policy in un \texttt{PolicySet} possono essere sia delle \texttt{Rule} che altri \texttt{PolicySet} annidati.
+    \item le \texttt{obligation} sono delle componenti opzionali sia nelle regole che negli insiemi di policy che rappresentano delle azioni da eseguire. Permettono di specificare se devono essere eseguite in caso di decisione positiva o negativa. Possono essere obbligatorie o opzionali, questo significa che nel primo caso se l'azione espressa dalla \texttt{obligation} non viene eseguita con successo la valutazione non sarà positiva, mentre nel secondo caso sì.
+\end{itemize}
+In questo listing si può vedere un esempio di policy in linguaggio FACPL:
+\begin{lstlisting}[label={code:policyFACPL}, caption={Esempio di policy in FACPL}, language=FACPL, basicstyle=\fontsize{9.5}{10}\ttfamily]
+PolicySet Online_Generated{ permit-overrides
+	policies:
+	PolicySet Release_Policies { permit-overrides
+  		target:equal("RELEASE", action/action-id)
+    			&& (equal("P_1", subject/profile-id) || equal("P_2", subject/profile-id))
+  		policies:
+    	Rule hyper_1_release (permit
+      		target:( in (resource/vm-name, system/hyper1.vm-names))
+      		obl: [M release("0", resource/vm-name)]
+    	)
+    	Rule hyper_2_release (permit
+      		target:( in (resource/vm-name, system/hyper2.vm-names))
+      		obl: [M release("1", resource/vm-name)]
+    	)
+  	}
+}
+\end{lstlisting}
+Il linguaggio è pensato per essere scritto direttamente in questa sintassi, da cui è poi possibile convertirlo in diversi altri linguaggi, come verrà esposto nel capitolo \ref{sec:modalitaFACPL}.\par
+
+Le richieste sono semplicemente composte da coppie attributo-valore. L'idea è che almeno parte di questi attributi siano predefiniti e strettamente collegati con l'utente che sta eseguendo la richiesta, mentre altri possano essere impostati dall'utente in base a cosa intende fare. In questo listing si può vedere un esempio di richiesta in linguaggio FACPL:
+\begin{lstlisting}[xleftmargin=1em, label={code:requestFacpl}, caption={Esempio di richiesta in FACPL}, language=FACPL, basicstyle=\fontsize{9.5}{10}\ttfamily]
+Request: { Online_Generated
+    (action/action-id, "CREATE")
+    (subject/profile-id, "P_2")
+    (resource/vm-type, "4")
+}
+\end{lstlisting} 
 \section{Componenti del sistema FACPL}
 \label{sec:componentiFACPL}
-FACPL trae comunque larga ispirazione da XACML, in particolar modo per la struttura base delle policy e anche per una parte della terminologia. il linguaggio presenta due tipoligie di policy, le \emph{authorisation properties} che permettono di valutare una policy rispetto ad una richiesta e le \emph{structural properties} che permettono di svolgere una valutazione su un insieme di valutazioni svolte su una o più policy.
-Come si può vedere nell'immagine \ref{fig:facplEvaluationProcess}\footnote{\cite{facpl}} Il sistema FACPL è composto da alcuni componenti principali:
+La Figura \ref{fig:facplEvaluationProcess} mostra le componenti di valutazione delle policy del sistema FACPL:
 \begin{figure}[h]
     \centering
     \includesvg[width=\textwidth]{facplEvaluationProcess.svg}
     \caption{Processo di valuatione di FACPL}
-  \end{figure}
-\label{fig:facplEvaluationProcess}
+    \label{fig:facplEvaluationProcess}
+\end{figure}
 \begin{itemize}
-    \item \emph{PEP:} Policy Enforcement Point, è il componente che si occupa di verificare la compatibilità della richiesta con le policy. Nessuna operazione di valutazione è svolta in questo componente, infatti come si può vedere dall'immagine \ref{fig:facplEvaluationProcess} la richiesta viene inviata al \emph{PDP} per essere valutata e questo restituisce il risultato da usare nel \emph{PEP}. Per l'esecuzione delle obbligazioni si affida agli \emph{Obligation services}. In FACPL il \emph{PEP} è però anche portato a svolgere una scelta in situazioni in cui il \emph{PDP} non è in grado di fornire una risposta;
-    \item \emph{PDP:} Policy Decision Point, è il componente che riceve le richieste dal \emph{PEP} e le valuta in base alle policy presenti nel \emph{PR}. Il risultato della valutazione è restutuito al \emph{PEP};
+    \item \emph{PEP:} Policy Enforcement Point, è il componente che si occupa di verificare la compatibilità della richiesta con le policy. Nessuna operazione di valutazione è svolta in questo componente, infatti come si può vedere in Figura \ref{fig:facplEvaluationProcess} la richiesta viene inviata al \emph{PDP} per essere valutata e questo restituisce il risultato da usare nel \emph{PEP}. Per l'esecuzione delle obbligazioni ci si affida agli \emph{Obligation services}. In FACPL il \emph{PEP} è però anche portato a svolgere una scelta in situazioni in cui il \emph{PDP} non è in grado di fornire una risposta;
+    \item \emph{PDP:} Policy Decision Point, è il componente che riceve le richieste dal \emph{PEP} e le valuta in base alle policy presenti nel \emph{PR}. Il risultato della valutazione è restituito al \emph{PEP};
     \item \emph{PR:} Policy Repository, è il componente che si occupa di memorizzare le policy e di fornirle al Policy Decision Point;
-    \item \emph{Context Handler:} come si può vedere si trova in mezzo nel percorso fra \emph{PEP} e \emph{PDP}, e sia le richieste che risposte passano sempre da questo componente. Il suo compito è quello di fornire il contesto necessario per valutare le richieste, infatti come si può vedere è strettamente legato ad \emph{Environment} a cui chiede i valori degli attributi necessari per la valutazione;
+    \item \emph{Context Handler:} come si può vedere è in mezzo nel percorso fra \emph{PEP} e \emph{PDP}, e sia le richieste che risposte passano sempre da questo componente. Il suo compito è quello di fornire il contesto necessario per valutare le richieste, infatti come si può vedere è strettamente legato ad \emph{Environment} a cui chiede i valori degli attributi necessari per la valutazione;
     \item \emph{Environment:} questo componente non è definito in modo specifico, deve infatti essere implementato in base al sistema in uso ed ha come compito quello di fornire valori attuali di specifici attributi;
     \item \emph{Requester:} è il componente che invia le effettive richieste al \emph{PEP};
-    \item \emph{Obligation services}: è il componente attua le obbligazioni e verifica l'esito dell'esecuzione. La decisione del \emph{PEP} dipende dal risultato dell'esecuzione delle obbligazioni, se queste non sono state eseguite con successo la richiesta non da esito positivo.
+    \item \emph{Obligation services}: è il componente che attua le obbligazioni e verifica l'esito dell'esecuzione. La decisione del \emph{PEP} dipende dal risultato dell'esecuzione delle obbligazioni; se queste non sono state eseguite con successo la richiesta non da esito positivo.
 \end{itemize}
+
 \section{Modalità di utilizzo di FACPL}
-FACPL viene distribuito come una repository p2 di Eclipse, questo permette di installarlo direttamente tramite la UI di Eclipse in modo molto facile. FACPL richiede l'utilizzo di Java 8 anche se non risulterebbe difficile integrarlo in progetti che utilizzao versione di Java successive con qualche accorgimento.\par
+\label{sec:modalitaFACPL}
+FACPL viene distribuito come una repository p2 di Eclipse, questo permette di installarlo direttamente tramite la UI di Eclipse in modo molto facile. FACPL richiede l'utilizzo di Java 8 anche se non risulterebbe difficile integrarlo in progetti che utilizzano versioni di Java successive con qualche accorgimento.\par
 Il metodo principale per sviluppare un progetto FACPL è crearlo direttamente con l'interfaccia di Eclipse, in questo modo viene creato un progetto con tutte le dipendenze necessarie. Si nota come FACPL sia pensato per essere usato tramite la sua sintassi di alto livello e non tramite Java direttamente, di conseguenza è di solito richiesto al programmatore di scrivere codice Java solo per tre componenti del sistema, il \emph{Context Handler}, l'\emph{Environment} e gli \emph{Obligation services}.\par
 Il \emph{Context Handler} deve soltanto essere leggermente modificato per adattarsi ad interagire con l'\emph{Environment}, che invece è la parte fondamentale da scrivere. L'\emph{Environment} può essere scritto come si preferisce, basta che sia in grado di comunicare con il \emph{Context Handler} quindi può potenzialmente essere scritto in qualsiasi linguaggio di programmazione. Questa logica rende FACPL facilmente adattabile ad un grande numero di casi concreti. Per quanto riguarda gli \emph{Obligation services} occorre integrare quelle che sono chiamate \emph{PEPAction}, ovvero i comandi che vengono effettivamente lanciati come obbligazioni, in questo caso il contratto da rispettare è che siano tutte classi che implementano l'interfaccia \texttt{IPepAction} e quindi che presentino il metodo \texttt{evaluate} con cui vengono chiamate dal \emph{PEP}.\par
-Per la scrittura di file \texttt{.fpl} in sintassi FACPL è fornito un editor apposito realizzato con Xtext~\cite{eclipseXtext} ed accessbile comodamente da Eclipse automaticamente dopo l'installazione della repository p2. L'editor presenta alcune funzioni tipiche degli IDE come l'identificazione di \emph{warning} e \emph{errors} che permettono di capire se si sono svolti degli errori di sintassi, oltre che l'highlighting della sintassi. Vengono messi inoltre a disposizione dei generatori automatici di codice Java, XACML e SMT-LIB a partire da un file \texttt{.fpl}; questi generatori sono accessibili dalla UI di Eclipse. Nella repository del progetto su github\footnote{\url{https://github.com/andreamargheri/FACPL}} sono inoltre presenti diversi codici di esempio.\par
+Per la scrittura di file \texttt{.fpl} in sintassi FACPL è fornito un editor apposito realizzato con Xtext~\cite{eclipseXtext} ed accessbile comodamente da Eclipse automaticamente dopo l'installazione della repository p2. L'editor presenta alcune funzioni tipiche degli IDE come l'identificazione di \emph{warning} e \emph{errors} che permettono di capire se si sono verificati degli errori di sintassi, oltre che l'highlighting della sintassi. Vengono messi inoltre a disposizione dei generatori automatici di codice Java, XACML e SMT-LIB a partire da un file \texttt{.fpl}; questi generatori sono accessibili dalla UI di Eclipse. Nella repository del progetto su github\footnote{\url{https://github.com/andreamargheri/FACPL}} sono inoltre presenti diversi codici di esempio.\par
 
 \section{Il software OpenNebula}
-OpenNebula~\cite{opennebula} è definita come una piattaforma open-source potente, ma semplice da utilizzare, che si può usare per costruire e gestire infstratture Cloud. L'idea dietro OpenNebula è quella di fornire una struttura per la gestione unificata per le infrastrutture IT e le applicazioni, evitando di dover utilizzare strumenti closed-source e proprietari per cui di solito è richiesto un alto costo di acquisto e gestione.\par
+OpenNebula~\cite{opennebula} è definita come una piattaforma open-source potente, ma semplice da utilizzare, che si può usare per costruire e gestire infrastrutture Cloud. L'idea dietro OpenNebula è quella di fornire una struttura per la gestione unificata per le infrastrutture IT e le applicazioni, evitando di dover utilizzare strumenti closed-source e proprietari per cui di solito è richiesto un alto costo di acquisto e gestione.\par
 OpenNebula permette di gestire diversi hypervisor come KVM, VMware, Xen e LXD, consentendo quindi di creare diversi tipi di virtual machine e container e permette anche di scegliere diverse modalità per la gestione dello storage.
 \section{Architettura di OpenNebula}
 OpenNebula è una piattaforma che si compone di diversi componenti, ognuno dei quali svolge un ruolo ben preciso all'interno del sistema. I componenti sono presentanti tutti all'interno della documentazione ufficiale\footnote{\url{https://docs.opennebula.io/6.8/overview/opennebula\_concepts/opennebula\_overview.html\#id1}}, in questo capitolo verranno presentati solo quelli fondamentali per capire il funzionamento di OpenNebula in un caso di studio come quello descritto in questa tesi:
 \begin{itemize}
     \item \emph{OpenNebula Daemon:} Questo è il servizio centrale della piattaforma cloud. Gestisce i nodi, le reti, lo storage, i gruppi e gli utenti. Questo servizio è responsabile di coordinare tutte le operazioni e risponde alle chiamate XML-RPC fatte con le apposite API. Solitamente questo servizio è eseguito su un nodo che può anche essere usato come host.
     \item \emph{Host:} Ogni host rappresenta un server che è gestito da OpenNebula e può essere utilizzato per eseguire delle virtual machine. Ogni host deve installare tutte le dipendenze necessarie e deve successivamente essere registrato in OpenNebula. Ogni host può presentare un solo hypervisor, anche se ci sono modi per cercare di aggirare questa limitazione.
-    \item  \emph{User:} OpenNebula permette di gestire utenti e gruppi in modo del tutto separato dal modo in cui sono gestiti in Unix. Ogni utente ha un'\emph{ID} univoco e può appartenere ad uno o più gruppi. Di default viene creato l'utente \texttt{oneadmin} che ha tutti i permessi e può creare nuovi utenti e gruppi. Gli utenti del gruppo \texttt{oneadmin} hanno gli stessi permessi dell'utente \texttt{oneadmin} mentre gli utenti creati e inseriti in altri gruppi possono avere diversi permessi.
+    \item  \emph{User:} OpenNebula permette di gestire utenti e gruppi in modo del tutto separato dal modo in cui sono gestiti in Unix. Ogni utente ha un \emph{ID} univoco e può appartenere ad uno o più gruppi. Di default viene creato l'utente \texttt{oneadmin} che ha tutti i permessi e può creare nuovi utenti e gruppi. Gli utenti del gruppo \texttt{oneadmin} hanno gli stessi permessi dell'utente \texttt{oneadmin} mentre gli utenti creati e inseriti in altri gruppi possono avere diversi permessi.
     \item \emph{Virtual Machine Template:} In OpenNebula le virtual machine sono definite a partire da un template, che contiene tutte le informazioni necessarie per crearle, come capacità di memoria, CPU e dischi da utilizzare. I template possono essere definiti a partire da zero, usando l'appropriata sintassi ma sono disponibili anche presso degli store online e possono essere modificati a piacimento. Conoscere il template con cui è stata creata una virtual machine fornisce moltissime informazioni su come è configurata. La UI e la CLI forniscono strumenti per verificare la correttezza di un template che si intende salvare.
-    \item \emph{Sunstone:} OpenNebula fornisce diverse interfacce per la gestione delle risorse, quella più user-friendly è sicuramente Sunstone ovvero una Web-ui che è utilizzabile sia da utenti che da supervisori. Quando viene fatta l'installazione di OpenNebula, Sunstone è installata automaticamente ma è gestita da un demone separato, di conseguenza può essere spenta se non utilizzata. L'alternativa a Sunstone è utilizzare la CLI, che per alcuni comandi rimane comunque più veloce.
+    \item \emph{Sunstone:} OpenNebula fornisce diverse interfacce per la gestione delle risorse; quella più user-friendly è sicuramente Sunstone ovvero una Web-UI che è utilizzabile sia da utenti che da supervisori. Quando viene fatta l'installazione di OpenNebula, Sunstone è installata automaticamente ma è gestita da un demone separato, di conseguenza può essere spenta se non utilizzata. L'alternativa a Sunstone è utilizzare la CLI, che per alcuni comandi rimane comunque più veloce.
 \end{itemize}
 \section{XML-RPC e OpenNebula}
-Il protocollo XML-RPC~\cite{xmlrpc} è un protocollo che permette di eseguire chiamate a procedure remote (\emph{Remote Procedure Call}) attraverso la rete. Come indicato dal nome utilizza lo standard XML per la codifica della richiesta e si basa su HTTP per il trasporto dei dati.\par
+Il protocollo XML-RPC~\cite{xmlrpc} è un protocollo che permette di eseguire chiamate a procedure remote (\emph{Remote Procedure Call}) attraverso la rete. Come indicato dal nome, utilizza lo standard XML per la codifica della richiesta e si basa su HTTP per il trasporto dei dati.\par
 L'idea dietro questo protocollo è di rimanere il più semplice possibile permettendo però anche di gestire strutture dati complesse. Il potocollo è stato sviluppato da Dave Winer e Microsoft nel 1998 e da allora è stato largamente utilizzato ma anche mantenuto e migliorato.
 A partire dal 2019 il protocollo ha una nuova implementazione in JavaScript che permette anche l'utilizzo di sintassi Json oltre che XML.\par
-OpenNebula utilizza XML-RPC per mettere in comunicazione i componenti del sistema e fornire delle API, come si può vedere direttamente nella documentazione ufficiale\footnote{\url{https://docs.opennebula.io/6.8/integration\_and\_development/system\_interfaces/api.html}}. Per eseguire una chiamata occorre essere autenticati e avere i permessi necessari, quindi la prima cosa che viene fatta quando si esegue una richiesta XML-RPC è autenticare il token, a quel punto è presente un gestore delle richieste che crea una richiesta di autorizzazione per una o più operazioni. Grazie a questa logica è possibile sviluppare delle API wrapper per ogni linguaggio si ritenga necessario, alcune di queste, come quelle per Java\footnote{\url{https://docs.opennebula.io/6.8/integration\_and\_development/system\_interfaces/java.html}} sono disponibili direttamente sulla documentazione di OpenNebula e sono mantenute costantemente dalla community.
+OpenNebula utilizza XML-RPC per mettere in comunicazione i componenti del sistema e fornire delle API, come si può vedere direttamente nella documentazione ufficiale\footnote{\url{https://docs.opennebula.io/6.8/integration\_and\_development/system\_interfaces/api.html}}. Per eseguire una chiamata occorre essere autenticati e avere i permessi necessari. Quindi la prima cosa che viene fatta quando si esegue una richiesta XML-RPC è autenticare il token; a quel punto è presente un gestore delle richieste che crea una richiesta di autorizzazione per una o più operazioni. Grazie a questa logica è possibile sviluppare delle API wrapper per ogni linguaggio si ritenga necessario. Alcune di queste, come quelle per Java\footnote{\url{https://docs.opennebula.io/6.8/integration\_and\_development/system\_interfaces/java.html}} sono disponibili direttamente sulla documentazione di OpenNebula e sono mantenute costantemente dalla community.

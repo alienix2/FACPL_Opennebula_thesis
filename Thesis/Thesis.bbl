@@ -28,7 +28,8 @@ highlight.js contributors.
 
 \bibitem{junit5}
 {JUnit Team}.
-\newblock Junit 5, 2024.
+\newblock Junit 5.
+\newblock \url{https://junit.org/junit5/}, 2024.
 
 \bibitem{FAPCLTesi}
 Andrea Margheri.
@@ -56,15 +57,18 @@ Andrea Margheri, Massimiliano Masi, Rosario Pugliese, and Francesco Tiezzi.
 
 \bibitem{springboot}
 {Spring.io}.
-\newblock {Spring Boot Project}, 2024.
+\newblock {Spring Boot Project}.
+\newblock \url{https://spring.io/projects/spring-boot}, 2024.
 
 \bibitem{spring}
 {Spring.io}.
-\newblock {Spring Framework}, 2024.
+\newblock {Spring Framework}.
+\newblock \url{https://spring.io/}, 2024.
 
 \bibitem{mockito}
 Mockito Team.
-\newblock Mockito, 2024.
+\newblock Mockito.
+\newblock \url{https://site.mockito.org/}, 2024.
 
 \bibitem{maven}
 {The Apache Software Foundation}.
@@ -73,10 +77,12 @@ Mockito Team.
 
 \bibitem{apache_commons}
 {The Apache Software Foundation}.
-\newblock Apache commons, 2024.
+\newblock Apache commons.
+\newblock \url{https://commons.apache.org/}, 2024.
 
 \bibitem{xmlrpc}
 Dave Winer.
-\newblock Xml-rpc specification, 2024.
+\newblock Xml-rpc specification.
+\newblock \url{https://xmlrpc.com/}, 2024.
 
 \end{thebibliography}

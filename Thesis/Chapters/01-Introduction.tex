@@ -5,14 +5,14 @@ In questa tesi si cercherà di dare una risposta al problema della gestione dell
 Il sistema di gestione cloud scelto è OpenNebula, un software completamente open-source che permette di gestire infrastrutture cloud su diversi livelli e integra molti servizi utili per la gestione delle risorse.\par
 L'obiettivo finale è quello di fornire un'implementazione concreta di FACPL come gestore di richieste di creazione di virtual machine che sia in grado di funzionare in un ambiente cloud reale su cui è installato OpenNebula. Questo permetterà quindi di decidere le policy con cui si permette a specifici utenti di creare virtual machine su specifici host, così come di bilanciare le risorse tra i vari host o di decidere di spegnere alcune macchine in base a determinate condizioni.\par
 L'implementazione sarà corredata con adeguata metodologia di logging delle informazioni e utilizzo delle pratiche di buona programmazione per rendere il codice facilmente mantenibile e ampliabile in futuro.\par
-I principali problemi che saranno affrontati e risolti sono quelli scaturiti dalla necessità di far interagire le API di OpenNebula con la struttura fornita da FACPL senza snaturare nessuno dei due progetti in modo anche da dimostrare la facile adattabilità di FACPL. Un'altra questione che verrà trattata sarà inoltre l'integrazione di un software di gestione della build come Maven, con due progetti distribuiti esclusivamente come file .jar.\par
+I principali problemi che saranno affrontati e risolti sono quelli scaturiti dalla necessità di far interagire le API di OpenNebula con la struttura fornita da FACPL senza snaturare nessuno dei due progetti in modo anche da dimostrare la facile adattabilità di FACPL. Un'altra questione che verrà trattata sarà l'integrazione di un software di gestione della build come Maven, con due progetti distribuiti esclusivamente come file .jar.\par
 Per concludere verrà fornito uno spunto di web-app da cui sarà possibile provare le funzionalità del progetto sviluppato oltre che partire per una possibile implementazione in un vero server che integra un meccanismo di autenticazione e autorizzazione.\par
-Questa tesi spera di mostrare la semplicitià di utilizzo di FACPL e di evidenziare i suoi pro e contro di modo che una persona che intende realizzare un progetto in cui è richiesta la valutazione di policy di accesso, possa scegliere FACPL come linguaggio se fa al caso suo e con la possibilità di avere un'idea su come può essere utilizzato in un caso concreto.
+Questa tesi si pone l'obiettivo di mostrare la semplicitià di utilizzo di FACPL e di evidenziare i suoi pro e contro di modo che una persona che intende realizzare un progetto in cui è richiesta la valutazione di policy di accesso, possa scegliere FACPL come linguaggio se fa al caso suo e con la possibilità di avere un'idea su come può essere utilizzato in un caso concreto.
 \section{Guida alla lettura}
-I capitoli che seguono sono così suddivisi:
+I capitoli che seguono sono così organizzati:
 \begin{itemize}
     \item \emph{capitolo 2:} introduce i concetti di base su FACPL e OpenNebula, con particolare attenzione alle componenti usate in questa tesi;
-    \item \emph{capitolo 3:} descrive nel dettaglio l'implementazione fornita con diverse spiegazioni sulle scelte di design effettuate;
-    \item \emph{capitolo 4:} mostra un'esempio di utilizzo dei progetti e delle conseguenze su un sistema cloud reale;
-    \item \emph{capitolo 5:} conclude la tesi con un riassunto dei risultati e possibili sviluppi futuri.
+    \item \emph{capitolo 3:} descrive nel dettaglio l'implementazione realizzata e le scelte di design effettuate;
+    \item \emph{capitolo 4:} mostra un'esempio di utilizzo dei progetti sviluppati in un sistema cloud reale;
+    \item \emph{capitolo 5:} conclude la tesi con una sintesi dei risultati ottenuti e dei possibili sviluppi futuri.
 \end{itemize}
