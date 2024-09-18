@@ -30,6 +30,8 @@ public class ContextStub_Default implements IContextStub {
 	private static HostInfo hostInfo;
 	private static String hyper1HostId;
 	private static String hyper2HostId;
+	private static String type1Template;
+	private static String type2Template;
 
 	public static ContextStub_Default getInstance() {
 		if (instance == null) {
@@ -37,6 +39,8 @@ public class ContextStub_Default implements IContextStub {
 	            Configuration config = new Configurations().properties(CONFIG_FILE);
 	            hyper1HostId = config.getString("hyper1.host.id");
 	            hyper2HostId = config.getString("hyper2.host.id");
+	            type1Template = config.getString("type1.template.id");
+	            type2Template = config.getString("type2.template.id");
 				ContextStub_Default.oneClient = new Client();
 				Logger logger = FileLoggerFactory.make("logs/virtualMachines.log");
 				inizializeStub(oneClient, logger);
@@ -97,10 +101,10 @@ public class ContextStub_Default implements IContextStub {
 			return runningHyper2VMs;
 		}
 		if (attribute.getCategory().equals("system") && attribute.getIDAttribute().equals("hyper1.vm1-counter")) {
-			return vmsInfo.countRunningVMsByHost(hyper1HostId).doubleValue();
-		}
+			return vmsInfo.getRunningVMsByHostTemplate(hyper1HostId, type1Template).size();
+	    }
 		if (attribute.getCategory().equals("system") && attribute.getIDAttribute().equals("hyper2.vm1-counter")) {
-			return vmsInfo.countRunningVMsByHost(hyper2HostId).doubleValue();
+			return vmsInfo.getRunningVMsByHostTemplate(hyper2HostId, type1Template).size();
 		}
 		if (attribute.getCategory().equals("system")
 				&& attribute.getIDAttribute().equals("hyper1.availableResources")) {

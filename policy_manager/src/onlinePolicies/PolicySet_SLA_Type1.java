@@ -13,14 +13,14 @@ public class PolicySet_SLA_Type1 extends PolicySet {
 		addTarget(new ExpressionBooleanTree(ExprBooleanConnector.AND,new ExpressionBooleanTree(new ExpressionBooleanTree(ExprBooleanConnector.OR,new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.Equal(), "P_1",new AttributeName("subject","profile-id") 
 		)),new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.Equal(), "P_2",new AttributeName("subject","profile-id") 
 		)))
-		),new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.Equal(), "TYPE_1",new AttributeName("resource","vm-type") 
+		),new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.Equal(), "0",new AttributeName("resource","vm-type") 
 		)))
 		);
 		//PolElements
 		addPolicyElement(new Rule_hyper_1());
 		addPolicyElement(new Rule_hyper_2());
 		//Obligation
-		addObligation(new Obligation("warning",Effect.DENY,ObligationType.O,"Not enough available resources for TYPE_1 VMs"
+		addObligation(new Obligation("log",Effect.DENY,ObligationType.O,"Not enough available resources for TYPE_1 VMs"
 		)
 		);
 		}
@@ -32,15 +32,15 @@ public class PolicySet_SLA_Type1 extends PolicySet {
 					//Effect
 					addEffect(Effect.PERMIT);
 					//Target
-					addTarget(new ExpressionBooleanTree(ExprBooleanConnector.AND,new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.LessThanOrEqual(), 1,new AttributeName("system","hyper1.availableResources") 
+					addTarget(new ExpressionBooleanTree(ExprBooleanConnector.AND,new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.LessThanOrEqual(), 100,new AttributeName("system","hyper1.availableResources") 
 					)),new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.LessThanOrEqual(), new AttributeName("system","hyper2.availableResources") 
 					,new AttributeName("system","hyper1.availableResources") 
 					)))
 					);
 					//Obligations
-					addObligation(new Obligation("create",Effect.PERMIT,ObligationType.M,"HYPER_1",
-					new AttributeName("system","vm-id") ,
-					"TYPE_1"
+					addObligation(new Obligation("create",Effect.PERMIT,ObligationType.M,0,
+					new AttributeName("system","vm-name") ,
+					0
 					)
 					);
 			}	
@@ -52,15 +52,15 @@ public class PolicySet_SLA_Type1 extends PolicySet {
 					//Effect
 					addEffect(Effect.PERMIT);
 					//Target
-					addTarget(new ExpressionBooleanTree(ExprBooleanConnector.AND,new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.LessThanOrEqual(), 1,new AttributeName("system","hyper1.availableResources") 
+					addTarget(new ExpressionBooleanTree(ExprBooleanConnector.AND,new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.LessThanOrEqual(), 100,new AttributeName("system","hyper1.availableResources") 
 					)),new ExpressionBooleanTree(new ExpressionFunction(new it.unifi.facpl.lib.function.comparison.LessThanOrEqual(), new AttributeName("system","hyper1.availableResources") 
 					,new AttributeName("system","hyper2.availableResources") 
 					)))
 					);
 					//Obligations
-					addObligation(new Obligation("create",Effect.PERMIT,ObligationType.M,"HYPER_2",
-					new AttributeName("system","vm-id") ,
-					"TYPE_1"
+					addObligation(new Obligation("create",Effect.PERMIT,ObligationType.M,2,
+					new AttributeName("system","vm-name") ,
+					0
 					)
 					);
 			}	

@@ -31,8 +31,8 @@
 \contentsline {section}{\numberline {4.1}{Installazione dei due progetti}}{50}{section.4.1}%
 \contentsline {section}{\numberline {4.2}{Specifiche dell'esempio}}{51}{section.4.2}%
 \contentsline {section}{\numberline {4.3}{Risultati dell'esecuzione}}{52}{section.4.3}%
-\contentsline {chapter}{\numberline {5}{Conclusioni e sviluppi futuri}}{55}{chapter.5}%
-\contentsline {section}{\numberline {5.1}{Criticità e punti di forza della libreria Java di FACPL}}{55}{section.5.1}%
-\contentsline {section}{\numberline {5.2}{Sviluppi futuri}}{57}{section.5.2}%
-\contentsline {chapter}{Ringraziamenti}{59}{section.5.2}%
-\contentsline {chapter}{Bibliografia}{61}{section.5.2}%
+\contentsline {chapter}{\numberline {5}{Conclusioni e sviluppi futuri}}{57}{chapter.5}%
+\contentsline {section}{\numberline {5.1}{Criticità e punti di forza della libreria Java di FACPL}}{57}{section.5.1}%
+\contentsline {section}{\numberline {5.2}{Sviluppi futuri}}{59}{section.5.2}%
+\contentsline {chapter}{Ringraziamenti}{61}{section.5.2}%
+\contentsline {chapter}{Bibliografia}{63}{section.5.2}%

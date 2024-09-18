@@ -54,7 +54,7 @@ Nel nostro esempio di test tutti i passaggi hanno funzionato senza alcun problem
 
 \section{Specifiche dell'esempio}
 Le valutazioni fatte da FACPL sono visibili direttamente nel terminale da cui è stato eseguito il comando \texttt{mvn spring-boot\:run}. Le informazioni sull'applicazione delle policy e l'invio delle richieste, oltre che le informazioni sulle azioni svolte sulle virtual machine, sono visibili nei file di log posti nella cartella \emph{logs}.\par
-L'utente può connettersi alla web-app di OpenNebula, accessibile di default sulla porta 9869 del server per vedere la situazione delle macchine virtuali e degli host. Per farlo deve però essere in possesso delle credenziali di un account di OpenNebula.\par
+L'utente può connettersi a OpenNebula Sunstone, accessibile di default sulla porta 9869 del server per vedere la situazione delle macchine virtuali e degli host. Per farlo deve però essere in possesso delle credenziali di un account di OpenNebula.\par
 Nel nostro caso di esempio abbiamo considerato degli utenti che si connettono alla web-app di \emph{policy\_manager} attraverso la rete wifi. Nessun utente ha la possibilità di modificare le policy, però tutti possono vederle e quindi formattare le loro richieste di conseguenza. Alcuni utenti appartengono al gruppo P\_2 mentre altri al gruppo P\_1, quindi è possibile verificare il cambiamento del sistema all'invio di specifiche richieste da entrambi i gruppi.
 
 \section{Risultati dell'esecuzione}
@@ -105,8 +105,15 @@ Continuando in questo modo si raggiunge una situazione in cui entrambi gli host 
     \centering
     \begin{minipage}{\textwidth}
         \centering
+        \includegraphics[width=\textwidth]{tesi_screenshot/permitReleaseCreateLonger.png}
+        \caption{Valutazione di FACPL}
+        \label{fig:full_hosts}
+    \end{minipage}
+    \begin{minipage}{\textwidth}
+        \centering
         \includegraphics[width=\textwidth]{tesi_screenshot/full_hosts.png}
         \caption{Dashboard con entrambi gli host al 100\% di utilizzo}
+        \label{fig:full_hosts}
     \end{minipage}
     \par \medskip
     \begin{minipage}{\textwidth}
@@ -115,9 +122,32 @@ Continuando in questo modo si raggiunge una situazione in cui entrambi gli host 
         \caption{virtual machine stoppate automaticamente}
     \end{minipage}
 \end{figure}
+Le due virtual machine freezzate erano appartenenti al server, anche perchè era l'unico dei due host ad avere macchine di tipo 1 attive e quindi freezzabili. Possiamo notare questo anche nella figura \ref{fig:full_hosts}, dato che il numero delle virtual machine sul server è 14. Questo numero è dato dalla presenza di 10 virtual machine che richiedono 2 processori l'uno e 4 virtual machine che richiedono 1 processore l'una. Sul laptop ci sono invece soltanto 4 virtual machine che richiedono 2 processori l'una.\par
+Se si tenta di creare ulteriori virtual machine di tipo 1 il sistema FACPL ritorna correttamente una valutazione di \emph{DENY} e quindi la richiesta non viene neanche inviata a OpenNebula come si può vedere nella seguente immagine:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{tesi_screenshot/notEnoughResources.png}
+\end{figure}
+Questo è un comportamento corretto dato che in realtà OpenNebula permette di sovraccaricare il sistema ma non è quello che vogliamo nel nostro caso.\par
+A questo punto l'unico passo rimasto è testare se le macchine vengono correttamente freezzate anche con l'utilizzo diretto delle richieste di tipo \emph{RELEASE}. Per fare questo si è resettato il sistema, si è poi creato una virtual machine e si è verificato che eseguisse correttamente la richiesta. Come si può vedere nella seguente l'esecuzione è andata a buon fine:
 
-Per fare ciò si è deciso di inviare ulteriori 4 (? CAMBIARE) richieste valide per creazioni di virtual machine che richiedevano 200 risorse l'una. Come si può vedere tutte le virtual machine sono state create sul server.\par
-A questo punto mandando ulteriori richieste si nota che le virtual machine cominciano a venire create in modo alternato sia sul server che sul portatile. Questo è esattamente il comportamento che ci si aspettava dato che il server ha esattamente 1600 risose in più del portatile.\par
-Da qui l'unico passo rimasto è testare se le macchine vengono correttamente freezzate per permettere l'inserimento di nuove macchine. Per fare questo occorre terminare tutte le risorse su entrambi gli host.\par
-Come si può vedere anche questa logica funziona correttamente.
-\par
+A questo punto l'unico passo rimasto è testare se le macchine vengono correttamente rilasciate anche con l'utilizzo diretto delle richieste di tipo \emph{RELEASE}. Per fare questo si è resettato il sistema, si è poi creato una virtual machine e si è verificato che FACPL valutasse correttamente la richiesta. Come si può vedere nelle seguenti figure l'esecuzione è andata a buon fine:
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.40\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{tesi_screenshot/ReleaseP2.png}
+        \caption{Richiesta di rilascio}
+    \end{minipage}
+    \begin{minipage}{0.59\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{tesi_screenshot/permitRelease.png}
+        \caption{valutazione di FACPL}
+    \end{minipage}
+    \par \medbreak
+    \begin{minipage}{\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{tesi_screenshot/stoppedVM.png}
+        \caption{Virtual machine stoppata}
+    \end{minipage}
+\end{figure}

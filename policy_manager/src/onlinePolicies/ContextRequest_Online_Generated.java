@@ -20,7 +20,7 @@ public class ContextRequest_Online_Generated {
 	//add attribute's values
 	req_action.put("action-id","CREATE");
 	req_subject.put("profile-id","P_2");
-	req_resource.put("vm-type","4");
+	req_resource.put("vm-type","1");
 	//add attributes to request
 	Request req = new Request("Online_Generated");
 	req.addAttribute("action",req_action);
