@@ -19,7 +19,7 @@
 	</repositories>
 
 	<scm>
-		<developerConnection>scm:git:https://github.com/alienix2/FACPL_Opennebula_thesis.git</developerConnection>
+		<developerConnection>scm:git:git@github.com:yourusername/your-repo.git</developerConnection>
 	</scm>
 
 
