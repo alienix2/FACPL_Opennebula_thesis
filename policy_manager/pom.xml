@@ -19,10 +19,10 @@
 	</repositories>
 	
 	<scm>
-		<developerConnection>scm:git:git@github.com:yourusername/your-repo.git</developerConnection>
-	  <tag>0.0.1</tag>
+		<developerConnection>scm:git:https://github.com/alienix2/FACPL_Opennebula_thesis.git</developerConnection>
+	  <tag>HEAD</tag>
   	</scm>
-
+  	
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
