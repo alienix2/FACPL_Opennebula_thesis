@@ -505,12 +505,6 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplr9e.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr9e.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplrc9e.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplrc9e.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplrc9e.vf
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplrc8r.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
 INPUT /var/lib/one/eclipse-workspace/Thesis/Thesis.lol
 INPUT /var/lib/one/eclipse-workspace/Thesis/Thesis.lol
 OUTPUT /var/lib/one/eclipse-workspace/Thesis/Thesis.lol
@@ -522,6 +516,12 @@ OUTPUT /var/lib/one/eclipse-workspace/Thesis/Thesis.lof
 OUTPUT /var/lib/one/eclipse-workspace/Thesis/Chapters/01-Introduction.aux
 INPUT /var/lib/one/eclipse-workspace/Thesis/Chapters/01-Introduction.tex
 INPUT /var/lib/one/eclipse-workspace/Thesis/Chapters/01-Introduction.tex
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr9e.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplrc9e.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplrc9e.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/palatino/pplrc9e.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplrc8r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
 OUTPUT /var/lib/one/eclipse-workspace/Thesis/Chapters/02-StateOfTheArt.aux
 INPUT /var/lib/one/eclipse-workspace/Thesis/Chapters/02-StateOfTheArt.tex
 INPUT /var/lib/one/eclipse-workspace/Thesis/Chapters/02-StateOfTheArt.tex

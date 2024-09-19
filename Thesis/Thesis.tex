@@ -92,13 +92,13 @@ parts,dottedtoc]{classicthesis}
 %--------------------------------------------------------------
 % Mainmatter
 %--------------------------------------------------------------
-\pagenumbering{arabic}
 \let\origcleardoublepage\cleardoublepage
+\let\cleardoublepage\clearpage
+\pagenumbering{arabic}
 \tableofcontents
 \lstlistoflistings
-\addcontentsline{toc}{chapter}{\lstlistlistingname}
-\listoffigures
 \let\cleardoublepage\origcleardoublepage
+\listoffigures
 \cleardoublepage
 \thispagestyle{empty}
 \begin{flushright}

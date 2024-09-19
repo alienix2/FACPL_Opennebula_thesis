@@ -6,21 +6,21 @@
 \ttl@tocsep 
 \ttl@tocsep 
 \ttl@tocsep 
-\contentsline {figure}{\numberline {1}{\ignorespaces Processo di valuatione di FACPL\relax }}{13}{figure.caption.1}%
+\contentsline {figure}{\numberline {1}{\ignorespaces Processo di valuatione di FACPL\relax }}{11}{figure.caption.1}%
 \ttl@tocsep 
-\contentsline {figure}{\numberline {2}{\ignorespaces Front-end di policy manager (web-app)\relax }}{37}{figure.caption.2}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Front-end di policy manager (web-app)\relax }}{35}{figure.caption.2}%
 \ttl@tocsep 
-\contentsline {figure}{\numberline {3}{\ignorespaces Dashboard di OpenNebula con una sola virtual machine\relax }}{52}{figure.caption.3}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Richieste di P\_1 e P\_2\relax }}{52}{figure.caption.3}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Valutazioni di FACPL sulle due richieste\relax }}{53}{figure.caption.4}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Dashboard di OpenNebula con i due host bilanciati\relax }}{53}{figure.caption.5}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Dashboard con le virtual machine alternate fra i due host\relax }}{53}{figure.caption.6}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Valutazione di FACPL\relax }}{54}{figure.caption.7}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Dashboard con entrambi gli host al 100\% di utilizzo\relax }}{54}{figure.caption.7}%
-\contentsline {figure}{\numberline {10}{\ignorespaces virtual machine stoppate automaticamente\relax }}{54}{figure.caption.7}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Richiesta di rilascio\relax }}{55}{figure.caption.9}%
-\contentsline {figure}{\numberline {12}{\ignorespaces valutazione di FACPL\relax }}{55}{figure.caption.9}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Virtual machine stoppata\relax }}{55}{figure.caption.9}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Dashboard di OpenNebula con una sola virtual machine\relax }}{50}{figure.caption.3}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Richieste di P\_1 e P\_2\relax }}{50}{figure.caption.3}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Valutazioni di FACPL sulle due richieste\relax }}{51}{figure.caption.4}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Dashboard di OpenNebula con i due host bilanciati\relax }}{51}{figure.caption.5}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Dashboard con le virtual machine alternate fra i due host\relax }}{51}{figure.caption.6}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Valutazione di FACPL\relax }}{52}{figure.caption.7}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Dashboard con entrambi gli host al 100\% di utilizzo\relax }}{52}{figure.caption.7}%
+\contentsline {figure}{\numberline {10}{\ignorespaces virtual machine stoppate automaticamente\relax }}{52}{figure.caption.7}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Richiesta di rilascio\relax }}{53}{figure.caption.9}%
+\contentsline {figure}{\numberline {12}{\ignorespaces valutazione di FACPL\relax }}{53}{figure.caption.9}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Virtual machine stoppata\relax }}{53}{figure.caption.9}%
 \ttl@tocsep 
 \ttl@tocsep 
 \ttl@tocsep 

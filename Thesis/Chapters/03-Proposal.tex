@@ -619,7 +619,7 @@ Public class CreateVMTest {
         CreateVM createVMAction = new CreateVM(mockContext);
 
         List<Object> args = Arrays.asList(0, "VMName", 1);
-        createVMAction.eval(args);;
+        createVMAction.eval(args);
         
         assertTrue(mockLogHandler.getLogBuilder().contains("INFO: Starting VM: [1, VMName]\n"));
         assertTrue(mockLogHandler.getLogBuilder().contains("SEVERE: 150\n"));

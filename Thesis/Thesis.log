@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.9.1)  17 SEP 2024 18:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2024.9.1)  18 SEP 2024 16:50
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1320,7 +1320,7 @@ LaTeX Font Info:    Trying to load font information for TS1+pplx on input line 6
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1pplx.fd
 File: ts1pplx.fd 2004/09/06 font definitions for TS1/pplx.
 )) [2]
-Package tocbasic Info: character protrusion at toc deactivated on input line 97.
+Package tocbasic Info: character protrusion at toc deactivated on input line 98.
  (/var/lib/one/eclipse-workspace/Thesis/Thesis.toc
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplx/m/sc/12'.
@@ -1330,15 +1330,14 @@ Package microtype Info: Character `029' is missing
 \openout9 = `Thesis.toc'.
 
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 9.30756pt on input line 98.
+(Font)              scaled to size 9.30756pt on input line 99.
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
-(Font)              scaled to size 5.10004pt on input line 98.
+(Font)              scaled to size 5.10004pt on input line 99.
  [1
 
 
-
-] [2] (/var/lib/one/eclipse-workspace/Thesis/Thesis.lol
-Overfull \hbox (2.56096pt too wide) in paragraph at lines 10--10
+] (/var/lib/one/eclipse-workspace/Thesis/Thesis.lol
+Overfull \hbox (2.86096pt too wide) in paragraph at lines 10--10
  [][] []\T1/pplx/m/n/12 (-20) Classe per free-z-za-re(sospendere) una \T1/fvm/m/n/12 VirtualMachine []  
  []
 
@@ -1346,20 +1345,19 @@ Overfull \hbox (2.56096pt too wide) in paragraph at lines 10--10
 \tf@lol=\write10
 \openout10 = `Thesis.lol'.
 
+ [2
+
+] (/var/lib/one/eclipse-workspace/Thesis/Thesis.lof)
+\tf@lof=\write11
+\openout11 = `Thesis.lof'.
+
  [3
 
 
 ] [4
 
 
-] (/var/lib/one/eclipse-workspace/Thesis/Thesis.lof)
-\tf@lof=\write11
-\openout11 = `Thesis.lof'.
-
- [5] [6
-
-
-] [7] [8
+] [5] [6
 
 
 ]
@@ -1367,16 +1365,16 @@ Overfull \hbox (2.56096pt too wide) in paragraph at lines 10--10
 
  (/var/lib/one/eclipse-workspace/Thesis/Chapters/01-Introduction.tex
 Capitolo 1.
-[9
+[7
 
 
 
-]) [10]
+]) [8]
 \openout2 = `Chapters/02-StateOfTheArt.aux'.
 
  (/var/lib/one/eclipse-workspace/Thesis/Chapters/02-StateOfTheArt.tex
 Capitolo 2.
-[11
+[9
 
 
 
@@ -1391,10 +1389,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--17
 
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 (Font)              scaled to size 8.07506pt on input line 21.
-[12]
+[10]
 Package svg Info: Last page of `./svg-inkscape/facplEvaluationProcess_svg-tex.pdf' is 1 on input line 54.
  (/var/lib/one/eclipse-workspace/Thesis/./svg-inkscape/facplEvaluationProcess_svg-tex.pdf_tex
-<./svg-inkscape/facplEvaluationProcess_svg-tex.pdf, id=247, page=1, 441.31216pt x 196.42122pt>
+<./svg-inkscape/facplEvaluationProcess_svg-tex.pdf, id=237, page=1, 441.31216pt x 196.42122pt>
 File: ./svg-inkscape/facplEvaluationProcess_svg-tex.pdf Graphic file (type pdf)
 <use ./svg-inkscape/facplEvaluationProcess_svg-tex.pdf, page 1>
 Package pdftex.def Info: ./svg-inkscape/facplEvaluationProcess_svg-tex.pdf , page1 used on input line 56.
@@ -1403,12 +1401,12 @@ Package pdftex.def Info: ./svg-inkscape/facplEvaluationProcess_svg-tex.pdf , pag
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplx/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
- [13 <./svg-inkscape/facplEvaluationProcess_svg-tex.pdf>] [14]
+ [11 <./svg-inkscape/facplEvaluationProcess_svg-tex.pdf>] [12]
 Underfull \hbox (badness 10000) in paragraph at lines 79--79
 [][][][]$\T1/fvm/m/n/10 https : / / docs . opennebula . io / 6 . 8 / overview / opennebula _ concepts / opennebula _
  []
 
-[15] [16]
+[13] [14]
 Underfull \hbox (badness 10000) in paragraph at lines 91--91
 [][][][]$\T1/fvm/m/n/10 https : / / docs . opennebula . io / 6 . 8 / integration _ and _ development / system _
  []
@@ -1418,17 +1416,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 91--91
 [][][][]$\T1/fvm/m/n/10 https : / / docs . opennebula . io / 6 . 8 / integration _ and _ development / system _
  []
 
-) [17]
+) [15]
 \openout2 = `Chapters/03-Proposal.aux'.
 
  (/var/lib/one/eclipse-workspace/Thesis/Chapters/03-Proposal.tex
 Capitolo 3.
-[18
+[16
 
 
 
 
-] [19]
+] [17]
 Underfull \hbox (badness 10000) in paragraph at lines 26--26
 [][][][]$\T1/fvm/m/n/10 https : / / docs . opennebula . io / 6 . 8 / management _ and _ operations / users _ groups _
  []
@@ -1448,27 +1446,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--30
 [][][][]$\T1/fvm/m/n/10 https : / / docs . opennebula . io / doc / 6 . 4 / oca / java / org / opennebula / client /
  []
 
-[20] [21] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+[18] [19] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
-) [22] [23] [24] [25]
+) [20] [21] [22] [23]
 LaTeX Font Info:    Font shape `T1/fvm/m/n' will be
 (Font)              scaled to size 7.22505pt on input line 168.
- [26] [27] [28] [29] [30] [31]
+ [24] [25] [26] [27] [28] [29]
 Overfull \hbox (38.742pt too wide) in paragraph at lines 354--355
 \T1/pplx/m/n/12 (-20) sta, ed en-tram-be uti-liz-za-no co-me \T1/fvm/m/n/12 setupper \T1/pplx/m/n/12 (-20) la clas-se \T1/fvm/m/n/12 OpenNebulaFACPLClassSetup
  []
 
-[32]
+[30]
 Overfull \hbox (120.09207pt too wide) in paragraph at lines 390--391
 []\T1/fvm/m/n/12 classGenerator \T1/pplx/m/n/12 (-20) è un og-get-to crea-to a par-ti-re dal-la clas-se \T1/fvm/m/n/12 OpenNebulaFACPLClassGenerator
  []
 
-[33] [34] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+[31] [32] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2019/09/10 1.8c listings language file
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
-) [35] [36]
-<./Figures/policyManagerFrontEnd.png, id=794, 1264.725pt x 1200.485pt>
+) [33] [34]
+<./Figures/policyManagerFrontEnd.png, id=784, 1264.725pt x 1200.485pt>
 File: ./Figures/policyManagerFrontEnd.png Graphic file (type png)
 <use ./Figures/policyManagerFrontEnd.png>
 Package pdftex.def Info: ./Figures/policyManagerFrontEnd.png  used on input line 453.
@@ -1478,124 +1476,124 @@ Overfull \hbox (10.8017pt too wide) in paragraph at lines 458--458
 []\T1/pplx/m/n/12 (-20) A li-vel-lo im-ple-men-ta-ti-vo si evi-den-zia l'u-ti-liz-zo del-la li-bre-ria \T1/pplx/m/it/12 (-20) hi-ghlight.js \T1/pplx/m/n/12 (-20) [[]]
  []
 
-[37 <./Figures/policyManagerFrontEnd.png>] [38] [39]
+[35 <./Figures/policyManagerFrontEnd.png>] [36] [37]
 Overfull \hbox (19.75931pt too wide) in paragraph at lines 511--512
 \T1/pplx/m/n/12 (-20) Il co-strut-to-re di que-sta clas-se ri-ce-ve in in-put un og-get-to di ti-po \T1/fvm/m/n/12 PolicyService
  []
 
-[40] [41] [42] [43] [44] [45] [46]) [47]
+[38] [39] [40] [41] [42] [43] [44]) [45]
 \openout2 = `Chapters/04-RealCaseScenario.aux'.
 
  (/var/lib/one/eclipse-workspace/Thesis/Chapters/04-RealCaseScenario.tex
 Capitolo 4.
-[48
+[46
 
 
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 22--22
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
 [][][][]$\T1/fvm/m/n/10 https : / / docs . opennebula . io / 6 . 8 / installation _ and _ configuration / frontend _
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 22--22
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
 [][][][]$\T1/fvm/m/n/10 https : / / docs . opennebula . io / 6 . 8 / open _ cluster _ deployment / kvm _ node / kvm _ node _
  []
 
-[49] [50] [51]
-<tesi_screenshot/OpenNebula_firstVM.png, id=1055, 1621.05624pt x 148.555pt>
+[47] [48] [49]
+<tesi_screenshot/OpenNebula_firstVM.png, id=1046, 1621.05624pt x 148.555pt>
 File: tesi_screenshot/OpenNebula_firstVM.png Graphic file (type png)
 <use tesi_screenshot/OpenNebula_firstVM.png>
-Package pdftex.def Info: tesi_screenshot/OpenNebula_firstVM.png  used on input line 66.
+Package pdftex.def Info: tesi_screenshot/OpenNebula_firstVM.png  used on input line 67.
 (pdftex.def)             Requested size: 384.1122pt x 35.20056pt.
-<tesi_screenshot/P1Create_1.png, id=1056, 823.075pt x 999.735pt>
+<tesi_screenshot/P1Create_1.png, id=1047, 823.075pt x 999.735pt>
 File: tesi_screenshot/P1Create_1.png Graphic file (type png)
 <use tesi_screenshot/P1Create_1.png>
-Package pdftex.def Info: tesi_screenshot/P1Create_1.png  used on input line 71.
+Package pdftex.def Info: tesi_screenshot/P1Create_1.png  used on input line 72.
 (pdftex.def)             Requested size: 188.21709pt x 228.60706pt.
-<tesi_screenshot/P2Create_1.png, id=1057, 823.075pt x 999.735pt>
+<tesi_screenshot/P2Create_1.png, id=1048, 823.075pt x 999.735pt>
 File: tesi_screenshot/P2Create_1.png Graphic file (type png)
 <use tesi_screenshot/P2Create_1.png>
-Package pdftex.def Info: tesi_screenshot/P2Create_1.png  used on input line 75.
+Package pdftex.def Info: tesi_screenshot/P2Create_1.png  used on input line 76.
 (pdftex.def)             Requested size: 188.21709pt x 228.60706pt.
-<tesi_screenshot/DenyP1_1_cut.png, id=1058, 507.8975pt x 305.14pt>
+<tesi_screenshot/DenyP1_1_cut.png, id=1049, 507.8975pt x 305.14pt>
 File: tesi_screenshot/DenyP1_1_cut.png Graphic file (type png)
 <use tesi_screenshot/DenyP1_1_cut.png>
-Package pdftex.def Info: tesi_screenshot/DenyP1_1_cut.png  used on input line 83.
+Package pdftex.def Info: tesi_screenshot/DenyP1_1_cut.png  used on input line 84.
 (pdftex.def)             Requested size: 103.71193pt x 62.30733pt.
-<tesi_screenshot/Permit_P2_1.png, id=1059, 1507.6325pt x 337.26pt>
+<tesi_screenshot/Permit_P2_1.png, id=1050, 1507.6325pt x 337.26pt>
 File: tesi_screenshot/Permit_P2_1.png Graphic file (type png)
 <use tesi_screenshot/Permit_P2_1.png>
-Package pdftex.def Info: tesi_screenshot/Permit_P2_1.png  used on input line 87.
+Package pdftex.def Info: tesi_screenshot/Permit_P2_1.png  used on input line 88.
 (pdftex.def)             Requested size: 276.56125pt x 61.8672pt.
- [52 </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/OpenNebula_firstVM.png> </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/P1Create_1.png> </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/P2Create_1.png>]
-<tesi_screenshot/OpenNebula_eavenLoad.png, id=1067, 1767.60374pt x 230.8625pt>
+ [50 </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/OpenNebula_firstVM.png> </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/P1Create_1.png> </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/P2Create_1.png>]
+<tesi_screenshot/OpenNebula_eavenLoad.png, id=1058, 1767.60374pt x 230.8625pt>
 File: tesi_screenshot/OpenNebula_eavenLoad.png Graphic file (type png)
 <use tesi_screenshot/OpenNebula_eavenLoad.png>
-Package pdftex.def Info: tesi_screenshot/OpenNebula_eavenLoad.png  used on input line 94.
+Package pdftex.def Info: tesi_screenshot/OpenNebula_eavenLoad.png  used on input line 95.
 (pdftex.def)             Requested size: 384.1122pt x 50.16638pt.
-<tesi_screenshot/alternating.png, id=1068, 1642.135pt x 357.335pt>
+<tesi_screenshot/alternating.png, id=1059, 1642.135pt x 357.335pt>
 File: tesi_screenshot/alternating.png Graphic file (type png)
 <use tesi_screenshot/alternating.png>
-Package pdftex.def Info: tesi_screenshot/alternating.png  used on input line 100.
+Package pdftex.def Info: tesi_screenshot/alternating.png  used on input line 101.
 (pdftex.def)             Requested size: 384.1122pt x 83.58115pt.
-<tesi_screenshot/permitReleaseCreateLonger.png, id=1069, 1507.6325pt x 337.26pt>
+<tesi_screenshot/permitReleaseCreateLonger.png, id=1060, 1507.6325pt x 337.26pt>
 File: tesi_screenshot/permitReleaseCreateLonger.png Graphic file (type png)
 <use tesi_screenshot/permitReleaseCreateLonger.png>
-Package pdftex.def Info: tesi_screenshot/permitReleaseCreateLonger.png  used on input line 108.
+Package pdftex.def Info: tesi_screenshot/permitReleaseCreateLonger.png  used on input line 109.
 (pdftex.def)             Requested size: 384.1122pt x 85.92554pt.
-<tesi_screenshot/full_hosts.png, id=1070, 1764.5925pt x 216.81pt>
+<tesi_screenshot/full_hosts.png, id=1061, 1764.5925pt x 216.81pt>
 File: tesi_screenshot/full_hosts.png Graphic file (type png)
 <use tesi_screenshot/full_hosts.png>
-Package pdftex.def Info: tesi_screenshot/full_hosts.png  used on input line 114.
+Package pdftex.def Info: tesi_screenshot/full_hosts.png  used on input line 115.
 (pdftex.def)             Requested size: 384.1122pt x 47.19217pt.
-<tesi_screenshot/stoppedVMS.png, id=1071, 1444.39626pt x 132.495pt>
+<tesi_screenshot/stoppedVMS.png, id=1062, 1444.39626pt x 132.495pt>
 File: tesi_screenshot/stoppedVMS.png Graphic file (type png)
 <use tesi_screenshot/stoppedVMS.png>
-Package pdftex.def Info: tesi_screenshot/stoppedVMS.png  used on input line 121.
+Package pdftex.def Info: tesi_screenshot/stoppedVMS.png  used on input line 122.
 (pdftex.def)             Requested size: 384.1122pt x 35.23431pt.
- [53 </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/DenyP1_1_cut.png> </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/Permit_P2_1.png> </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/OpenNebula_eavenLoad.png> </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/Alternating.png>]
-<tesi_screenshot/notEnoughResources.png, id=1083, 1493.58pt x 343.2825pt>
+ [51 </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/DenyP1_1_cut.png> </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/Permit_P2_1.png> </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/OpenNebula_eavenLoad.png> </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/Alternating.png>]
+<tesi_screenshot/notEnoughResources.png, id=1072, 1493.58pt x 343.2825pt>
 File: tesi_screenshot/notEnoughResources.png Graphic file (type png)
 <use tesi_screenshot/notEnoughResources.png>
-Package pdftex.def Info: tesi_screenshot/notEnoughResources.png  used on input line 129.
+Package pdftex.def Info: tesi_screenshot/notEnoughResources.png  used on input line 130.
 (pdftex.def)             Requested size: 384.1122pt x 88.28229pt.
- [54 </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/permitReleaseCreateLonger.png> </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/full_hosts.png> </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/stoppedVMS.png> </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/notEnoughResources.png>]
-<tesi_screenshot/ReleaseP2.png, id=1093, 823.075pt x 999.735pt>
+ [52 </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/permitReleaseCreateLonger.png> </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/full_hosts.png> </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/stoppedVMS.png> </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/notEnoughResources.png>]
+<tesi_screenshot/ReleaseP2.png, id=1083, 823.075pt x 999.735pt>
 File: tesi_screenshot/ReleaseP2.png Graphic file (type png)
 <use tesi_screenshot/ReleaseP2.png>
 Package pdftex.def Info: tesi_screenshot/ReleaseP2.png  used on input line 139.
-(pdftex.def)             Requested size: 153.64253pt x 186.61084pt.
-<tesi_screenshot/permitRelease.png, id=1094, 1507.6325pt x 341.275pt>
+(pdftex.def)             Requested size: 192.05609pt x 233.275pt.
+<tesi_screenshot/permitRelease.png, id=1084, 1507.6325pt x 341.275pt>
 File: tesi_screenshot/permitRelease.png Graphic file (type png)
 <use tesi_screenshot/permitRelease.png>
 Package pdftex.def Info: tesi_screenshot/permitRelease.png  used on input line 144.
-(pdftex.def)             Requested size: 226.62479pt x 51.29839pt.
-<tesi_screenshot/stoppedVM.png, id=1095, 1532.72626pt x 154.5775pt>
+(pdftex.def)             Requested size: 384.1122pt x 86.94846pt.
+<tesi_screenshot/stoppedVM.png, id=1085, 1532.72626pt x 154.5775pt>
 File: tesi_screenshot/stoppedVM.png Graphic file (type png)
 <use tesi_screenshot/stoppedVM.png>
 Package pdftex.def Info: tesi_screenshot/stoppedVM.png  used on input line 150.
 (pdftex.def)             Requested size: 384.1122pt x 38.73625pt.
-) [55 </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/ReleaseP2.png> </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/permitRelease.png> </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/stoppedVM.png>]
+) [53 </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/ReleaseP2.png> </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/permitRelease.png> </var/lib/one/eclipse-workspace/Thesis/tesi_screenshot/stoppedVM.png>]
 \openout2 = `Chapters/05-Conclusions.aux'.
 
  (/var/lib/one/eclipse-workspace/Thesis/Chapters/05-Conclusions.tex
 Capitolo 5.
-[56
+[54
 
 
 
 
-] [57] [58]) [59]
+] [55] [56]) [57]
 \openout2 = `Chapters/06-Ringraziamenti.aux'.
 
- (/var/lib/one/eclipse-workspace/Thesis/Chapters/06-Ringraziamenti.tex [60
+ (/var/lib/one/eclipse-workspace/Thesis/Chapters/06-Ringraziamenti.tex [58
 
 
 
 
-]) [61] (/var/lib/one/eclipse-workspace/Thesis/Thesis.bbl [62
+]) [59] (/var/lib/one/eclipse-workspace/Thesis/Thesis.bbl [60
 
 
 
@@ -1609,7 +1607,7 @@ Underfull \hbox (badness 3019) in paragraph at lines 41--44
 []\T1/pplx/m/n/12 (+20) Andrea Mar-ghe-ri.  Fa-c-pl do-cu-men-ta-tion.  [][]$\T1/fvm/m/n/12 https : / / facpl .
  []
 
-[63]) [64]
+[61]) [62]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 130.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 130.
  (/var/lib/one/eclipse-workspace/Thesis/Thesis.aux (/var/lib/one/eclipse-workspace/Thesis/FrontMatter/Titlepage.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/01-Introduction.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/02-StateOfTheArt.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/03-Proposal.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/04-RealCaseScenario.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/05-Conclusions.aux) (/var/lib/one/eclipse-workspace/Thesis/Chapters/06-Ringraziamenti.aux))
@@ -1623,18 +1621,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 38741 strings out of 481239
- 783326 string characters out of 5920378
- 1434226 words of memory out of 5000000
- 52175 multiletter control sequences out of 15000+600000
- 646227 words of font info for 435 fonts, out of 8000000 for 9000
+ 38752 strings out of 481239
+ 783597 string characters out of 5920378
+ 1435211 words of memory out of 5000000
+ 52176 multiletter control sequences out of 15000+600000
+ 646857 words of font info for 444 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,23n,100p,10139b,2445s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 74i,23n,95p,10139b,2445s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/euler/eurb10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/bera/fvmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on /var/lib/one/eclipse-workspace/Thesis/Thesis.pdf (66 pages, 907997 bytes).
+Output written on /var/lib/one/eclipse-workspace/Thesis/Thesis.pdf (64 pages, 907746 bytes).
 PDF statistics:
- 1415 PDF objects out of 1440 (max. 8388607)
- 1245 compressed objects within 13 object streams
- 607 named destinations out of 1000 (max. 500000)
- 101247 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 1402 PDF objects out of 1440 (max. 8388607)
+ 1234 compressed objects within 13 object streams
+ 605 named destinations out of 1000 (max. 500000)
+ 101239 words of extra memory for PDF output out of 106986 (max. 10000000)
 

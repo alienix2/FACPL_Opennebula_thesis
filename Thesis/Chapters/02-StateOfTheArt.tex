@@ -3,18 +3,18 @@
 \label{cap:capitolo2}
 L'obiettivo di questo capitolo è introdurre i concetti di base del linguaggio FACPL e del software OpenNebula, necessari per comprendere il lavoro svolto in questa tesi. In particolare, sarà discusso il linguaggio FACPL, le sue caratteristiche principali e le motivazioni che hanno portato al suo utilizzo. Successivamente verrà presentato il software OpenNebula, sarà descritta la sua architettura e saranno evidenziate funzionalità ritrovabili all'interno dei progetti descritti nei capitoli successivi.\par
 \section{Il linguaggio FACPL}
-FACPL~\cite{FAPCLTesi} è stato ideato nel 2012 come risposta alla necessità di sistemi di controllo degli accessi più flessibili e adattabili rispetto a quelli già esistenti. In particolar modo il linguaggio viene spesso paragonato con XACML, questo per due motivi principali: 
+FACPL~\cite{FAPCLTesi} è stato ideato nel 2012 come risposta alla necessità di disporre di sistemi di controllo degli accessi più flessibili e adattabili rispetto a quelli già esistenti. In particolar modo il linguaggio viene spesso paragonato con XACML, questo per due motivi principali: 
 \begin{itemize}
     \item XACML è attualmente il inguaggio più largamente utilizzato per il controllo degli accessi;
     \item FACPL è stato sviluppato proprio come risposta ad alcune evidenti problematiche di XACML.
 \end{itemize}
-Il problema principale che FACPL punta a risolvere è la mancanza di una semantica definita formalmente in XACML, il che rende difficile ideare delle tecniche di analisi. Trae comunque larga ispirazione da XACML, in particolar modo per la struttura base delle policy e anche per una parte della terminologia.\par
+Il problema principale che FACPL punta a risolvere è la mancanza di una semantica definita formalmente in XACML, il che rende difficile ideare delle tecniche di analisi. Trae quindi larga ispirazione da XACML, in particolar modo per la struttura base delle policy e anche per una parte della terminologia.\par
 
 \section{Struttura delle policy e delle richieste di FACPL}
 In FACPL le policy sono composte da regole e insiemi di policy, indicati come \texttt{Rule} e \texttt{PolicySet}:
 \begin{itemize}
-    \item le \texttt{Rule} presentano un nome, la decisione positiva o negativa che è data dalla loro valutatione (che può essere \texttt{Permit} o \texttt{Deny}) e un'espressione che viene confrontata con la richiesta che sta venendo valutata;
-    \item i \texttt{PolicySet} presentano un nome, un algoritmo, detto \emph{combining algorithm}, e un'espressione che valuta se l'insieme è applicabile alla richiesta. I \emph{combining algorithm}\footnote{\url{https://facpl.readthedocs.io/en/latest/txt/facpl.html?highlight=policy\#evaluation}} sono funzioni che prendono in input le decisioni delle policy e restituiscono una decisione unica. Le policy in un \texttt{PolicySet} possono essere sia delle \texttt{Rule} che altri \texttt{PolicySet} annidati.
+    \item le \texttt{Rule} sono le policy basilari e presentano un nome, la decisione positiva o negativa che è data dalla loro valutatione (che può essere \texttt{Permit} o \texttt{Deny}) e un'espressione che viene confrontata con la richiesta che sta venendo valutata;
+    \item i \texttt{PolicySet} sono insiemi di policy e presentano un nome, un algoritmo, detto \emph{combining algorithm}, e un'espressione che valuta se l'insieme di policy è applicabile alla richiesta. I \emph{combining algorithm}\footnote{\url{https://facpl.readthedocs.io/en/latest/txt/facpl.html?highlight=policy\#evaluation}} sono funzioni che prendono in input le decisioni delle policy dell'insieme e restituiscono una decisione unica. Le policy in un \texttt{PolicySet} possono essere sia delle \texttt{Rule} che altri \texttt{PolicySet} annidati.
     \item le \texttt{obligation} sono delle componenti opzionali sia nelle regole che negli insiemi di policy che rappresentano delle azioni da eseguire. Permettono di specificare se devono essere eseguite in caso di decisione positiva o negativa. Possono essere obbligatorie o opzionali, questo significa che nel primo caso se l'azione espressa dalla \texttt{obligation} non viene eseguita con successo la valutazione non sarà positiva, mentre nel secondo caso sì.
 \end{itemize}
 In questo listing si può vedere un esempio di policy in linguaggio FACPL:
@@ -48,7 +48,7 @@ Request: { Online_Generated
 \end{lstlisting} 
 \section{Componenti del sistema FACPL}
 \label{sec:componentiFACPL}
-La Figura \ref{fig:facplEvaluationProcess} mostra le componenti di valutazione delle policy del sistema FACPL:
+La Figura \ref{fig:facplEvaluationProcess} mostra le componenti del processo di valutazione delle policy del sistema FACPL:
 \begin{figure}[h]
     \centering
     \includesvg[width=\textwidth]{facplEvaluationProcess.svg}
@@ -67,7 +67,7 @@ La Figura \ref{fig:facplEvaluationProcess} mostra le componenti di valutazione d
 
 \section{Modalità di utilizzo di FACPL}
 \label{sec:modalitaFACPL}
-FACPL viene distribuito come una repository p2 di Eclipse, questo permette di installarlo direttamente tramite la UI di Eclipse in modo molto facile. FACPL richiede l'utilizzo di Java 8 anche se non risulterebbe difficile integrarlo in progetti che utilizzano versioni di Java successive con qualche accorgimento.\par
+FACPL viene distribuito come una repository p2 di Eclipse; questo permette di installarlo direttamente tramite la UI di Eclipse in modo molto facile. FACPL richiede l'utilizzo di Java 8 anche se non risulterebbe difficile integrarlo in progetti che utilizzano versioni di Java successive con qualche accorgimento.\par
 Il metodo principale per sviluppare un progetto FACPL è crearlo direttamente con l'interfaccia di Eclipse, in questo modo viene creato un progetto con tutte le dipendenze necessarie. Si nota come FACPL sia pensato per essere usato tramite la sua sintassi di alto livello e non tramite Java direttamente, di conseguenza è di solito richiesto al programmatore di scrivere codice Java solo per tre componenti del sistema, il \emph{Context Handler}, l'\emph{Environment} e gli \emph{Obligation services}.\par
 Il \emph{Context Handler} deve soltanto essere leggermente modificato per adattarsi ad interagire con l'\emph{Environment}, che invece è la parte fondamentale da scrivere. L'\emph{Environment} può essere scritto come si preferisce, basta che sia in grado di comunicare con il \emph{Context Handler} quindi può potenzialmente essere scritto in qualsiasi linguaggio di programmazione. Questa logica rende FACPL facilmente adattabile ad un grande numero di casi concreti. Per quanto riguarda gli \emph{Obligation services} occorre integrare quelle che sono chiamate \emph{PEPAction}, ovvero i comandi che vengono effettivamente lanciati come obbligazioni, in questo caso il contratto da rispettare è che siano tutte classi che implementano l'interfaccia \texttt{IPepAction} e quindi che presentino il metodo \texttt{evaluate} con cui vengono chiamate dal \emph{PEP}.\par
 Per la scrittura di file \texttt{.fpl} in sintassi FACPL è fornito un editor apposito realizzato con Xtext~\cite{eclipseXtext} ed accessbile comodamente da Eclipse automaticamente dopo l'installazione della repository p2. L'editor presenta alcune funzioni tipiche degli IDE come l'identificazione di \emph{warning} e \emph{errors} che permettono di capire se si sono verificati degli errori di sintassi, oltre che l'highlighting della sintassi. Vengono messi inoltre a disposizione dei generatori automatici di codice Java, XACML e SMT-LIB a partire da un file \texttt{.fpl}; questi generatori sono accessibili dalla UI di Eclipse. Nella repository del progetto su github\footnote{\url{https://github.com/andreamargheri/FACPL}} sono inoltre presenti diversi codici di esempio.\par
