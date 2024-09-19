@@ -109,14 +109,18 @@ $(document).ready(function() {
             type: 'POST',
             data: request,
             contentType: 'text/plain',
-			unction(response) {
-			        alert('Request successfully validated: ' + response); // Alert for success
-			        fetchAndHighlightContent('/requests', 'requestsContent'); // Update requests content
-
-			        // Reset dropdown menus
-			        $('#actionId').val('default');
-			        $('#profileId').val('default');
-			        $('#vmType').val('default');
+			success: function(response) {
+				alert('Request successfully validated: ' + response); // Alert for success
+				fetchAndHighlightContent('/requests', 'requestsContent'); // Update requests content
+				// Reset dropdown menus
+				$('#actionId').val('Select...');
+				$('#profileId').val('Select...');
+				$('#vmType').val('Select...');
+				
+				// Hide custom input fields
+				$('#customActionId').hide();
+				$('#customProfileId').hide();
+				$('#customVmType').hide();
 			},
             error: function(xhr, status, error) {
                 console.error('Error submitting request:', xhr.responseText);
