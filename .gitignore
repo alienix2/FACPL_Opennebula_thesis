@@ -2,3 +2,6 @@
 /resource_management/*.log
 /.gitignore
 /*.fpl
+/Thesis/*
+!/Thesis/Thesis.pdf
+!/Thesis/riassunto_tesi.pdf
