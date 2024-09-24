@@ -9,7 +9,7 @@
 \documentclass[twoside,openright,titlepage,fleqn,
 	headinclude,12pt,a4paper,BCOR=5mm,footinclude]{scrbook}
 
-\usepackage[nottoc]{tocbibind}
+\usepackage[nottoc, notlot]{tocbibind}
 %--------------------------------------------------------------
 % Inputs for the title page 
 %--------------------------------------------------------------
@@ -95,10 +95,14 @@ parts,dottedtoc]{classicthesis}
 \let\origcleardoublepage\cleardoublepage
 \let\cleardoublepage\clearpage
 \pagenumbering{arabic}
+\addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
+\addtocontents{toc}{\protect\enlargethispage{\baselineskip}}
 \tableofcontents
+\phantomsection
 \lstlistoflistings
-\let\cleardoublepage\origcleardoublepage
+\phantomsection
 \listoffigures
+\let\cleardoublepage\origcleardoublepage
 \cleardoublepage
 \thispagestyle{empty}
 \begin{flushright}
@@ -123,7 +127,8 @@ parts,dottedtoc]{classicthesis}
 %--------------------------------------------------------------
 % Bibliography
 %--------------------------------------------------------------
-\bibliographystyle{plain} 
+\bibliographystyle{plain}
+\phantomsection
 \bibliography{Bibliography} % Entries are in the Bibliography.bib file
 
 %--------------------------------------------------------------

@@ -8,8 +8,6 @@ Bundle-SymbolicName: resource_management;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: FACPL_Library,
  XacmlToFacpl,
- org.junit,
- junit-jupiter-api
-Import-Package: org.apache.log4j,
- org.apache.commons.logging
+ org.junit
+Import-Package: org.apache.log4j
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

@@ -680,8 +680,11 @@
 %Include svgs
 \usepackage{svg}
 
-%Change list of listings title
+%Change list of listings title and add it to table of contents
 \renewcommand{\lstlistlistingname}{Elenco dei listing}
+\renewcommand{\lstlistoflistings}{\begingroup
+  \tocfile{\lstlistlistingname}{lol}
+\endgroup}
 %Change space between paragraphs
 \setlength{\parskip}{0.5em}
 

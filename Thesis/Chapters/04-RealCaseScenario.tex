@@ -2,7 +2,7 @@
 
 \chapter{Utilizzo dei progetti in un server reale}
 \label{cap:capitolo4}
-Per fornire un esempio di utilizzo dei progetti presentati nei capitoli precedenti, si è deciso di installare OpenNebula su un computer di prova. Il computer scelto è un desktop posizionato all'interno di una stanza ad uso degli studenti di informatica. Il computer non è raggiungibile dall'esterno ma è accessibile tramite rete cablata e wifi interna alla stanza. Questo permette di avere un ambiente di test semplice ma vicino alla realtà.\par
+Per fornire un esempio di utilizzo dei progetti presentati nei capitoli precedenti, si è deciso di installare OpenNebula su un computer di prova. Il computer scelto è un desktop posizionato all'interno di una stanza a uso degli studenti del CdS in Informatica. Il computer non è raggiungibile dall'esterno ma è accessibile tramite rete cablata e wifi interna alla stanza. Questo permette di avere un ambiente di test semplice ma vicino alla realtà.\par
 Le specifiche principali del desktop sono:
 \begin{itemize}
     \item processore: Intel Core i7-13700 (24 core);
@@ -17,18 +17,37 @@ In questo esempio è stato considerato anche un altro host, un computer portatil
     \item RAM: 8 GB ddr4.
 \end{itemize}
 Questo computer sarà riferito da qui in avanti come \emph{laptop}.\par
-Le policy scelte sono state quelle per il load balancing. Questa scelta è data dal fatto che il \emph{server} è molto più potente del \emph{laptop} e quindi sarà facile vedere se il bilanciamento viene fatto correttamente.
+
+\section{Descrizione delle policy di load balancing}
+All'interno del paper~\cite{10.1007/978-3-319-08260-8_6} vengono descritti due esempi di insiemi di policy. Uno per il load balancing e uno per il risparmio energetico. Dati i due computer da noi considerati entrambi gli insiemi potevano risultare interessanti. Si è deciso di concentrarci su quello riguardante il load balancing dato che permette di testare un maggior numero di funzionalità di FACPL. Questa scelta è data anche dal fatto che il \emph{server} è molto più potente del \emph{laptop} e quindi sarà facile vedere se il bilanciamento viene fatto correttamente fin da subito.\par
+Le policy di load balancing descrivono un sistema con le seguenti regole:
+\begin{itemize}
+    \item gli utenti del profilo \emph{P\_1} possono creare soltanto virtual machine di tipo \emph{TYPE\_1};
+    \item gli utenti del profilo \emph{P\_2} possono creare virtual machine sia di tipo \emph{TYPE\_1} che di tipo \emph{TYPE\_2};
+    \item sia gli utenti del profilo \emph{P\_1} che del profilo \emph{P\_2} possono rilasciare le virtual machine su entrambi gli hypervisor;
+    \item il carico fra i due hypervisor è bilanciato andando ad inserire le virtual machine sempre sull'host che ha più risorse disponibili;
+    \item se entrambi gli hypervisor raggiungono il 100\% di utilizzo delle risorse, le richieste di creazione di virtual machine di tipo \emph{TYPE\_1} vengono rifiutate;
+    \item se entrambi gli hypervisor raggiungono il 100\% di utilizzo delle risorse, le virtual machine di tipo \emph{TYPE\_2} possono venire create con il rilascio del numero appropriato di virtual machine di tipo \emph{TYPE\_1};
+    \item se entrambi gli hypervisor raggiungono il 100\% di utilizzo delle risorse e non sono presenti virtual machine di tipo \emph{TYPE\_1}, le richieste di creazione di virtual machine di tipo \emph{TYPE\_2} vengono rifiutate.
+\end{itemize}
+Il sistema preso in esame ha inoltre le seguenti caratteristiche:
+\begin{itemize}
+    \item sono presenti due profili di utenti, \emph{P\_1} e \emph{P\_2};
+    \item sono presenti due hypervisor, \emph{HYPER\_1} e \emph{HYPER\_2};
+    \item sono presenti due tipologie di virtual machine, \emph{TYPE\_1} e \emph{TYPE\_2};
+    \item le virtual machine di tipo \emph{TYPE\_1} richiedono la metà delle risorse dalle virtual machine di tipo \emph{TYPE\_2}.
+\end{itemize}
 
 \section{Installazione dei due progetti}
-In questo capitolo non sarà presa in considerazione l'installazione di OpenNebula; tutte le procedure descritte in questa sezione saranno riferite ad un sistema in cui OpenNebula è già installato e funzionante (per informazioni sulle procedure seguite fare riferimento alla ducumentazione ufficiale\footnote{\url{https://docs.opennebula.io/6.8/installation\_and\_configuration/frontend\_installation/install.html}}). Stessa considerazione è fatta anche per i nodi\footnote{\url{https://docs.opennebula.io/6.8/open\_cluster\_deployment/kvm\_node/kvm\_node\_installation.html}}.\par
-Per eseguire correttamente il codice descritto nel capitolo \ref{cap:capitolo3} è stato necessario innanzitutto aprire un terminale ad autenticarsi come utente del gruppo \emph{oneadmin}, da cui si è dovuto clonare la repository github per poi seguire le procedure descritte nel file \texttt{README.md}. Si evidenzia come sia fondamentale che l'utente che esegue i comandi sul terminale da qui in avanti abbia diritti di lettura, scrittura e esecuzione sui file appropriati, di conseguenza è consigliato direttamente clonare la repository con l'utente corretto; i permessi si possono fornire in un secondo momento se lo si preferisce, ma se non risultano del tutto corretti i risultati potrebbero essere inaspettati.
+In questo capitolo non sarà presa in considerazione l'installazione di OpenNebula; tutte le procedure descritte in questa sezione saranno riferite ad un sistema in cui OpenNebula è già installato e funzionante (per informazioni sulle procedure seguite fare riferimento alla documentazione ufficiale\footnote{\url{https://docs.opennebula.io/6.8/installation\_and\_configuration/frontend\_installation/install.html}}). Stessa considerazione è fatta anche per i nodi\footnote{\url{https://docs.opennebula.io/6.8/open\_cluster\_deployment/kvm\_node/kvm\_node\_installation.html}}.\par
+Per eseguire correttamente il codice descritto nel capitolo \ref{cap:capitolo3} è stato necessario innanzitutto aprire un terminale ad autenticarsi come utente del gruppo \emph{oneadmin}, da cui si è dovuto clonare la repository github per poi seguire le procedure descritte nel file \texttt{README.md}. Si evidenzia come sia fondamentale che l'utente che esegue i comandi sul terminale da qui in avanti abbia diritti di lettura, scrittura ed esecuzione sui file appropriati, di conseguenza è consigliato direttamente clonare la repository con l'utente corretto; i permessi si possono fornire in un secondo momento se lo si preferisce, ma se non risultano del tutto corretti i risultati potrebbero essere inaspettati.
 In questo caso si vuole testare il funzionamento di \emph{policy\_manager} di conseguenza i passaggi da seguire sono:
 \begin{itemize}
-    \item Lato \emph{server}:
+    \item lato \emph{server}:
 \begin{itemize}
     \item entrare nella cartella \emph{resource\_management} ed eseguire il comando \texttt{mvn install} assicurandosi che tutti i test che sono eseguiti abbiano successo. Questo comando installerà il progetto all'interno della repository locale di Maven, passaggio fondamentale per eseguire con successo il comando successivo;
     \item entrare nella cartella \emph{policy\_manager} ed eseguire il comando \texttt{mvn test} per assicurarsi che i test vadano a buon fine e tutto possa funzionare correttamente;
-    \item ancora all'interno della cartella \emph{policy\_manager} eseguire il comando \texttt{mvn spring-boot:run} per far partire il server gestito con Spring-Boot.
+    \item ancora all'interno della cartella \emph{policy\_manager} eseguire il comando \texttt{mvn spring-boot:run} per far partire il server gestito con Spring-Boot;
     \item entrare nella cartella \emph{policy\_manager/config.properties} e modificare i campi in modo consono con la propria installazione di OpenNebula. In questo caso abbiamo considerato i due host di \emph{ID} 0 e 2, e i due template di \emph{ID} 0 e 1. Il file di configurazione avrà quindi la seguente forma:
     \begin{lstlisting}[xleftmargin=1em, label={code:config_properties}, caption={config.properties}]
 hyper1.host.id=0
@@ -38,17 +57,17 @@ type2.template.id=1
 context.file.location=opennebula_context_actions/
     \end{lstlisting}
 \end{itemize}
-    \item lato client \emph{da eseguire una volta}:
+    \item lato client, \emph{da eseguire una volta}:
     \begin{itemize}
         \item connettersi all'ip del server sulla porta 8080;
         \item validare le policy che si vogliono utilizzare, in questo caso abbiamo scelto quelle di load balancing presenti nel progetto;
         \item modificare le policy per aderire al caso reale in questione. In particolare quindi inserire i corretti \emph{ID} degli host e dei template. Ovviamente questo passaggio può essere saltato se si scrivono le policy direttamente per il proprio sistema senza usarne di generiche già scritte;
     \end{itemize}
-    \item lato client \emph{da eseguire ogni volta}:
+    \item lato client, \emph{da eseguire ogni volta}:
     \begin{itemize}
         \item connettersi all'ip del server sulla porta 8080;
         \item creare una richiesta con il menù a tendina disponibile e validarla;
-        \item inviare la richiesta;
+        \item inviare la richiesta.
     \end{itemize}
 \end{itemize}
 Nel nostro esempio di test tutti i passaggi hanno funzionato senza alcun problema, anche se in una precedente installazione su un altro server si era evidenziata la necessità di inserire alcune dipendenze nel file \texttt{pom.xml} rispetto a quelle che erano necessarie sul computer di test originale. Si evidenzia inoltre come non sia stato necessario modificare alcun file .java.
@@ -59,13 +78,13 @@ L'utente può connettersi a OpenNebula Sunstone, accessibile di default sulla po
 Nel nostro caso di esempio abbiamo considerato degli utenti che si connettono alla web-app di \emph{policy\_manager} attraverso la rete wifi. Nessun utente ha la possibilità di modificare le policy, però tutti possono vederle e quindi formattare le loro richieste di conseguenza. Alcuni utenti appartengono al gruppo P\_2 mentre altri al gruppo P\_1, quindi è possibile verificare il cambiamento del sistema all'invio di specifiche richieste da entrambi i gruppi.
 
 \section{Risultati dell'esecuzione}
-Di seguito sono riportate le prime richieste e i risultati del loro invio sulla dashboard di OpenNebula:
 \begin{figure}[H]
     \centering
     \begin{minipage}{1\textwidth}
         \centering
         \includegraphics[width=\textwidth]{tesi_screenshot/OpenNebula_firstVM.png}
         \caption{Dashboard di OpenNebula con una sola virtual machine}
+        \label{fig:dashboardFirstVM}
     \end{minipage}
     \begin{minipage}{0.49\textwidth}
         \centering
@@ -76,8 +95,10 @@ Di seguito sono riportate le prime richieste e i risultati del loro invio sulla 
         \includegraphics[width=\textwidth]{tesi_screenshot/P2Create_1.png}
     \end{minipage}
     \caption{Richieste di P\_1 e P\_2}
+    \label{fig:richiesteCreazione}
 \end{figure}
-Come si può vedere nonostante siano state eseguite due richieste è stata creata soltanto una macchina virtuale. Questa logica è corretta perchè l'utente P\_1 non è autorizzato a creare virtual machine con il template 1. Le valutazione del sistema FACPL sono quindi:
+nelle figure \ref{fig:dashboardFirstVM} e \ref{fig:richiesteCreazione} sono riportate le prime richieste e i risultati del loro invio sulla dashboard di OpenNebula.
+Come si può vedere nonostante siano state eseguite due richieste è stata creata soltanto una macchina virtuale. Questa logica è corretta perché l'utente P\_1 non è autorizzato a creare virtual machine con il template 1. Le valutazione del sistema FACPL sono quindi:
 \begin{figure}[H]
     \begin{minipage}{0.27\textwidth}
         \centering
@@ -123,7 +144,7 @@ Continuando in questo modo si raggiunge una situazione in cui entrambi gli host 
         \caption{virtual machine stoppate automaticamente}
     \end{minipage}
 \end{figure}
-Le due virtual machine freezzate erano appartenenti al \emph{server}, anche perchè era l'unico dei due host ad avere macchine di tipo 1 attive e quindi freezzabili. Possiamo notare questo anche nella figura \ref{fig:full_hosts}, dato che il numero delle virtual machine sul \emph{server} è 14. Questo numero è dato dalla presenza di 10 virtual machine che richiedono 2 processori l'una e 4 virtual machine che richiedono 1 processore l'una. Sul \emph{laptop} ci sono invece soltanto 4 virtual machine che richiedono 2 processori l'una.\par
+Le due virtual machine freezzate erano appartenenti al \emph{server}, anche perché era l'unico dei due host ad avere macchine di tipo 1 attive e quindi freezzabili. Possiamo notare questo anche nella figura \ref{fig:full_hosts}, dato che il numero delle virtual machine sul \emph{server} è 14. Questo numero è dato dalla presenza di 10 virtual machine che richiedono 2 processori l'una e 4 virtual machine che richiedono 1 processore l'una. Sul \emph{laptop} ci sono invece soltanto 4 virtual machine che richiedono 2 processori l'una.\par
 Se si tenta di creare ulteriori virtual machine di tipo 1 il sistema FACPL ritorna correttamente una valutazione di \emph{DENY} e quindi la richiesta non viene neanche inviata a OpenNebula come si può vedere nella seguente immagine:
 \begin{figure}[H]
     \centering
